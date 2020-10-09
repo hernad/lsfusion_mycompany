@@ -1,5 +1,6 @@
 Организация,Organization
 Организации,Organizations
+Название,Name
 Веб сайт,Web site
 Инвентаризация,Inventory
 инвентаризации,inventory
@@ -24,3 +25,180 @@
 Ед. изм.,UOM name
 Место хранения строки инвентаризации не является потомком места хранения документа,The inventory line storage location is not a descendant of the document storage location
 Теоретическое кол-во,Theoretical quantity
+Статус,Status
+Номер,Room
+от ,from 
+Строки,Strings
+Заполнить,Fill in
+Этикетки,Labels
+В процессе,During
+Фактическое кол-во,Actual Qty
+Начать,To begin
+Расхождения,Discrepancies
+Излишки,Surplus
+Недостачи,Gaps
+ (теоретическое), (theoretical)
+ (фактическое), (actual)
+Партии,Party
+Склад,Storage
+Подбор,Selection
+Отменен,Canceled
+Активен,Active
+Отменить,Cancel
+Завершена,Completed
+Завершить,Complete
+Количество,Number
+Изменения,Changes
+Регистр себестоимости,Cost register
+Вид,View
+Время,Time
+Входящая проводка,Incoming wiring
+Сумма (первичная),Amount (primary)
+Сумма (расчетная),Amount (calculated)
+Сумма,Amount
+Цена,Price
+Исходящая проводка,Outbound posting
+Сумма,Amount
+Себестоимость,Cost price
+Себестоимость за единицу,Unit cost
+Себестоимость,Cost price
+Расходовано,Spent
+Параметры расчета себестоимости,Costing parameters
+Дата[comma] с которой пересчитывать,Date from which to recalculate
+Пересчитать себестоимость,Recalculate cost
+Активный,Active
+Движения,Movement
+Резервирование,Reservation
+Места хранения,Storage locations
+Родитель,Parent
+Код родителя,Parent code
+Нельзя удалить место хранения имеющее подчиненные склады,You cannot delete a storage location that has subordinate warehouses
+Уровень,Level
+Каноническое имя,Canonical name
+Владелец,Owner
+Код владельца,Owner code
+Владелец,Owner
+Адрес,Address
+Город,City
+Область,Region
+Почтовый индекс,Postcode
+Места хранения,Storage locations
+Список,List
+Дерево,Tree
+Доступен,Available
+У текущего пользователя нет прав доступа к выбранному месту хранения,The current user does not have permission to access the selected storage location
+Экспорт мест хранения,Export of storage locations
+Мой склад,My warehouse
+Код,Code
+Расчет себестоимости,Cost calculation
+Импорт мест хранения,Importing storage locations
+Импорт завершен,Import completed
+Методы расчета себестоимости,Costing methods
+Плановая себестоимость,Planned cost
+Средняя себестоимость,Average cost
+Метод расчета себестоимости,Cost calculation method
+Методы,Методы
+Партия,Party
+Партионный учет,Lot accounting
+Строка для партии должна относится к тому же продукту[comma] что и партия,The line for the batch must refer to the same product as the batch
+Партия относится к другому продукту (,The batch refers to another product (
+Задание на поступление,Assignment for admission
+поступления,receipts
+Возврат,Return
+Тип возврата,Return type
+Поступление,Поступление
+Отгрузка,Shipment
+Контрагент и товар поступления должны совпадать с контрагентом и товаром возврата,The counterparty and the goods received must match the counterparty and the returned goods
+Вернуть,Return
+Возвращено,Returned
+Возвраты,Refunds
+Возврат поставщику,Return to supplier
+ВП,RS
+Принят,Accepted
+Дата поступления,Receipt Date
+Принятое количество,Accepted quantity
+Принятое количество должно быть от 0 до исходного,The accepted amount must be between 0 and the original
+Заполнить Принято,Fill Accepted
+Принят,Accepted
+Не заполены принятые количества для поступления[space],Accepted Receipt Quantities Not Filled[space] 
+. Проставить ожидаемыми ?,. Put as expected?
+Экспорт остатков,Export of residues
+Код места хранения,Storage location code
+Код места хранения,Storage location code
+Код продукта,Product code
+Кол-во,Quantity
+Cost price,Cost price
+Импорт остатков,Residue import
+Отсутствует место хранения в базе данных с кодом[space],Missing storage location in database with code[space]
+Отсутствует товар в базе данных с кодом[space],There is no product in the database with a code[space]
+Отсутствуют типы поступлений в базе данных. Импорт отменен,There are no receipt types in the database. Import canceled
+Остатки,Leftovers
+Поступление,Admission
+Ввод начальных остатков,Entering initial balances
+Планируемое кол-во,Planned quantity
+Планируемое кол-во партий,Planned number of parties
+Поступления,Receipts
+Размещение,Accommodation
+Размещен,Posted
+К приемке,For acceptance
+В работу,To work
+Списать,Write off
+Выбрать дату,Select date
+По одному складу,One composition at a time
+Остаток на дату,Balance as of date
+Текущие остатки,Current balances
+С остатком,With the change
+С приходом,With income
+Группа полная,Full group
+Остаток,The remainder
+Текущие остатки,Current balances
+Категории,Categories
+Регистр изменения остатка,Remaining change register
+Регистр резервов,Reserves register
+Изображение,Picture
+Отчет,Report
+Атрибуты,Attributes
+Себестоимость остатков,Cost of residues
+С движением,With movement
+По расходу,By consumption
+Себестоимость остатков,Cost of residues
+Движение товара,Movement of goods
+Списание,Magazine
+списания,magazines
+Списания,Magazines
+Строка списания,Debit line
+Продукт,Product
+от[space],from[space]
+Копировать,Copy
+Проведен,Carried out
+Провести,Conduct
+Списание товара,Write-off of goods
+СТ,WO
+Настройки,Settings
+Основные,The main
+Операции,Operations
+Процессы,Processes
+Отчеты,Reports
+Настройка,Customization
+Счет,Account
+Держатель счета,Account holder
+По умолчанию,Default
+Наименование,Name
+Разрешить отрицательный остаток,Allow negative balance
+Тип счета,Account type
+Счета,Accounts
+Касса,Cash account
+Кассы,Cash accounts
+Экспорт касс,Export cash registers
+Код контрагента,Contractor code
+Импорт касс,Import of cash registers
+Отсутствует контрагент в базе данных с кодом[space],There is no counterparty in the database with the code[space]
+Отсутствует банк в базе данных с кодом[space],There is no bank in the database with the code[space]
+. Импорт отменен,. Import canceled
+Банковский счет,Bank account
+Номер счета,Account number
+Банк,Bank
+Код банка,Bank code
+Банковский счет,Bank account
+Экспорт счетов,Export accounts
+Банковские счета,Bank accounts
