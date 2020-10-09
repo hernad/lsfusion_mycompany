@@ -1,0 +1,26 @@
+Организация,Organization
+Организации,Organizations
+Веб сайт,Web site
+Инвентаризация,Inventory
+инвентаризации,inventory
+Инвентаризации,Inventories
+ИН,IN
+Описание,Description
+Дата,Date
+Место хранения,Storage
+Тип инвентаризации,Inventory type
+Все,All
+По категории,By category
+Вручную,Manually
+Имя,Name
+Тип,Type
+Категория,Category
+Примечание,Note
+Строка инвентаризации,Inventory line
+№,No
+Товар,Product
+Штрихкод,Barcode
+Код,Код
+Ед. изм.,UOM name
+Место хранения строки инвентаризации не является потомком места хранения документа,The inventory line storage location is not a descendant of the document storage location
+Теоретическое кол-во,Theoretical quantity

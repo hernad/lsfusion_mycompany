@@ -1,53 +1,53 @@
 # mycompany
-Решение для управления небольшой компанией
+Small business management solution
 
-Сайт : https://mycompany.lsfusion.org
+Website: https://mycompany.lsfusion.org
 
-Демо-версия находится по адресу https://demo.lsfusion.org/mycompany
+The demo is at https://demo.lsfusion.org/mycompany
 
-Обсуждение : https://slack.lsfusion.org/
+Discussion: https://slack.lsfusion.org/
 
-### Реализованные модули
+### Implemented modules
 
-* Расчеты с контрагентами
-* Складской учет
-* Отдел продаж
-* Отдел закупок
-* Производство
+* Settlements with counterparties
+* Inventory control
+* Sales department
+* Purchasing department
+* Production
 
-### Описание модулей
+### Description of modules
 
-#### Расчеты с контрагентами
+#### Settlements with counterparties
 
-* Карточка контрагента. Контакты. Банковские счета
-* Документы по приобретению товаров и услуг. Возврат поставщику
-* Документы реализации товаров и услуг. Возврат от покупателей
-* Регистрация безналичных и наличных платежей
-* Привязка платежей к документам
-* Условия поставки. Условия оплаты
-* Отчет по расчетам с контрагентом
+* Counterparty card. Contacts. Bank accounts
+* Documents for the purchase of goods and services. Return to supplier
+* Documents for the sale of goods and services. Return from buyers
+* Registration of non-cash and cash payments
+* Linking payments to documents
+* Delivery conditions. Terms of payment
+* Report on settlements with a counterparty
 
-#### Складской учет
+#### Inventory control
 
-* Карточка товара
-* Ведение учета по нескольким складам
-* Учет товаров в разрезе мест хранения внутри склада
-* Приходные, расходные ордера
+* Card Product
+* Keeping records of multiple warehouses
+* Accounting of goods in the context of storage locations inside the warehouse
+* Receipt, debit orders
 
-#### Отдел продаж
+#### Sales department
 
-* Создание ценового предложения
-* Учет заявок/заказов от покупателей
-* Формирование и планирование движения товаров на основании заказа в модуле Складского учета
-* Создание документов реализации товаров и услуг в модуле Расчетов с контрагентами
-* Отслеживание выполнения заказа
-* Управление ценовой политикой. Прайс-листы. Группы цен применяемые к различным контрагентам
+* Create a quote
+* Accounting for applications / orders from buyers
+* Formation and planning of the movement of goods based on the order in the Warehouse accounting module
+* Creation of documents for the sale of goods and services in the Settlements with counterparties module
+* Order tracking
+* Pricing policy management. Price lists. Price groups applied to different counterparties
 
-#### Отдел закупок
+#### Purchasing Department
 
-* Создание запроса ценового предложения поставщикам
-* Учет заказов
-* Формирование и планирование движения товаров на основании заказа в модуле Складского учета
-* Создание документов по приобретению товаров в модуле Расчетов с контрагентами
-* Отслеживание выполнения заказа
-* Прайс-листы поставщиков
+* Create a request for quotation to suppliers
+* Accounting for orders
+* Formation and planning of the movement of goods based on the order in the Warehouse accounting module
+* Creation of documents for the purchase of goods in the module Settlements with counterparties
+* Order tracking
+* Price lists of suppliers
