@@ -37,8 +37,6 @@
 Расхождения,Discrepancies
 Излишки,Surplus
 Недостачи,Gaps
- (теоретическое), (theoretical)
- (фактическое), (actual)
 Партии,Party
 Склад,Storage
 Подбор,Selection
@@ -202,3 +200,147 @@ Cost price,Cost price
 Банковский счет,Bank account
 Экспорт счетов,Export accounts
 Банковские счета,Bank accounts
+Условия оплаты,Terms of payment
+Спецификация,Specification
+Неактивная,Inactive
+Активная,Active
+Активные,Active
+Номенклатура,Nomenclature
+Номенклатура спецификации по умолчанию должна совпадать с номенклатурой,The default BOM nomenclature must match the nomenclature
+Спецификация по умолчанию должна быть активной,The default spec should be active
+Строка компонентов,Component string
+Доля стоимости,Share of cost
+Компонентов,Components
+Строка производных номенклатур,Derived item row
+Действия,Actions
+Отходы,Waste
+Спецификации,Specifications
+Выбор спецификации,Specification selection
+Экспорт спецификаций,Export specifications
+Единица измерения,Unit of measurement
+Экспорт строк спецификаций,Exporting BOM Lines
+Номер спецификации,Specification number
+Импорт спецификаций,Importing BOMs
+Импорт строк спецификаций,Importing BOM Lines
+Единица измерения,Unit of measurement
+Экспорт производных номенклатур,Exporting Derived Items
+Отсутствует спецификация в базе данных с кодом[space],Missing BOM in database with code[space]
+Импорт производных номенклатур,Importing Derived Items
+Отсутствует спецификация в базе данных с кодом[space],Отсутствует спецификация в базе данных с кодом[space]
+Откуда,From where
+Печать,Printing
+Производственный заказ,Manufacturing Order
+производственного заказа,Manufacturing Order
+Дата начала,start date
+ начала, start
+Производственные заказы,Manufacturing Orders
+ПЗ,MO
+[space](теоретическое),[space](theoretical)
+[space](фактическое),[space](actual)
+Мобильное перемещение,Mobile movement
+Отобрано,Selected
+Перемещение,Moving
+Переместить,Move
+Переместить с[space],Move from[space]
+[space]на[space],[space]on[space]
+Телефон,Phone
+Задание на отгрузку,Shipment task
+отгрузки,shipment
+Отгрузки,Shipments
+Доступный остаток,Available balance
+[space](отгружено),[space](shipped)
+Непериодичная,Non-periodic
+Планировалось (за период),Planned (for the period)
+Отгружено (за период),Shipped (for the period)
+Отбор,Team
+Зарезервировано,Reserved
+Зарезервировано (с учетом вложенных),Reserved (including nested)
+Отгружено,Shipped
+Отгружено (с учетом вложенных),Shipped (including enclosed)
+Отгруженное кол-во не может быть меньше 0,The shipped quantity cannot be less than 0
+Нельзя отгрузить товара по местам хранения больше чем в строке,You cannot ship goods to storage locations more than in a line
+Дата последнего прихода, Date of last arrival
+Доступно,Available
+Создать перемещения,Create displacements
+Не выбран тип отгрузки,Shipment type not selected
+Выбран тип отгрузки не являющийся перемещением,The selected shipment type is not a transfer
+Не выбрано место хранения (откуда),No storage location selected (from where)
+Страна,Country
+Банки,Banks
+Экспорт банков,Bank export
+БИК,BAC
+Код страны,Code of the country
+Импорт банков,Bank import
+Импортная закупка,Import purchase
+Таможенная декларация,Customs declaration
+Таможенные декларации,Customs declarations
+ИЗ,PO
+Дата декларирования,Declaration date
+Тип платежа,Payment type
+Оплатить,Pay
+Реализация,Implementation
+приобретения,acquisitions
+Приобретения,Acquisitions
+Контрагент и номенклатура реализации должны совпадать с контрагентом и товаром возврата,Counterparty and sales item must match the counterparty and return item
+Разнести,Blow up
+Разнесение оплат,Payment spread
+Разнесенные,Spaced
+Доступные,Available
+Оплачено,Paid up
+Закупка у поставщика,Purchase from a supplier
+ЗП,PS
+База распределения,Distribution base
+Стоимость приобретения,Acquisition cost
+Сумма по ценам продажи,Sum at selling prices
+Масса,Weight
+Объем,Volume
+Габаритный вес,Overall weight
+База распределения,Distribution base
+Распределять,Distribute
+Распределено,Distributed
+Распределенная сумма не может превышать стоимость услуги,The allocated amount cannot exceed the cost of the service
+Распределение на себестоимость,Allocation to cost
+Нумератор,Numerator
+Цена включает налоги,Price includes taxes
+Тип приобретения,Acquisition type
+Типы приобретения,Acquisition types
+Кол-во типов,Number of types
+Тип поступления,Receipt type
+Принять,To accept
+Автоматически создавать поступление,Automatically create receipt
+Тип отгрузки,Shipment type
+Реализации,Implementation
+Отгрузить,Ship
+Автоматически создавать отгрузку,Automatically create shipment
+Контрагент реализации должен совпадать с контрагентом возврата,The sales counterparty must be the same as the return counterparty
+Номенклатура реализации должны совпадать с номенклатурой возврата,The sales nomenclature must match the return nomenclature
+Оптовый возврат,Bulk return
+Оптовый возврат,Bulk return
+Розничный возврат,Retail return
+реализации,implementation
+Покупатель,Customer
+Контрагент должен быть покупателем,The counterparty must be the buyer
+Компания,Company
+Оплатить до,Pay before
+Счет покупателя,Customer[quote]s account
+Счет должен принадлежать выбранному контрагенту,The account must belong to the selected counterparty
+Счет компании,Company account
+Счет должен принадлежать выбранной компании,The account must belong to the selected company
+Код покупателя,Buyer code
+Строка реализации,Implementation line
+Номенклатура не предназначена для продажи,The item is not for sale
+Кол-во строк с товарами,Number of lines with goods
+Вес,Weight
+Строки реализаций,Implementation strings
+Прочая информация,other information
+Оплата,Payment
+Прочие,Others
+Налоги,Taxes
+Налоги[space],Taxes[space]
+Налог,Tax
+Итоговая сумма,Total amount
+Итого по документу,Total for the document
+Значение[comma] %,Value[comma] %
+Группа налога,Tax group
+Вкл,C.Tax
+Установить налог,Set tax
