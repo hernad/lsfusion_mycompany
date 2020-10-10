@@ -344,3 +344,149 @@ Cost price,Cost price
 Группа налога,Tax group
 Вкл,C.Tax
 Установить налог,Set tax
+Контрагент и товар отгрузки должны совпадать с контрагентом и товаром возврата,The counterparty and shipment item must match the counterparty and return item
+Незапланированная,Незапланированная
+Планируемая дата,Планируемая дата
+[space]планируемая,[space]the planned
+Место хранения (откуда),Storage location (from where)
+Место хранения (куда),Storage location (where)
+Места хранения откуда и куда не могут совпадать,Where and where storage locations cannot coincide
+Строка отгрузки,Shipment line
+Документ,Document
+Кол-во строк,Number of lines
+Товар не предназначен для продажи,This product is not for sale
+Планируемое количество,Planned quantity
+Исходное количество должно быть от 0 до максимально разрешенного,The initial amount must be between 0 and the maximum allowed
+Планируемая дата,Planned date
+Строки отгрузки,Shipping lines
+Незапланированная отгрузка,Unplanned shipment
+Отгружен,Shipped
+Дата отгрузки,Shipping date
+Отгруженое количество должно быть от 0 до исходного,The shipped quantity must be between 0 and original
+Заполнить Отгружено,Fill Shipped
+Не заполнены отгруженные количества для отгрузки[space],Shipment quantities not filled for shipment[space]
+. Проставить зарезервированными?,. Leave reserved?
+Куда,Where
+ПР,MV
+Экспорт статей ДДС,Export of DDS articles
+Импорт статей ДДС,Import of DDS articles
+Статьи ДДС,DDS Articles
+Запрещено удалять статьи, на которые ссылаются другие статьи,It is forbidden to delete articles that are referenced by other articles
+Добавить,Add to
+Вкл.,On.
+Статья ДДС должна соответствовать типу платежа,The DDS article must correspond to the type of payment
+Входящий платeж,Incoming payment
+входящего платежа,incoming payment
+Входящий платеж,Incoming payment
+Контрагент,Counterparty
+При внутреннем платеже контрагентом может быть только компания,With an internal payment, only a company can be a counterparty
+Счет контрагента,Counterparty account
+Владелец счета контрагента не совпадает с контрагентом во входящем платеже,The counterparty account owner does not match the counterparty in the incoming payment
+Для этого типа платежа банковские счета контрагента не разрешены,Counterparty bank accounts are not allowed for this type of payment
+Для этого типа платежа кассы контрагента не разрешены,Counterparty cash desks are not allowed for this type of payment.
+Владелец счета компании не совпадает с компанией во входящем платеже,The company account holder does not match the company in the incoming payment
+Для этого типа платежа банковские счета компании не разрешены,Company bank accounts are not allowed for this type of payment
+Для этого типа платежа кассы компании не разрешены,For this type of payment, company cash registers are not allowed
+Ссылка,Link
+Входящий платеж,Incoming payment
+Входящий платеж,Incoming payment
+Параметры,Parameters
+Контрагент,Counterparty
+Входящие платежи,Incoming payments
+Статья ДДС,DDS article
+Оплата на счет покупателем,Payment to the account by the buyer
+Оплата наличными покупателем,Cash payment by the buyer
+Возврат на счет поставщику,Return to supplier account
+Возврат наличных поставщику,Cash back to supplier
+Перемещение с другого счета,Transfer from another account
+Перемещение на другой счет,Transfer to another account
+Ввод начальных остатков денежных средств,Entering initial cash balances
+Тип входящего платежа,Incoming payment type
+Исходящий платеж,Outgoing payment
+Создать входящий платеж,Create an incoming payment
+Автоматически создавать входящий платеж,Automatically create incoming payment
+Тип входящего платежа,Incoming payment type
+Внутренний платеж,Internal payment
+Должен быть разрешен хотя бы один вид счета,At least one account type must be allowed
+Тип входящего платежа,Incoming payment type
+Разрешенные типы счетов,Allowed account types
+Типы входящих платежей,Types of incoming payments
+Исходящий платeж,Outgoing payment
+Исходящие платежи,Outgoing payments
+исходящего платежа,outgoing payment
+Владелец счета контрагента не совпадает с контрагентом в исходящем платеже,The counterparty account owner does not match the counterparty in the outgoing payment
+Владелец счета компании не совпадает с компанией в исходящем платеже,The company account holder does not match the company in the outgoing payment
+Кол-во оплат,Number of payments
+Тип исходящего платежа,Outgoing payment type
+Создать исходящий платеж,Create outgoing payment
+Автоматически создавать исходящий платеж,Automatically create outgoing payment
+Оплата на счет поставщику,Payment to the supplier's account
+Оплата наличными поставщику,Cash payment to supplier
+Возврат на счет покупателю,Return to customer account
+Возврат наличными покупателю,Cash back to buyer
+К оплате,To pay
+Типы исходящих платежей,Types of outgoing payments
+Отчет по приобретениям,Purchases report
+Группа 1,Group 1
+Группа 2,Group 2
+Группа 3,Group 3
+Отчет по реализациям,Sales report
+Группа налогов,Tax group
+Группы налогов,Tax groups
+закупки,purchases
+Импорт налогов на реализацию,Import sales taxes
+Импорт налогов на закупку,Import of purchase taxes
+Экспорт налогов на реализацию,Export sales taxes
+Экспорт налогов на закупку,Export purchase taxes
+Группа,Group
+Ставка,Rate
+Расчеты,Calculations
+Компоненты,Components
+Номенклатура спецификации компонента должна равняться номенклатуре компонента,Component BOM nomenclature must equal component item nomenclature
+Промежуточная,Intermediate
+Стоимость изделия,Product cost
+Стоимость компонентов,Component cost
+Структура и стоимость,Structure and cost
+Номенклатура спецификации производственного заказа должна равняться номенклатуре производственного заказа,Production order BOM item must be equal to production order item
+Списать из,writeOffFrom
+Разборка,Disassembly
+Материалы,Materials
+Строк материалов,Material lines
+Израсходовать,Use up
+Продукция,Products
+Строк продукции,Product lines
+Произвести,Produce
+Материалы,Materials
+Продукция,Products
+Заказы,Orders
+Заполнить по спецификации,Fill in according to specification
+Выбор продукции,Product selection
+Произвести,To produce
+Закрыть расход,Close flow
+Создать заказы,Create orders
+Не выбран тип производственного заказа,No production order type selected
+Списание сырья,Write-off of raw materials
+Производство,Production
+Завершен,Completed
+Дата производства,date of manufacture
+Получатель,Recipient
+Не выбрано место хранения получателя в завершенном производственном заказе,No recipient storage location selected in completed production order
+Остаток после операции (получатель),Balance after surgery (recipient)
+Завершен,Completed
+Получатель,Recipient
+Израсходовано,Spent
+Произведено,Produced by
+К производству,To production
+Не выбрано место хранения списания в производственном заказе,Write-off storage location not selected in production order
+Зарезервировать,Make a reservation
+Снять резервирование,Cancel reservation
+К производству,To production
+Зарезервировать,Make a reservation
+Отчет по заказам,Order report
+Введите дату начала,Enter start date
+Итоги,Outcome
+Тип производственного заказа,Production order type
+Списывать из,Cheat from
+Тип производственного заказа,Production order type
+Типы производственных заказов,Types of production orders
+В ожидании,Pending

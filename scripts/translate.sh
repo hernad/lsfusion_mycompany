@@ -7,9 +7,11 @@ do
     ORIG=`echo $ORIG | sed -e 's/\[comma\]/,/g'`
     TRANS=`echo $TRANS | sed -e 's/\[comma\]/,/g'`
     ORIG=`echo $ORIG | sed -e 's/\[space\]/ /g'`
-    TRANS=`echo $TRANS | sed -e 's/\[space\]/ /g'`
-    # x5c - backslash, x27 - quote
+    
+    # https://www.eso.org/~ndelmott/ascii.html
+    # x5c - backslash, x27 - quote, x20 - space
     TRANS=`echo $TRANS | sed -e "s@\[quote\]@\\\\\x5c\\\\\x27@g"`
+    TRANS=`echo $TRANS | sed -e 's/\[space\]/\\x20/g'`
 
    
     echo "'$ORIG' -> '$TRANS'"
