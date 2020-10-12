@@ -420,7 +420,7 @@ Cost price,Cost price
 Тип исходящего платежа,Outgoing payment type
 Создать исходящий платеж,Create outgoing payment
 Автоматически создавать исходящий платеж,Automatically create outgoing payment
-Оплата на счет поставщику,Payment to the supplier's account
+Оплата на счет поставщику,Payment to the supplier[quote]s account
 Оплата наличными поставщику,Cash payment to supplier
 Возврат на счет покупателю,Return to customer account
 Возврат наличными покупателю,Cash back to buyer
@@ -490,3 +490,40 @@ Cost price,Cost price
 Тип производственного заказа,Production order type
 Типы производственных заказов,Types of production orders
 В ожидании,Pending
+Приобретение,Acquisition
+счета,accounts
+Поставщик,The supplier
+Контрагент должен быть поставщиком,The counterparty must be a supplier
+Счет поставщика,Supplier invoice
+Строка приобретения,Acquisition line
+Приобретение,Acquisition
+Кол-во строк с услугами,Number of lines with services
+Номенклатура не предназначена для закупки,The item is not intended for purchase
+Строки приобретения,Acquisition lines
+К отгрузке,To shipment
+Распределить,Distribute
+Оптовая продажа,Wholesale trade
+Розничная продажа,Retail
+Тип реализации,Implementation type
+Типы реализации,Implementation types
+Задолженность,Debt
+Входящая задолженность,Incoming debt
+Исходящая задолженность,Outgoing debt
+Осталось,Left
+По входящей задолженности разнесено больше[comma] чем сумма задолженности,Incoming debt is posted more than the amount owed
+По исходящей задолженности разнесено больше[comma] чем сумма задолженности,Outgoing debt has been posted more than the outstanding amount
+Долг,Debt
+Просроченный долг,Overdue debt
+Долги по контрагенту,Counterparty debts
+Просроченные,Overdue
+Платеж,Payment
+Платежи,Payments
+Остаток по счету / кассе не может быть отрицательным,Account / cash balance cannot be negative
+Движение денежных средств,Flow of funds
+Запрещено удалять статьи, на которые ссылаются другие статьи,It is forbidden to delete articles that are referenced by other articles
+Дни,Days
+Экспорт стран,Export countries
+Альфа-2,Alpha-2
+Альфа-3,Alpha-3
+Импорт стран,Import countries
+Страны,Country
