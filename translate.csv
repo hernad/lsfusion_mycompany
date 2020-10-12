@@ -81,6 +81,7 @@
 Область,Region
 Почтовый индекс,Postcode
 Места хранения,Storage locations
+MX,SL
 Список,List
 Дерево,Tree
 Доступен,Available
@@ -706,3 +707,37 @@ Cost price,Cost price
 К поступлению,For admission
 По товару поступление превышает количество в заказе,For the goods[comma] the receipt exceeds the quantity in the order
 Оприходовано на склад,Posted in stock
+Период заказа,Order period
+Ожидает отгрузку,Awaiting shipment
+Планировалось,It was planned
+Автозаказ,Auto order
+Дата с,Date s
+по,by
+Политика оформления приобретения,Purchase registration policy
+Заказанное количество,Ordered quantity
+Политика оформления приобретения,Purchase registration policy
+Приобретено,Purchased
+К оформлению,To registration
+Приобрести,Purchase
+Выставлено счетов,Billed
+Поступившее количество,Поступившее количество
+Заказ поставщику,Supplier order
+заказа поставщику,order to supplier
+Контрагент заказа поставщику должен быть поставщиком,The partner of the order to the supplier must be the supplier
+Адрес поставщика,Supplier address
+Срок поставки,Delivery time
+Наш представитель,Our representative
+Входящий номер поставщика,Incoming vendor number
+Создан,Created by
+Поставка,Supply
+Итого,Total
+Заказы поставщикам,Orders to suppliers
+Подтвержден,Confirmed
+Подтвердить,Confirm
+ЗК,SO
+Закрыт,Closed
+Закрыть,Close
+Предыдущий заказ,Previous order
+Был заказ на МХ,There was an order for SL
+Был заказ,There was an order
+Шаблон по умолчанию,Шаблон по умолчанию
