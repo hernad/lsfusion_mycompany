@@ -762,3 +762,18 @@ Cost price,Cost price
 Действует с,Valid from
 по[space],by[space]
 Копировать,Copy
+Дисконтная карта,Discount card
+Дисконтные карты,Discount cards
+Дата выпуска,Date of issue
+Дата блокировки,Lock date
+Дата блокировки дисконтной карты не может быть раньше даты выпуска,The blocking date of the discount card cannot be earlier than the issue date
+Покупатель должен быть держателем дисконтной карты,Buyer must be a discount card holder
+Выбрана заблокированная дисконтная карта,Blocked discount card selected
+Карта,Card
+Метод оплаты,Payment method
+Наличные,Cash
+Тип возвратного платежа,Chargeback type
+Метод оплаты,Payment method
+Методы оплаты,Payment methods
+Наличные,Cash
+Банковская карта,Bank card
