@@ -173,7 +173,7 @@ Cost price,Cost price
 Списание товара,Write-off of goods
 СТ,WO
 Настройки,Settings
-Основные,The main
+Основные,Basic
 Операции,Operations
 Процессы,Processes
 Отчеты,Reports
@@ -527,3 +527,140 @@ Cost price,Cost price
 Альфа-3,Alpha-3
 Импорт стран,Import countries
 Страны,Country
+Код номенклатуры,Item code
+Штрихкоды,Barcodes
+Штрихкод не найден,Barcode not found
+Штрихкод уже присутствует в базе данных.,The barcode is already in the database.
+Автоматически генерировать штрихкод,Automatically generate barcode
+Изменен штрихкод,Changed barcode
+Изменен штрихкод на,Changed barcode on
+Добавлен штрихкод,Added barcode
+Удален штрихкод,Deleted barcode
+Экспорт штрихкодов,Экспорт штрихкодов
+Импорт штрихкодов,Импорт штрихкодов
+Отсутствует номенклатура в базе данных с кодом[space],Missing item in database with code[space]
+Выбор категории,Category selection
+Коэффициент,Coefficient
+Запрещено удалять категории[comma] на которые ссылаются другие категории,It is forbidden to delete categories that are referenced by other categories
+Значения по умолчанию,Default values
+Загрузить,Download
+Открыть,Open
+Сбросить,Reset
+Экспорт категорий,Export categories
+Моя категория,My category
+Код категории,Category code
+Код родительской категории,Parent category code
+Импорт категорий,Importing categories
+Загрузка изображений,Loading images
+Без изображения,Без изображения
+Изображения,Images
+Выбор номенклатуры,Choice of nomenclature
+Надбавка[comma] %,Surcharge %
+Кол-во в месте,Qty in place
+Кол-во мест,Qtys in place
+Показывать количество мест,Show number of seats
+Вид упаковки,Type of packaging
+Для выбранного места не задано соотношение перевода в базовую единицу измерения,The selected location does not have a conversion ratio to the base unit of measure
+продажи,sales
+Этикетка,Label
+Параметры печати этикеток,Print options for labels
+На печать,To print
+Этикетка 58x40,Label 58x40
+Этикетка 58x60,Label 58x60
+Шаблон этикетки,Label template
+Шаблоны этикетки,Label templates
+Кол-во шаблонов,Number of templates
+Вес единицы[comma] кг,Unit weight[comma] kg
+Объем единицы[comma] м3,Unit volume [comma] m3
+Страна происхождения,Country of origin
+Товары,Products
+Неактивный,Inactive
+Экспорт товаров,Export of goods
+Мой продукт,My product
+Самый лучший продукт,The best product
+Код товара,Product code
+Код единицы измерения,Unit code
+Цена продажи,Selling price
+Код страны происхождения,Country of origin code
+Артикул,Article
+Вес единицы[comma] кг,Unit weight [comma] kg
+Объем единицы[comma] м3,Unit volume [comma] m3
+Импорт товаров,Import of goods
+Код страны происхождения,Country of origin code
+Отсутствует категория в базе данных с кодом[space],Missing category in database with code[space]
+Отсутствует единица измерения в базе данных с кодом[space],Unit of measure is missing in the database with code[space]
+Отсутствует страна в базе данных с кодом[space],Country missing in database with code[space]
+Экспорт услуг,Export of services
+Импорт услуг,Import of services
+Моя услуга,My service
+Код услуги,Service code
+Код учетной единицы,Accounting unit code
+Услуги,Services
+Услуга,Service
+Префикс,Prefix
+Суффикс,Suffix
+Наименование (полное),Name (full)
+Категория (полная),Category (full)
+Код ед. изм.,Unit change code
+Нельзя удалить единицу измерения на которую ссылается номенклатура,You cannot delete the unit of measure referenced by the item
+Группа 4,Group 4
+Статусы,Statuses
+Документы,Documents
+Атрибут,Attribute
+Обязателен для заполнения,Required
+Значение,Value
+Значения,Values
+Кол-во заданных категорий,Number of preset categories
+Категория значения должна совпадать с категорией атрибута,The value category must match the attribute category
+Опции атрибута,Attribute options
+Категории атрибута,Attribute categories
+Категории значений,Value categories
+Атрибут обязателен для заполнения,The attribute is required
+Категория номенклатуры должна совпадать с категорией значения,The item category must match the value category
+Выбрано недопустимое значение для данной номенклатуры,An invalid value was selected for this item
+Нельзя удалять значение[comma] которое используется,You cannot delete the value that is in use
+Последовательность,Sequence
+Полное значение,Full value
+Формирование наименования,Formation of the name
+Фильтры,Filters
+Экспорт атрибутов,Exporting attributes
+Код атрибута,Attribute code
+Значение атрибута,Attribute value
+Импорт атрибутов,Importing attributes
+Отсутствует атрибут в базе данных с кодом[space],Missing attribute in database with code[space]
+Атрибуты товаров,Product attributes
+Ввод себестоимости,Entering cost
+Начало действия,Start of action
+Введите дату :,Enter date:
+Введите себестоимость :,Enter cost price:
+История изменения себестоимости,Cost change history
+История,History
+Экспорт себестоимостей,Export of cost prices
+Импорт себестоимостей,Import of cost prices
+Себестоимости номенклатуры,Item cost price
+История изменений,Change history
+Пользователь,User
+Компьютер,Computer
+Добавлена номенклатура,Nomenclature added
+Удалена номенклатура,Item removed
+Изменено полное наименование,Full name changed
+Изменена единица измерения,Unit of measure changed
+на,on
+Изменена категория,Modified category
+Импорт изображений,Importing images
+Предназначен для закупки,Designed for purchase
+Закупка,Purchase
+Предназначен для продажи,Intended for sale
+Продажа,Sale
+Используются,Are used
+Единицы измерения,Units
+Ед. изм. контрагента,Unit rev. counterparty
+Выбрана единица измерения контрагента[comma] для которой не задано соотношение,The counterparty unit of measure is selected for which the ratio is not specified
+Кол-во контрагента,Counterparty[quote]s quantity
+Цена контрагента,Counterparty price
+Соотношение,Ratio
+Экспорт соотношений единиц измерений,Exporting unit ratios
+Импорт соотношений единиц измерений,Importing unit ratios
+Соотношения единиц измерений,Unit ratios
+Основная номенклатура,Basic nomenclature
+Разновидность,Variety
