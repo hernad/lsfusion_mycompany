@@ -106,7 +106,7 @@
 Тип возврата,Return type
 Поступление,Поступление
 Отгрузка,Shipment
-Контрагент и товар поступления должны совпадать с контрагентом и товаром возврата,The counterparty and the goods received must match the counterparty and the returned goods
+Контрагент и товар поступления должны совпадать с контрагентом и товаром возврата,The Partner and the goods received must match the Partner and the returned goods
 Вернуть,Return
 Возвращено,Returned
 Возвраты,Refunds
@@ -190,7 +190,7 @@ Cost price,Cost price
 Экспорт касс,Export cash registers
 Код контрагента,Contractor code
 Импорт касс,Import of cash registers
-Отсутствует контрагент в базе данных с кодом[space],There is no counterparty in the database with the code[space]
+Отсутствует контрагент в базе данных с кодом[space],There is no Partner in the database with the code[space]
 Отсутствует банк в базе данных с кодом[space],There is no bank in the database with the code[space]
 . Импорт отменен,. Import canceled
 Банковский счет,Bank account
@@ -281,7 +281,7 @@ Cost price,Cost price
 Реализация,Implementation
 приобретения,acquisitions
 Приобретения,Acquisitions
-Контрагент и номенклатура реализации должны совпадать с контрагентом и товаром возврата,Counterparty and sales item must match the counterparty and return item
+Контрагент и номенклатура реализации должны совпадать с контрагентом и товаром возврата,Partner and sales item must match the Partner and return item
 Разнести,Blow up
 Разнесение оплат,Payment spread
 Разнесенные,Spaced
@@ -312,18 +312,18 @@ Cost price,Cost price
 Реализации,Implementation
 Отгрузить,Ship
 Автоматически создавать отгрузку,Automatically create shipment
-Контрагент реализации должен совпадать с контрагентом возврата,The sales counterparty must be the same as the return counterparty
+Контрагент реализации должен совпадать с контрагентом возврата,The sales Partner must be the same as the return Partner
 Номенклатура реализации должны совпадать с номенклатурой возврата,The sales nomenclature must match the return nomenclature
 Оптовый возврат,Bulk return
 Оптовый возврат,Bulk return
 Розничный возврат,Retail return
 реализации,implementation
 Покупатель,Customer
-Контрагент должен быть покупателем,The counterparty must be the buyer
+Контрагент должен быть покупателем,The Partner must be the buyer
 Компания,Company
 Оплатить до,Pay before
 Счет покупателя,Customer[quote]s account
-Счет должен принадлежать выбранному контрагенту,The account must belong to the selected counterparty
+Счет должен принадлежать выбранному контрагенту,The account must belong to the selected Partner
 Счет компании,Company account
 Счет должен принадлежать выбранной компании,The account must belong to the selected company
 Код покупателя,Buyer code
@@ -344,7 +344,7 @@ Cost price,Cost price
 Группа налога,Tax group
 Вкл,C.Tax
 Установить налог,Set tax
-Контрагент и товар отгрузки должны совпадать с контрагентом и товаром возврата,The counterparty and shipment item must match the counterparty and return item
+Контрагент и товар отгрузки должны совпадать с контрагентом и товаром возврата,The Partner and shipment item must match the Partner and return item
 Незапланированная,Незапланированная
 Планируемая дата,Планируемая дата
 [space]планируемая,[space]the planned
@@ -378,12 +378,12 @@ Cost price,Cost price
 Входящий платeж,Incoming payment
 входящего платежа,incoming payment
 Входящий платеж,Incoming payment
-Контрагент,Counterparty
-При внутреннем платеже контрагентом может быть только компания,With an internal payment, only a company can be a counterparty
-Счет контрагента,Counterparty account
-Владелец счета контрагента не совпадает с контрагентом во входящем платеже,The counterparty account owner does not match the counterparty in the incoming payment
-Для этого типа платежа банковские счета контрагента не разрешены,Counterparty bank accounts are not allowed for this type of payment
-Для этого типа платежа кассы контрагента не разрешены,Counterparty cash desks are not allowed for this type of payment.
+Контрагент,Partner
+При внутреннем платеже контрагентом может быть только компания,With an internal payment, only a company can be a Partner
+Счет контрагента,Partner account
+Владелец счета контрагента не совпадает с контрагентом во входящем платеже,The Partner account owner does not match the Partner in the incoming payment
+Для этого типа платежа банковские счета контрагента не разрешены,Partner bank accounts are not allowed for this type of payment
+Для этого типа платежа кассы контрагента не разрешены,Partner cash desks are not allowed for this type of payment.
 Владелец счета компании не совпадает с компанией во входящем платеже,The company account holder does not match the company in the incoming payment
 Для этого типа платежа банковские счета компании не разрешены,Company bank accounts are not allowed for this type of payment
 Для этого типа платежа кассы компании не разрешены,For this type of payment, company cash registers are not allowed
@@ -391,7 +391,7 @@ Cost price,Cost price
 Входящий платеж,Incoming payment
 Входящий платеж,Incoming payment
 Параметры,Parameters
-Контрагент,Counterparty
+Контрагент,Partner
 Входящие платежи,Incoming payments
 Статья ДДС,DDS article
 Оплата на счет покупателем,Payment to the account by the buyer
@@ -414,7 +414,7 @@ Cost price,Cost price
 Исходящий платeж,Outgoing payment
 Исходящие платежи,Outgoing payments
 исходящего платежа,outgoing payment
-Владелец счета контрагента не совпадает с контрагентом в исходящем платеже,The counterparty account owner does not match the counterparty in the outgoing payment
+Владелец счета контрагента не совпадает с контрагентом в исходящем платеже,The Partner account owner does not match the Partner in the outgoing payment
 Владелец счета компании не совпадает с компанией в исходящем платеже,The company account holder does not match the company in the outgoing payment
 Кол-во оплат,Number of payments
 Тип исходящего платежа,Outgoing payment type
@@ -493,7 +493,7 @@ Cost price,Cost price
 Приобретение,Acquisition
 счета,accounts
 Поставщик,The supplier
-Контрагент должен быть поставщиком,The counterparty must be a supplier
+Контрагент должен быть поставщиком,The Partner must be a supplier
 Счет поставщика,Supplier invoice
 Строка приобретения,Acquisition line
 Приобретение,Acquisition
@@ -514,7 +514,7 @@ Cost price,Cost price
 По исходящей задолженности разнесено больше[comma] чем сумма задолженности,Outgoing debt has been posted more than the outstanding amount
 Долг,Debt
 Просроченный долг,Overdue debt
-Долги по контрагенту,Counterparty debts
+Долги по контрагенту,Partner debts
 Просроченные,Overdue
 Платеж,Payment
 Платежи,Payments
@@ -654,13 +654,55 @@ Cost price,Cost price
 Продажа,Sale
 Используются,Are used
 Единицы измерения,Units
-Ед. изм. контрагента,Unit rev. counterparty
-Выбрана единица измерения контрагента[comma] для которой не задано соотношение,The counterparty unit of measure is selected for which the ratio is not specified
-Кол-во контрагента,Counterparty[quote]s quantity
-Цена контрагента,Counterparty price
+Ед. изм. контрагента,Unit rev. Partner
+Выбрана единица измерения контрагента[comma] для которой не задано соотношение,The Partner unit of measure is selected for which the ratio is not specified
+Кол-во контрагента,Partner[quote]s quantity
+Цена контрагента,Partner price
 Соотношение,Ratio
 Экспорт соотношений единиц измерений,Exporting unit ratios
 Импорт соотношений единиц измерений,Importing unit ratios
 Соотношения единиц измерений,Unit ratios
 Основная номенклатура,Basic nomenclature
 Разновидность,Variety
+Выбор контрагента,Choosing a counterparty
+Компания по умолчанию,Default company
+Кол-во компаний,Number of companies
+Компании,Companies
+Моя компания,My company
+Сотрудник,Employee
+Сотрудники,Employees
+Организацией сотрудника может быть только компания,An employee[quote]s organization can only be a company
+Физическое лицо,Individual
+Физические лица,Individuals
+Фамилия,Surname
+Должность,Position
+Контакты,Contacts
+Отчество,Middle name
+Печать накладных,Printing waybills
+Должен быть наш работник,Should be our worker
+Экспорт физических лиц,Export of individuals
+Код организации,Organization code
+Электронная почта,Email
+Импорт физических лиц,Import of individuals
+Физ лица,Individuals
+Экспорт организаций,Export organizations
+Является поставщиком,Is a Supplier
+Является покупателем,Is a Buyer
+Импорт организаций,Importing organizations
+Контрагенты,Contractors
+КН,CN
+Тип контрагента,Type of counterparty
+Юридические данные,Legal data
+Закупки,Procurement
+Продажи,Sales
+Другие единицы измерений,Other units of measure
+Единицы измерений,Units of measurement
+ЕИ,UM
+Экспорт единиц измерения,Exporting Units
+Штука,Thing
+Импорт единиц измерения,Importing Units
+В прайс-листе,In the price list
+Поступило,Received
+К поступлению,For admission
+По товару поступление превышает количество в заказе,For the goods[comma] the receipt exceeds the quantity in the order
+Оприходовано на склад,Posted in stock
