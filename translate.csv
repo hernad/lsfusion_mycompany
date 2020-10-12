@@ -740,4 +740,25 @@ Cost price,Cost price
 Предыдущий заказ,Previous order
 Был заказ на МХ,There was an order for SL
 Был заказ,There was an order
-Шаблон по умолчанию,Шаблон по умолчанию
+Шаблон по умолчанию,Default template
+Копия адресату,Copy to addressee
+Тема,Subject
+Шаблон должен быть включен для данного типа заказа,Template must be included for this type of order
+Почта,mail
+Тип заказа,Order type
+Типы заказов,Types of orders
+Прайс-лист поставщика,Supplier price list
+Прайс-лист,Price List
+прайс-листа поставщика,supplier price list
+Окончание действия,End of action
+Прайс-листы поставщиков,Supplier price lists
+Прайс-лист поставщика,Supplier price list
+ПП,PL
+[space]от[space],[space]from[space]
+Поставщик[space],The supplier[space]
+Наименование у поставщика,Supplier name
+Код у поставщика,Код у поставщика
+Окончание действия,Окончание действия
+Действует с,Valid from
+по[space],by[space]
+Копировать,Copy
