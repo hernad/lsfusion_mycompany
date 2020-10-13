@@ -1,1037 +1,998 @@
-Организация,Organization
-Организации,Organizations
-Название,Name
-Веб сайт,Web site
-Инвентаризация,Inventory
-инвентаризации,inventory
-Инвентаризации,Inventories
-ИН,IN
-Описание,Description
-Дата,Date
-Место хранения,Storage
-Тип инвентаризации,Inventory type
-Все,All
-По категории,By category
-Вручную,Manually
-Имя,Name
-Тип,Type
-Категория,Category
-Примечание,Note
-Строка инвентаризации,Inventory line
-№,No
-Товар,Product
-Штрихкод,Barcode
-Код,Код
-Ед. изм.,UOM name
-Место хранения строки инвентаризации не является потомком места хранения документа,The inventory line storage location is not a descendant of the document storage location
-Теоретическое кол-во,Theoretical quantity
-Статус,Status
-Номер,Room
-от ,from 
-Строки,Strings
-Заполнить,Fill in
-Этикетки,Labels
-В процессе,During
-Фактическое кол-во,Actual Qty
-Начать,To begin
-Расхождения,Discrepancies
-Излишки,Surplus
-Недостачи,Gaps
-Партии,Party
-Склад,Storage
-Подбор,Selection
-Отменен,Canceled
-Активен,Active
-Отменить,Cancel
-Завершена,Completed
-Завершить,Complete
-Количество,Number
-Изменения,Changes
-Регистр себестоимости,Cost register
-Вид,View
-Время,Time
-Входящая проводка,Incoming wiring
-Сумма (первичная),Amount (primary)
-Сумма (расчетная),Amount (calculated)
-Сумма,Amount
-Цена,Price
-Исходящая проводка,Outbound posting
-Сумма,Amount
-Себестоимость,Cost price
-Себестоимость за единицу,Unit cost
-Себестоимость,Cost price
-Расходовано,Spent
-Параметры расчета себестоимости,Costing parameters
-Дата[comma] с которой пересчитывать,Date from which to recalculate
-Пересчитать себестоимость,Recalculate cost
-Активный,Active
-Движения,Movement
-Резервирование,Reservation
-Места хранения,Storage locations
-Родитель,Parent
-Код родителя,Parent code
-Нельзя удалить место хранения имеющее подчиненные склады,You cannot delete a storage location that has subordinate warehouses
-Уровень,Level
-Каноническое имя,Canonical name
-Владелец,Owner
-Код владельца,Owner code
-Владелец,Owner
-Адрес,Address
-Город,City
-Область,Region
-Почтовый индекс,Postcode
-Места хранения,Storage locations
-MX,SL
-Список,List
-Дерево,Tree
-Доступен,Available
-У текущего пользователя нет прав доступа к выбранному месту хранения,The current user does not have permission to access the selected storage location
-Экспорт мест хранения,Export of storage locations
-Мой склад,My warehouse
-Код,Code
-Расчет себестоимости,Cost calculation
-Импорт мест хранения,Importing storage locations
-Импорт завершен,Import completed
-Методы расчета себестоимости,Costing methods
-Плановая себестоимость,Planned cost
-Средняя себестоимость,Average cost
-Метод расчета себестоимости,Cost calculation method
-Методы,Методы
-Партия,Party
-Партионный учет,Lot accounting
-Строка для партии должна относится к тому же продукту[comma] что и партия,The line for the batch must refer to the same product as the batch
-Партия относится к другому продукту (,The batch refers to another product (
-Задание на поступление,Assignment for admission
-поступления,receipts
-Возврат,Return
-Без изображени,No picture
-ВЗ,RX
-Описи,Descriptions
-WP,DE
-Строка описи,Inventory line
-Внесение денег в ККМ,Depositing money to Fiscal printer
-B4,R7
-CI,FM
-Тип возврата,Return type
-Поступление,Admission
-П3,AD
-Отгрузка,Shipment
-O2,DL
-Контрагент и товар поступления должны совпадать с контрагентом и товаром возврата,The Partner and the goods received must match the Partner and the returned goods
-Вернуть,Return
-Возвращено,Returned
-Возвраты,Refunds
-Возврат поставщику,Return to supplier
-ВП,RS
-Принят,Accepted
-Дата поступления,Receipt Date
-Принятое количество,Accepted quantity
-Принятое количество должно быть от 0 до исходного,The accepted amount must be between 0 and the original
-Заполнить Принято,Fill Accepted
-Принят,Accepted
-Не заполены принятые количества для поступления[space],Accepted Receipt Quantities Not Filled[space] 
-. Проставить ожидаемыми ?,. Put as expected?
-Экспорт остатков,Export of residues
-Код места хранения,Storage location code
-Код места хранения,Storage location code
-Код продукта,Product code
-Кол-во,Quantity
-Cost price,Cost price
-Импорт остатков,Residue import
-Отсутствует место хранения в базе данных с кодом[space],Missing storage location in database with code[space]
-Отсутствует товар в базе данных с кодом[space],There is no product in the database with a code[space]
-Отсутствуют типы поступлений в базе данных. Импорт отменен,There are no receipt types in the database. Import canceled
-Остатки,Leftovers
-Поступление,Admission
-Ввод начальных остатков,Entering initial balances
-Планируемое кол-во,Planned quantity
-Планируемое кол-во партий,Planned number of parties
-Поступления,Receipts
-Размещение,Accommodation
-Размещен,Posted
-К приемке,For acceptance
-В работу,To work
-Списать,Write off
-Выбрать дату,Select date
-По одному складу,One composition at a time
-Остаток на дату,Balance as of date
-Текущие остатки,Current balances
-С остатком,With the change
-С приходом,With income
-Группа полная,Full group
-Остаток,The remainder
-Текущие остатки,Current balances
-Категории,Categories
-Регистр изменения остатка,Remaining change register
-Регистр резервов,Reserves register
-Изображение,Picture
-Отчет,Report
-Атрибуты,Attributes
-Себестоимость остатков,Cost of residues
-С движением,With movement
-По расходу,By consumption
-Себестоимость остатков,Cost of residues
-Движение товара,Movement of goods
-Списание,Magazine
-списания,magazines
-Списания,Magazines
-Строка списания,Debit line
-Продукт,Product
-от[space],from[space]
-Копировать,Copy
-Проведен,Carried out
-Провести,Conduct
-Списание товара,Write-off of goods
-СТ,WO
-Настройки,Settings
-Основные,Basic
-Операции,Operations
-Процессы,Processes
-Отчеты,Reports
-Настройка,Customization
-Счет,Account
-Держатель счета,Account holder
-По умолчанию,Default
-Наименование,Name
-Разрешить отрицательный остаток,Allow negative balance
-Тип счета,Account type
-Счета,Accounts
-Касса,Cash account
-Кассы,Cash accounts
-Экспорт касс,Export cash registers
-Код контрагента,Contractor code
-Импорт касс,Import of cash registers
-Отсутствует контрагент в базе данных с кодом[space],There is no Partner in the database with the code[space]
-Отсутствует банк в базе данных с кодом[space],There is no bank in the database with the code[space]
-. Импорт отменен,. Import canceled
-Банковский счет,Bank account
-Номер счета,Account number
-Банк,Bank
-Код банка,Bank code
-Банковский счет,Bank account
-Экспорт счетов,Export accounts
-Банковские счета,Bank accounts
-Условия оплаты,Terms of payment
-Спецификация,Specification
-Неактивная,Inactive
-Активная,Active
-Активные,Active
-Номенклатура,Nomenclature
-Номенклатуры,Nomenclatures
-НМ,NM
-Номенклатура спецификации по умолчанию должна совпадать с номенклатурой,The default BOM nomenclature must match the nomenclature
-Спецификация по умолчанию должна быть активной,The default spec should be active
-Строка компонентов,Component string
-Доля стоимости,Share of cost
-Компонентов,Components
-Строка производных номенклатур,Derived item row
-Действия,Actions
-Отходы,Waste
-Спецификации,Specifications
-СП,SP
-Выбор спецификации,Specification selection
-Экспорт спецификаций,Export specifications
-Единица измерения,Unit of measurement
-Экспорт строк спецификаций,Exporting BOM Lines
-Номер спецификации,Specification number
-Импорт спецификаций,Importing BOMs
-Импорт строк спецификаций,Importing BOM Lines
-Единица измерения,Unit of measurement
-Экспорт производных номенклатур,Exporting Derived Items
-Отсутствует спецификация в базе данных с кодом[space],Missing BOM in database with code[space]
-Импорт производных номенклатур,Importing Derived Items
-Отсутствует спецификация в базе данных с кодом[space],Отсутствует спецификация в базе данных с кодом[space]
-Откуда,From where
-Печать,Printing
-Производственный заказ,Manufacturing Order
-производственного заказа,Manufacturing Order
-Дата начала,start date
- начала, start
-Производственные заказы,Manufacturing Orders
-ПЗ,MO
-[space](теоретическое),[space](theoretical)
-[space](фактическое),[space](actual)
-Мобильное перемещение,Mobile movement
-Отобрано,Selected
-Перемещение,Moving
-Переместить,Move
-Переместить с[space],Move from[space]
-[space]на[space],[space]on[space]
-Телефон,Phone
-Задание на отгрузку,Shipment task
-отгрузки,shipment
-Отгрузки,Shipments
-Доступный остаток,Available balance
-[space](отгружено),[space](shipped)
-Непериодичная,Non-periodic
-Планировалось (за период),Planned (for the period)
-Отгружено (за период),Shipped (for the period)
-Отбор,Team
-Зарезервировано,Reserved
-Зарезервировано (с учетом вложенных),Reserved (including nested)
-Отгружено,Shipped
-Отгружено (с учетом вложенных),Shipped (including enclosed)
-Отгруженное кол-во не может быть меньше 0,The shipped quantity cannot be less than 0
-Нельзя отгрузить товара по местам хранения больше чем в строке,You cannot ship goods to storage locations more than in a line
-Дата последнего прихода, Date of last arrival
-Доступно,Available
-Создать перемещения,Create displacements
-Не выбран тип отгрузки,Shipment type not selected
-Выбран тип отгрузки не являющийся перемещением,The selected shipment type is not a transfer
-Не выбрано место хранения (откуда),No storage location selected (from where)
-Страна,Country
-Банки,Banks
-Экспорт банков,Bank export
-БИК,BAC
-Код страны,Code of the country
-Импорт банков,Bank import
-Импортная закупка,Import purchase
-Таможенная декларация,Customs declaration
-Таможенные декларации,Customs declarations
-ИЗ,PO
-Дата декларирования,Declaration date
-Тип платежа,Payment type
-Оплатить,Pay
-Реализация,Implementation
-приобретения,acquisitions
-Приобретения,Acquisitions
-Контрагент и номенклатура реализации должны совпадать с контрагентом и товаром возврата,Partner and sales item must match the Partner and return item
-Разнести,Blow up
-Разнесение оплат,Payment spread
-Разнесенные,Spaced
-Доступные,Available
-Оплачено,Paid up
-Закупка у поставщика,Purchase from a supplier
-ЗП,PS
-База распределения,Distribution base
-Стоимость приобретения,Acquisition cost
-Сумма по ценам продажи,Sum at selling prices
-Масса,Weight
-Объем,Volume
-Габаритный вес,Overall weight
-База распределения,Distribution base
-Распределять,Distribute
-Распределено,Distributed
-Распределенная сумма не может превышать стоимость услуги,The allocated amount cannot exceed the cost of the service
-Распределение на себестоимость,Allocation to cost
-Нумератор,Numerator
-Цена включает налоги,Price includes taxes
-Тип приобретения,Acquisition type
-Типы приобретения,Acquisition types
-Кол-во типов,Number of types
-Тип поступления,Receipt type
-Принять,To accept
-Автоматически создавать поступление,Automatically create receipt
-Тип отгрузки,Shipment type
-Реализации,Implementation
-Отгрузить,Ship
-Автоматически создавать отгрузку,Automatically create shipment
-Контрагент реализации должен совпадать с контрагентом возврата,The sales Partner must be the same as the return Partner
-Номенклатура реализации должны совпадать с номенклатурой возврата,The sales nomenclature must match the return nomenclature
-Оптовый возврат,Bulk return
-Розничный возврат,Retail return
-реализации,implementation
-Покупатель,Customer
-Контрагент должен быть покупателем,The Partner must be the buyer
-Компания,Company
-Оплатить до,Pay before
-Счет покупателя,Customer[quote]s account
-Счет должен принадлежать выбранному контрагенту,The account must belong to the selected Partner
-Счет компании,Company account
-Счет должен принадлежать выбранной компании,The account must belong to the selected company
-Код покупателя,Buyer code
-Строка реализации,Implementation line
-Номенклатура не предназначена для продажи,The item is not for sale
-Кол-во строк с товарами,Number of lines with goods
-Вес,Weight
-Строки реализаций,Implementation strings
-Прочая информация,other information
-Оплата,Payment
-Прочие,Others
-Налоги,Taxes
-Налоги[space],Taxes[space]
-Налог,Tax
-Итоговая сумма,Total amount
-Итого по документу,Total for the document
-Значение[comma] %,Value[comma] %
-Группа налога,Tax group
-Вкл,C.Tax
-Установить налог,Set tax
-Контрагент и товар отгрузки должны совпадать с контрагентом и товаром возврата,The Partner and shipment item must match the Partner and return item
-Незапланированная,Незапланированная
-Планируемая дата,Планируемая дата
-[space]планируемая,[space]the planned
-Место хранения (откуда),Storage location (from where)
-Место хранения (куда),Storage location (where)
-Места хранения откуда и куда не могут совпадать,Where and where storage locations cannot coincide
-Строка отгрузки,Shipment line
-Документ,Document
-Кол-во строк,Number of lines
-Товар не предназначен для продажи,This product is not for sale
-Планируемое количество,Planned quantity
-Исходное количество должно быть от 0 до максимально разрешенного,The initial amount must be between 0 and the maximum allowed
-Планируемая дата,Planned date
-Строки отгрузки,Shipping lines
-Незапланированная отгрузка,Unplanned shipment
-Отгружен,Shipped
-Дата отгрузки,Shipping date
-Отгруженое количество должно быть от 0 до исходного,The shipped quantity must be between 0 and original
-Заполнить Отгружено,Fill Shipped
-Не заполнены отгруженные количества для отгрузки[space],Shipment quantities not filled for shipment[space]
-. Проставить зарезервированными?,. Leave reserved?
-Куда,Where
-ПР,TR
-Экспорт статей ДДС,Export of DDS articles
-Импорт статей ДДС,Import of DDS articles
-Статьи ДДС,DDS Articles
-Запрещено удалять статьи, на которые ссылаются другие статьи,It is forbidden to delete articles that are referenced by other articles
-Добавить,Add to
-Вкл.,On.
-Статья ДДС должна соответствовать типу платежа,The DDS article must correspond to the type of payment
-Входящий платeж,Incoming payment
-входящего платежа,incoming payment
-Входящий платеж,Incoming payment
-Контрагент,Partner
-При внутреннем платеже контрагентом может быть только компания,With an internal payment, only a company can be a Partner
-Счет контрагента,Partner account
-Владелец счета контрагента не совпадает с контрагентом во входящем платеже,The Partner account owner does not match the Partner in the incoming payment
-Для этого типа платежа банковские счета контрагента не разрешены,Partner bank accounts are not allowed for this type of payment
-Для этого типа платежа кассы контрагента не разрешены,Partner cash desks are not allowed for this type of payment.
-Владелец счета компании не совпадает с компанией во входящем платеже,The company account holder does not match the company in the incoming payment
-Для этого типа платежа банковские счета компании не разрешены,Company bank accounts are not allowed for this type of payment
-Для этого типа платежа кассы компании не разрешены,For this type of payment, company cash registers are not allowed
-Ссылка,Link
-Входящий платеж,Incoming payment
-Входящий платеж,Incoming payment
-Параметры,Parameters
-Контрагент,Partner
-Входящие платежи,Incoming payments
-Статья ДДС,DDS article
-Оплата на счет покупателем,Payment to the account by the buyer
-ПБ,C1
-Оплата наличными покупателем,Cash payment by the buyer
-ПН,CB
-Возврат на счет поставщику,Return to supplier account
-ВБ,R2
-Возврат наличных поставщику,Cash back to supplier
-Перемещение с другого счета,Transfer from another account
-П4,T2
-Перемещение на другой счет,Transfer to another account
-П5,T3
-Ввод начальных остатков денежных средств,Entering initial cash balances
-H2,C0
-Тип входящего платежа,Incoming payment type
-Исходящий платеж,Outgoing payment
-Создать входящий платеж,Create an incoming payment
-Автоматически создавать входящий платеж,Automatically create incoming payment
-Тип входящего платежа,Incoming payment type
-Внутренний платеж,Internal payment
-Должен быть разрешен хотя бы один вид счета,At least one account type must be allowed
-Тип входящего платежа,Incoming payment type
-Разрешенные типы счетов,Allowed account types
-Типы входящих платежей,Types of incoming payments
-Исходящий платeж,Outgoing payment
-Исходящие платежи,Outgoing payments
-исходящего платежа,outgoing payment
-Владелец счета контрагента не совпадает с контрагентом в исходящем платеже,The Partner account owner does not match the Partner in the outgoing payment
-Владелец счета компании не совпадает с компанией в исходящем платеже,The company account holder does not match the company in the outgoing payment
-Кол-во оплат,Number of payments
-Тип исходящего платежа,Outgoing payment type
-Создать исходящий платеж,Create outgoing payment
-Автоматически создавать исходящий платеж,Automatically create outgoing payment
-Оплата на счет поставщику,Payment to the supplier[quote]s account
-П2,P9
-Оплата наличными поставщику,Cash payment to supplier
-П6,C7
-Возврат на счет покупателю,Return to customer account
-В2,R5
-Возврат наличными покупателю,Cash back to buyer
-B3,R6
-К оплате,To pay
-Типы исходящих платежей,Types of outgoing payments
-Отчет по приобретениям,Purchases report
-Группа 1,Group 1
-Группа 2,Group 2
-Группа 3,Group 3
-Отчет по реализациям,Sales report
-Группа налогов,Tax group
-Группы налогов,Tax groups
-закупки,purchases
-Импорт налогов на реализацию,Import sales taxes
-Импорт налогов на закупку,Import of purchase taxes
-Экспорт налогов на реализацию,Export sales taxes
-Экспорт налогов на закупку,Export purchase taxes
-Группа,Group
-Ставка,Rate
-Расчеты,Calculations
-Компоненты,Components
-Номенклатура спецификации компонента должна равняться номенклатуре компонента,Component BOM nomenclature must equal component item nomenclature
-Промежуточная,Intermediate
-Стоимость изделия,Product cost
-Стоимость компонентов,Component cost
-Структура и стоимость,Structure and cost
-Номенклатура спецификации производственного заказа должна равняться номенклатуре производственного заказа,Production order BOM item must be equal to production order item
-Списать из,writeOffFrom
-Разборка,Disassembly
-Материалы,Materials
-Строк материалов,Material lines
-Израсходовать,Use up
-Продукция,Products
-Строк продукции,Product lines
-Произвести,Produce
-Материалы,Materials
-Продукция,Products
-Заказы,Orders
-Заполнить по спецификации,Fill in according to specification
-Выбор продукции,Product selection
-Произвести,To produce
-Закрыть расход,Close flow
-Создать заказы,Create orders
-Не выбран тип производственного заказа,No production order type selected
-Списание сырья,Write-off of raw materials
-Производство,Production
-Завершен,Completed
-Дата производства,date of manufacture
-Получатель,Recipient
-Не выбрано место хранения получателя в завершенном производственном заказе,No recipient storage location selected in completed production order
-Остаток после операции (получатель),Balance after surgery (recipient)
-Завершен,Completed
-Получатель,Recipient
-Израсходовано,Spent
-Произведено,Produced by
-К производству,To production
-Не выбрано место хранения списания в производственном заказе,Write-off storage location not selected in production order
-Зарезервировать,Make a reservation
-Снять резервирование,Cancel reservation
-К производству,To production
-Зарезервировать,Make a reservation
-Отчет по заказам,Order report
-Введите дату начала,Enter start date
-Итоги,Outcome
-Тип производственного заказа,Production order type
-Списывать из,Cheat from
-Тип производственного заказа,Production order type
-Типы производственных заказов,Types of production orders
-В ожидании,Pending
-Приобретение,Acquisition
-счета,accounts
-Поставщик,The supplier
-Контрагент должен быть поставщиком,The Partner must be a supplier
-Счет поставщика,Supplier invoice
-Строка приобретения,Acquisition line
-Приобретение,Acquisition
-Кол-во строк с услугами,Number of lines with services
-Номенклатура не предназначена для закупки,The item is not intended for purchase
-Строки приобретения,Acquisition lines
-К отгрузке,To shipment
-Распределить,Distribute
-Оптовая продажа,Wholesale trade
-O3,W3
-Розничная продажа,Retail
-P2,RT
-Тип реализации,Implementation type
-Типы реализации,Implementation types
-Задолженность,Debt
-Входящая задолженность,Incoming debt
-Исходящая задолженность,Outgoing debt
-Осталось,Left
-По входящей задолженности разнесено больше[comma] чем сумма задолженности,Incoming debt is posted more than the amount owed
-По исходящей задолженности разнесено больше[comma] чем сумма задолженности,Outgoing debt has been posted more than the outstanding amount
-Долг,Debt
-Просроченный долг,Overdue debt
-Долги по контрагенту,Partner debts
-Просроченные,Overdue
-Платеж,Payment
-Платежи,Payments
-Остаток по счету / кассе не может быть отрицательным,Account / cash balance cannot be negative
-Движение денежных средств,Flow of funds
-Запрещено удалять статьи, на которые ссылаются другие статьи,It is forbidden to delete articles that are referenced by other articles
-Дни,Days
-Экспорт стран,Export countries
-Альфа-2,Alpha-2
-Альфа-3,Alpha-3
-Импорт стран,Import countries
-Страны,Country
-Код номенклатуры,Item code
-Штрихкоды,Barcodes
-Штрихкод не найден,Barcode not found
-Штрихкод уже присутствует в базе данных.,The barcode is already in the database.
-Автоматически генерировать штрихкод,Automatically generate barcode
-Изменен штрихкод,Changed barcode
-Изменен штрихкод на,Changed barcode on
-Добавлен штрихкод,Added barcode
-Удален штрихкод,Deleted barcode
-Экспорт штрихкодов,Экспорт штрихкодов
-Импорт штрихкодов,Импорт штрихкодов
-Отсутствует номенклатура в базе данных с кодом[space],Missing item in database with code[space]
-Выбор категории,Category selection
-Коэффициент,Coefficient
-Запрещено удалять категории[comma] на которые ссылаются другие категории,It is forbidden to delete categories that are referenced by other categories
-Значения по умолчанию,Default values
-Загрузить,Download
-Открыть,Open
-Сбросить,Reset
-Экспорт категорий,Export categories
-Моя категория,My category
-Код категории,Category code
-Код родительской категории,Parent category code
-Импорт категорий,Importing categories
-Загрузка изображений,Loading images
-Без изображения,Без изображения
-Изображения,Images
-Выбор номенклатуры,Choice of nomenclature
-Надбавка[comma] %,Surcharge %
-Кол-во в месте,Qty in place
-Кол-во мест,Qtys in place
-Показывать количество мест,Show number of seats
-Вид упаковки,Type of packaging
-Для выбранного места не задано соотношение перевода в базовую единицу измерения,The selected location does not have a conversion ratio to the base unit of measure
-продажи,sales
-Этикетка,Label
-Параметры печати этикеток,Print options for labels
-На печать,To print
-Этикетка 58x40,Label 58x40
-Этикетка 58x60,Label 58x60
-Шаблон этикетки,Label template
-Шаблоны этикетки,Label templates
-Кол-во шаблонов,Number of templates
-Вес единицы[comma] кг,Unit weight[comma] kg
-Объем единицы[comma] м3,Unit volume[comma] m3
-Доступно (откуда),Available (from)
-Зарезервированое кол-во не может быть меньше 0,Reserved quantity cannot be less than 0
-Нельзя зарезервировать товара по местам хранения больше чем в строке,You cannot reserve goods for storage locations more than in a line
-Введите планируемую дату,Enter the planned date
-Страна происхождения,Country of origin
-Товары,Products
-Неактивный,Inactive
-Экспорт товаров,Export of goods
-Мой продукт,My product
-Самый лучший продукт,The best product
-Код товара,Product code
-Код единицы измерения,Unit code
-Цена продажи,Selling price
-Код страны происхождения,Country of origin code
-Артикул,Article
-Вес единицы[comma] кг,Unit weight [comma] kg
-Объем единицы[comma] м3,Unit volume [comma] m3
-Импорт товаров,Import of goods
-Код страны происхождения,Country of origin code
-Отсутствует категория в базе данных с кодом[space],Missing category in database with code[space]
-Отсутствует единица измерения в базе данных с кодом[space],Unit of measure is missing in the database with code[space]
-Отсутствует страна в базе данных с кодом[space],Country missing in database with code[space]
-Экспорт услуг,Export of services
-Импорт услуг,Import of services
-Моя услуга,My service
-Код услуги,Service code
-Код учетной единицы,Accounting unit code
-Услуги,Services
-Услуга,Service
-Префикс,Prefix
-Суффикс,Suffix
-Наименование (полное),Name (full)
-Категория (полная),Category (full)
-Код ед. изм.,Unit change code
-Нельзя удалить единицу измерения на которую ссылается номенклатура,You cannot delete the unit of measure referenced by the item
-Группа 4,Group 4
-Статусы,Statuses
-Документы,Documents
-Атрибут,Attribute
-Обязателен для заполнения,Required
-Значение,Value
-Значения,Values
-Кол-во заданных категорий,Number of preset categories
-Категория значения должна совпадать с категорией атрибута,The value category must match the attribute category
-Опции атрибута,Attribute options
-Категории атрибута,Attribute categories
-Категории значений,Value categories
-Атрибут обязателен для заполнения,The attribute is required
-Категория номенклатуры должна совпадать с категорией значения,The item category must match the value category
-Выбрано недопустимое значение для данной номенклатуры,An invalid value was selected for this item
-Нельзя удалять значение[comma] которое используется,You cannot delete the value that is in use
-Последовательность,Sequence
-Полное значение,Full value
-Формирование наименования,Formation of the name
-Фильтры,Filters
-Экспорт атрибутов,Exporting attributes
-Код атрибута,Attribute code
-Значение атрибута,Attribute value
-Импорт атрибутов,Importing attributes
-Отсутствует атрибут в базе данных с кодом[space],Missing attribute in database with code[space]
-Атрибуты товаров,Product attributes
-Ввод себестоимости,Entering cost
-Начало действия,Start of action
-Введите дату :,Enter date:
-Введите себестоимость :,Enter cost price:
-История изменения себестоимости,Cost change history
-История,History
-Экспорт себестоимостей,Export of cost prices
-Импорт себестоимостей,Import of cost prices
-Себестоимости номенклатуры,Item cost price
-История изменений,Change history
-Пользователь,User
-Компьютер,Computer
-Добавлена номенклатура,Nomenclature added
-Удалена номенклатура,Item removed
-Изменено полное наименование,Full name changed
-Изменена единица измерения,Unit of measure changed
-на,on
-Изменена категория,Modified category
-Импорт изображений,Importing images
-Предназначен для закупки,Designed for purchase
-Закупка,Purchase
-Предназначен для продажи,Intended for sale
-Продажа,Sale
-Используются,Are used
-Единицы измерения,Units
-Ед. изм. контрагента,Unit rev. Partner
-Выбрана единица измерения контрагента[comma] для которой не задано соотношение,The Partner unit of measure is selected for which the ratio is not specified
-Кол-во контрагента,Partner[quote]s quantity
-Цена контрагента,Partner price
-Соотношение,Ratio
-Экспорт соотношений единиц измерений,Exporting unit ratios
-Импорт соотношений единиц измерений,Importing unit ratios
-Соотношения единиц измерений,Unit ratios
-Основная номенклатура,Basic nomenclature
-Разновидность,Variety
-Выбор контрагента,Choosing a counterparty
-Компания по умолчанию,Default company
-Кол-во компаний,Number of companies
-Компании,Companies
-Моя компания,My company
-Сотрудник,Employee
-Сотрудники,Employees
-Организацией сотрудника может быть только компания,An employee[quote]s organization can only be a company
-Физическое лицо,Individual
-Физические лица,Individuals
-Фамилия,Surname
-Должность,Position
-Контакты,Contacts
-Отчество,Middle name
-Печать накладных,Printing waybills
-Должен быть наш работник,Should be our worker
-Экспорт физических лиц,Export of individuals
-Код организации,Organization code
-Электронная почта,Email
-Импорт физических лиц,Import of individuals
-Физ лица,Individuals
-Экспорт организаций,Export organizations
-Является поставщиком,Is a Supplier
-Является покупателем,Is a Buyer
-Импорт организаций,Importing organizations
-Контрагенты,Contractors
-КН,CN
-Тип контрагента,Type of counterparty
-Юридические данные,Legal data
-Закупки,Procurement
-Продажи,Sales
-Другие единицы измерений,Other units of measure
-Единицы измерений,Units of measurement
-ЕИ,UM
-Экспорт единиц измерения,Exporting Units
-Штука,Thing
-Импорт единиц измерения,Importing Units
-В прайс-листе,In the price list
-Поступило,Received
-К поступлению,For admission
-По товару поступление превышает количество в заказе,For the goods[comma] the receipt exceeds the quantity in the order
-Оприходовано на склад,Posted in stock
-Период заказа,Order period
-Ожидает отгрузку,Awaiting shipment
-Планировалось,It was planned
-Автозаказ,Auto order
-Дата с,Date s
-по,by
-Политика оформления приобретения,Purchase registration policy
-Заказанное количество,Ordered quantity
-Политика оформления приобретения,Purchase registration policy
-Приобретено,Purchased
-К оформлению,To registration
-Приобрести,Purchase
-Выставлено счетов,Billed
-Поступившее количество,Поступившее количество
-Заказ поставщику,Supplier order
-заказа поставщику,order to supplier
-Контрагент заказа поставщику должен быть поставщиком,The partner of the order to the supplier must be the supplier
-Адрес поставщика,Supplier address
-Срок поставки,Delivery time
-Наш представитель,Our representative
-Входящий номер поставщика,Incoming vendor number
-Создан,Created by
-Поставка,Supply
-Итого,Total
-Заказы поставщикам,Orders to suppliers
-Подтвержден,Confirmed
-Подтвердить,Confirm
-ЗК,SO
-Закрыт,Closed
-Закрыть,Close
-Предыдущий заказ,Previous order
-Был заказ на МХ,There was an order for SL
-Был заказ,There was an order
-Шаблон по умолчанию,Default template
-Копия адресату,Copy to addressee
-Тема,Subject
-Шаблон должен быть включен для данного типа заказа,Template must be included for this type of order
-Почта,mail
-Тип заказа,Order type
-Типы заказов,Types of orders
-Прайс-лист поставщика,Supplier price list
-Прайс-лист,Price List
-прайс-листа поставщика,supplier price list
-Окончание действия,End of action
-Прайс-листы поставщиков,Supplier price lists
-Прайс-лист поставщика,Supplier price list
-ПП,PL
-[space]от[space],[space]from[space]
-Поставщик[space],The supplier[space]
-Наименование у поставщика,Supplier name
-Код у поставщика,Код у поставщика
-Окончание действия,Окончание действия
-Действует с,Valid from
-по[space],by[space]
-Копировать,Copy
-Дисконтная карта,Discount card
-Дисконтные карты,Discount cards
-Дата выпуска,Date of issue
-Дата блокировки,Lock date
-Дата блокировки дисконтной карты не может быть раньше даты выпуска,The blocking date of the discount card cannot be earlier than the issue date
-Покупатель должен быть держателем дисконтной карты,Buyer must be a discount card holder
-Выбрана заблокированная дисконтная карта,Blocked discount card selected
-Карта,Card
-Метод оплаты,Payment method
-Наличные,Cash
-Тип возвратного платежа,Chargeback type
-Метод оплаты,Payment method
-Методы оплаты,Payment methods
-Наличные,Cash
-Банковская карта,Bank card
-Драйвер ККТ,KKT driver
-Драйвер,Driver
-Драйверы,Drivers
-Хост,Host
-Открыть смену,Open shift
-Закрыть смену,Close shift
-Внесение,Introduction
-Выемка,Notch
-Чек расхода,Expense receipt
-Допечатать,Print
-X-отчет,X-report
-Фискальный,Fiscal
-Фискализация,Fiscalization
-Внесение/изъятие денег,Deposit / withdrawal of money
-Тип внесения денег,Deposit type
-Внесение денег,Depositing money
-Тип изъятия денег,Withdrawal type
-Выемка денег,Seizure of money
-Внесение денег,Depositing money
-Перемещение денег из ККМ,Transferring money from cash register
-ИК,CT
-Перемещение денег в ККМ,Transferring money to cash register
-ВК,CX
-Выемка денег из ККМ,Taking money out of the cash register
-ИК,CO
-Оформить возврат,Make a return
-Скидка,A discount
-По смене,By change
-По кассе,By checkout
-Смена,Смена
-ККМ,SHI
-Смена открыта,The shift is open
-Закрыть смену,Close shift
-Новый чек,New check
-Штрих-код не найден,Barcode not found
-Дисконтная карта заблокирована,Discount card blocked
-Быстрый товар (название),Quick item (name)
-Поставка сегодня,Delivery today
-По заказу,By order
-Добавить в чек,Add to check
-Сдача,Surrender
-Выбрать,Choose
-В чеке,In check
-Поиск,Search
-По месту хранения,At the place of storage
-Спрятать,Hide
-Выбор,Choice
-Назад,Back to
-Касса ККМ,Cashier KKM
-Кассы ККМ,Cash register KKM
-Отключен,Disabled
-Владелец счета кассы не совпадает с компанией в методе оплаты,Cash account owner does not match the company in the payment method
-Центральная касса,Central cash desk
-Владелец счета центральной кассы не совпадает с компанией в методе оплаты,Central checkout account holder does not match the company in the payment method
-Наличных в кассе,Cash at the checkout
-Открыта,Open
-[space]открытия,[space]discoveries
-Закрыта,Closed
-Смена не может быть закрыта раньше чем была открыта,The shift cannot be closed earlier than it was open
-Открыта,Open
-Смены,Shifts
-СМ,SH
-Смена,Change
-Смены,Shifts
-Открыть смену,Open shift
-Уже есть открытая смена,There is already an open shift
-Закрыть смену,Close shift
-Продано,Sold
-Продаж,Selling
-Возвратов,Refunds
-Розничная торговля,Retail
-Применяется вручную,Applied manually
-Сумма покупки от,Purchase amount from
-Кол-во в строке от,Number per line from
-Продано клиенту всего от,Sold to a client from
-Продано клиенту за прошедший месяц от,Sold to a client in the past month from
-Скидка[comma] %,Discount[comma] %
-Вид цены,Price type
-Включенные,Included
-Период действия,Validity
-Условия,Conditions
-Виды цен,Types of prices
-Скидки,Discounts
-Включенные,Included
-Цена без скидки,Price without discount
-Сумма скидки,Discount amount
-Цена со скидкой,Discount price
-Выбор скидки,Discount selection
-Рассчитать скидки,Calculate discounts
-Выбор типа прайс-листа,Choosing the type of price list
-По товару отгрузка превышает количество в заказе,For the product, the shipment exceeds the quantity in the order
-Расход со склада,Warehouse consumption
-Тип прайс-листа,Price list type
-Установить в себестоимость цену,Set cost price
-Прайс-листы,Price lists
-Расценить,Rate
-Политика оформления реализации,Implementation registration policy
-Реализовано,Implemented
-Реализовать,To implement
-Отгруженное количество,Shipped quantity
-Вид цен,Price type
-Для типа реализации выбран недопустимый вид цены[comma] (не)включающий налоги,Invalid price type selected for the type of implementation[comma] (not) including taxes
-С ценой,With a price
-Регистр продаж,Регистр продаж
-Надбавка,Surcharge
-Продано за предыдущий месяц,Sold in the previous month
-Продажи по контрагенту,Sales by counterparty
-Спецификация должна соответствовать выбранной номенклатуре,The specification must match the selected nomenclature
-Тип заказа на производство,Manufacturing order type
-Заказ,Order
-Нельзя удалить строку на основании которой создан производственный заказ,You cannot delete the line from which the production order was created
-Автоматически создавать производственный заказ,Automatically create a production order
-Нельзя отменить заказ[comma] к которому существуют действующие производственные заказы,You cannot cancel an order for which there are valid production orders
-Нельзя изменить количество в строке[comma] к которой существует действующий производственный заказ,You cannot change the quantity on a line for which a valid production order exists
-Нельзя изменить номенклатуру в строке[comma] к которой существует действующий производственный заказ,You cannot change an item on a line for which a valid production order exists
-Нельзя изменить спецификацию в строке[comma] к которой существует действующий производственный заказ,You cannot change a BOM on a line for which a valid production order exists
-Заказ мобильный,Mobile order
-Мест,Places
-Заказ,Order
-Редактировать,Edit
-Заказчик,Customer
-Мобильный заказ,Mobile order
-В месте,In place
-Заказано,Ordered
-Для типа заказа выбран недопустимый вид цены[comma] (не)включающий налоги,Invalid price type selected for order type[comma] (not) including taxes
-Для реализации выбран недопустимый для типа вид цены[comma] (не)включающий налоги,For implementation[comma] a price type that is not valid for the type has been selected, (not) including taxes
-Заказ покупателя,Buyer[quote]s order
-заказа покупателя,buyer[quote]s order
-Контрагент заказа покупателя должен быть покупателем,The Partner of the buyer[quote]s order must be the buyer
-Адрес получателя,Recipient[quote]s address
-Срок действия,Validity
-Дата поставки,Delivery date
-Адрес доставки,Delivery address
-Входящий номер заказчика,Incoming customer number
-Запрос предложений,Request for proposals
-Заказы покупателей,Buyer orders
-заказе,ordering
-ОП,WT
-РП,RA
-Заказы покупателям,Buyer orders
-Открыт,Open
-Отправлен,Submitted
-Отправить,Send message
-Заказ №,Order no.
-Виды цены,Price types
-С учетом налогов,Tax included
-Оптовая,Wholesale
-Розничная,Retail
-Акционная,Promotional
-Надбавка по категории[comma] %,Category markup[comma] %
-Надбавка (от верхней группы), %,Surcharge (from the top group)[comma], %
-Надбавка по товару[comma] %,Margin on goods[comma], %
-Надбавки,allowances
-Изменившиеся,Changed
-Параметры печати,Print options
-На дату,On the date
-Отметить все,Select all
-Сформировать,To shape
-Шаблон прайс-листа,Price list template
-Шаблон,Template
-Формат,Format
-Порядок,Order
-Шаблон прайс-листа,Price list template
-Шаблоны прайс-листа,Price list templates
-Вид изменения цен,Price change type
-Установить надбавки из предыдущих прайсов,Set markups from previous prices
-Установить надбавки из видов цен,Set markups from price types
-Установить цены из предыдущих прайсов,Set prices from previous prices
-Вид изменения цен,Price change type
-Изменить на[comma] %,Change to[comma] %
-Изменение цен,Price change
-Изменить цены,Change prices
-Оптовый,Wholesale
-Оптовый прайс,Wholesale price
-O5,WP
-Розничный,Retail
-Розничный прайс,Retail price
-Р3,RP
-Акционный,Promotional
-Акционный прайс,Promotional price
-АП,AP
-Цены,Prices
-Текущая надбавка,Current allowance
-Без цены,No price
-Подобрать все,Pick up all
-Показывать себестоимость,Show cost price
-Показывать действующие цены,Show current prices
-Показывать надбавки,Show allowances
-Считать надбавку от,Calculate the markup from
-Типы прайс-листов,Types of price lists
-[space](текущая),[space](current)
-Тип прайс-листа на продажу,Type of price list for sale
-Отчет по продажам,Sales report
-Сводка по продажам,Sales summary
-Продажи по неделям,Sales by week
-Продажи по покупателям,Sales by customer
-Оборот,Turnover
-Доход,Income
-Продажи по местам хранения,Sales by location
-Продажи по категориям,Sales by category
-Интервал дат,Date interval
-Сегодня,Today
-Вчера,Yesterday
-Завтра,Tomorrow
-7 дней,7 days
-30 дней,30 days
-Этот месяц,This month
-Этот год,This year
-Черновик,Draft
-Цвет,Colour
-Отключить запись истории,Disable history recording
-Добавлена строка,Added line
-Добавлена строка с индексом[space],Added line with index[space]
-Удалена строка,Removed line
-Удалена строка с индексом[space],Deleted line with index[space]
-Изменено исходное кол-во,Changed the original quantity
-Изменено исходное кол-во продукта[space],Changed the original product quantity[space]
-Изменен продукт,Modified product
-Изменен продукт в строке[space],Product changed in line[space]
-Изменен статус,Status changed
-Изменен статус на[space],Changed status to[space]
-Цена итоговая,Final price
-Формат шаблона,Template format
-Имя файла шаблона,Template file name
-Принтер,Printer
-Ввод количества,Quantity input
-Введите количество :,Enter quantity:
-Отм,Cancel
-Отмечено,Noted
-Удалить,Delete
+ru,en,
+. Импорт отменен,. Import canceled,
+. Проставить зарезервированными?,. Leave reserved?,
+. Проставить ожидаемыми ?,. Put as expected?,
+[space](отгружено),[space](shipped),
+[space](текущая),[space](current),
+[space](теоретическое),[space](theoretical),
+[space](фактическое),[space](actual),
+[space]на[space],[space]on[space],
+[space]начала,[space]start,
+[space]от[space],[space]from[space],
+[space]открытия,[space]discoveries,
+[space]планируемая,[space]the planned,
+30 дней,30 days,
+7 дней,7 days,
+B2,RX,
+B3,R6,
+B4,R7,
+CI,FM,
+Cost price,Cost price,
+H2,C0,
+MX,SL,
+№,No,
+O2,DL,
+O3,W3,
+O5,W5,
+P2,RT,
+WP,DE,
+X-отчет,X-report,
+Автозаказ,Auto order,
+Автоматически генерировать штрихкод,Automatically generate barcode,
+Автоматически создавать входящий платеж,Automatically create incoming payment,
+Автоматически создавать исходящий платеж,Automatically create outgoing payment,
+Автоматически создавать отгрузку,Automatically create shipment,
+Автоматически создавать поступление,Automatically create receipt,
+Автоматически создавать производственный заказ,Automatically create a production order,
+Адрес,Address,
+Адрес доставки,Delivery address,
+Адрес получателя,Recipient[quote]s address,
+Адрес поставщика,Supplier address,
+Активен,Active,
+Активная,Active,
+Активные,Active,
+Активный,Active,
+Акционная,Promotional,
+Акционный,Promotional,
+Акционный прайс,Promotional price,
+Альфа-2,Alpha-2,
+Альфа-3,Alpha-3,
+АП,PA,
+Артикул,Article,
+Атрибут,Attribute,
+Атрибут обязателен для заполнения,The attribute is required,
+Атрибуты,Attributes,
+Атрибуты товаров,Product attributes,
+База распределения,Distribution base,
+Банк,Bank,
+Банки,Banks,
+Банковская карта,Bank card,
+Банковские счета,Bank accounts,
+Банковский счет,Bank account,
+Без изображени,No picture,
+Без изображения,Без изображения,
+Без цены,No price,
+БИК,BAC,
+Был заказ,There was an order,
+Был заказ на МХ,There was an order for SL,
+Быстрый товар (название),Quick item (name),
+В месте,In place,
+В ожидании,Pending,
+В прайс-листе,In the price list,
+В процессе,During,
+В работу,To work,
+В чеке,In check,
+В2,R5,
+ВБ,R2,
+Введите дату :,Enter date:,
+Введите дату начала,Enter start date,
+Введите количество :,Enter quantity:,
+Введите планируемую дату,Enter the planned date,
+Введите себестоимость :,Enter cost price:,
+Ввод количества,Quantity input,
+Ввод начальных остатков,Entering initial balances,
+Ввод начальных остатков денежных средств,Entering initial cash balances,
+Ввод себестоимости,Entering cost,
+Веб сайт,Web site,
+Вернуть,Return,
+Вес,Weight,
+Вес единицы[comma] кг,Unit weight[comma] kg,
+ВЗ,RX,
+Вид,View,
+Вид изменения цен,Price change type,
+Вид упаковки,Type of packaging,
+Вид цен,Price type,
+Вид цены,Price type,
+Виды цен,Types of prices,
+Виды цены,Price types,
+ВК,CX,
+Вкл,C.Tax,
+Вкл.,On.,
+Включенные,Included,
+Владелец,Owner,
+Владелец счета кассы не совпадает с компанией в методе оплаты,Cash account owner does not match the company in the payment method,
+Владелец счета компании не совпадает с компанией в исходящем платеже,The company account holder does not match the company in the outgoing payment,
+Владелец счета компании не совпадает с компанией во входящем платеже,The company account holder does not match the company in the incoming payment,
+Владелец счета контрагента не совпадает с контрагентом в исходящем платеже,The Partner account owner does not match the Partner in the outgoing payment,
+Владелец счета контрагента не совпадает с контрагентом во входящем платеже,The Partner account owner does not match the Partner in the incoming payment,
+Владелец счета центральной кассы не совпадает с компанией в методе оплаты,Central checkout account holder does not match the company in the payment method,
+Внесение,Introduction,
+Внесение денег,Depositing money,
+Внесение денег в ККМ,Depositing money to Fiscal printer,
+Внесение/изъятие денег,Deposit / withdrawal of money,
+Внутренний платеж,Internal payment,
+Возврат,Return,
+Возврат на счет покупателю,Return to customer account,
+Возврат на счет поставщику,Return to supplier account,
+Возврат наличными покупателю,Cash back to buyer,
+Возврат наличных поставщику,Cash back to supplier,
+Возврат поставщику,Return to supplier,
+Возвратов,Refunds,
+Возвраты,Refunds,
+Возвращено,Returned,
+ВП,RS,
+Время,Time,
+Вручную,Manually,
+Все,All,
+Входящая задолженность,Incoming debt,
+Входящая проводка,Incoming wiring,
+входящего платежа,incoming payment,
+Входящие платежи,Incoming payments,
+Входящий номер заказчика,Incoming customer number,
+Входящий номер поставщика,Incoming vendor number,
+Входящий платeж,Incoming payment,
+Вчера,Yesterday,
+Выбор,Choice,
+Выбор категории,Category selection,
+Выбор контрагента,Choosing a counterparty,
+Выбор номенклатуры,Choice of nomenclature,
+Выбор продукции,Product selection,
+Выбор скидки,Discount selection,
+Выбор спецификации,Specification selection,
+Выбор типа прайс-листа,Choosing the type of price list,
+Выбран тип отгрузки не являющийся перемещением,The selected shipment type is not a transfer,
+Выбрана единица измерения контрагента[comma] для которой не задано соотношение,The Partner unit of measure is selected for which the ratio is not specified,
+Выбрана заблокированная дисконтная карта,Blocked discount card selected,
+Выбрано недопустимое значение для данной номенклатуры,An invalid value was selected for this item,
+Выбрать,Choose,
+Выбрать дату,Select date,
+Выемка,Notch,
+Выемка денег,Seizure of money,
+Выемка денег из ККМ,Taking money out of the cash register,
+Выставлено счетов,Billed,
+Габаритный вес,Overall weight,
+Город,City,
+Группа,Group,
+Группа 1,Group 1,
+Группа 2,Group 2,
+Группа 3,Group 3,
+Группа 4,Group 4,
+Группа налога,Tax group,
+Группа налогов,Tax group,
+Группа полная,Full group,
+Группы налогов,Tax groups,
+Дата,Date,
+Дата блокировки,Lock date,
+Дата блокировки дисконтной карты не может быть раньше даты выпуска,The blocking date of the discount card cannot be earlier than the issue date,
+Дата выпуска,Date of issue,
+Дата декларирования,Declaration date,
+Дата начала,start date,
+Дата отгрузки,Shipping date,
+Дата последнего прихода, Date of last arrival,
+Дата поставки,Delivery date,
+Дата поступления,Receipt Date,
+Дата производства,date of manufacture,
+Дата с,Date s,
+Дата[comma] с которой пересчитывать,Date from which to recalculate,
+Движение денежных средств,Flow of funds,
+Движение товара,Movement of goods,
+Движения,Movement,
+Действия,Actions,
+Действует с,Valid from,
+Дерево,Tree,
+Держатель счета,Account holder,
+Дисконтная карта,Discount card,
+Дисконтная карта заблокирована,Discount card blocked,
+Дисконтные карты,Discount cards,
+Для выбранного места не задано соотношение перевода в базовую единицу измерения,The selected location does not have a conversion ratio to the base unit of measure,
+Для реализации выбран недопустимый для типа вид цены[comma] (не)включающий налоги,For implementation[comma] a price type that is not valid for the type has been selected,
+Для типа заказа выбран недопустимый вид цены[comma] (не)включающий налоги,Invalid price type selected for order type[comma] (not) including taxes,
+Для типа реализации выбран недопустимый вид цены[comma] (не)включающий налоги,Invalid price type selected for the type of implementation[comma] (not) including taxes,
+Для этого типа платежа банковские счета компании не разрешены,Company bank accounts are not allowed for this type of payment,
+Для этого типа платежа банковские счета контрагента не разрешены,Partner bank accounts are not allowed for this type of payment,
+Для этого типа платежа кассы компании не разрешены,For this type of payment,
+Для этого типа платежа кассы контрагента не разрешены,Partner cash desks are not allowed for this type of payment.,
+Дни,Days,
+Добавить,Add to,
+Добавить в чек,Add to check,
+Добавлен штрихкод,Added barcode,
+Добавлена номенклатура,Nomenclature added,
+Добавлена строка,Added line,
+Добавлена строка с индексом[space],Added line with index[space],
+Документ,Document,
+Документы,Documents,
+Долг,Debt,
+Долги по контрагенту,Partner debts,
+Должен быть наш работник,Should be our worker,
+Должен быть разрешен хотя бы один вид счета,At least one account type must be allowed,
+Должность,Position,
+Доля стоимости,Share of cost,
+Допечатать,Print,
+Доступен,Available,
+Доступно,Available,
+Доступно (откуда),Available (from),
+Доступные,Available,
+Доступный остаток,Available balance,
+Доход,Income,
+Драйвер,Driver,
+Драйвер ККТ,Fiscal driver,
+Драйверы,Drivers,
+Другие единицы измерений,Other units of measure,
+Ед. изм.,UOM name,
+Ед. изм. контрагента,Unit rev. Partner,
+Единица измерения,Unit of measurement,
+Единицы измерений,Units of measurement,
+Единицы измерения,Units,
+ЕИ,UM,
+Завершен,Completed,
+Завершена,Completed,
+Завершить,Complete,
+Завтра,Tomorrow,
+Загрузить,Download,
+Загрузка изображений,Loading images,
+Задание на отгрузку,Shipment task,
+Задание на поступление,Assignment for admission,
+Задолженность,Debt,
+Заказ,Order,
+Заказ №,Order no.,
+Заказ мобильный,Mobile order,
+Заказ покупателя,Buyer[quote]s order,
+Заказ поставщику,Supplier order,
+заказа покупателя,buyer[quote]s order,
+заказа поставщику,order to supplier,
+Заказанное количество,Ordered quantity,
+Заказано,Ordered,
+заказе,ordering,
+Заказчик,Customer,
+Заказы,Orders,
+Заказы покупателей,Buyer orders,
+Заказы покупателям,Buyer orders,
+Заказы поставщикам,Orders to suppliers,
+Закрыт,Closed,
+Закрыта,Closed,
+Закрыть,Close,
+Закрыть расход,Close flow,
+Закрыть смену,Close shift,
+Закрыть смену,Close shift,
+Закупка,Purchase,
+Закупка у поставщика,Purchase from a supplier,
+закупки,purchases,
+Закупки,Procurement,
+Заполнить,Fill in,
+Заполнить Отгружено,Fill Shipped,
+Заполнить по спецификации,Fill in according to specification,
+Заполнить Принято,Fill Accepted,
+Запрещено удалять категории[comma] на которые ссылаются другие категории,It is forbidden to delete categories that are referenced by other categories,
+Запрещено удалять статьи[comma] на которые ссылаются другие статьи,It is forbidden to delete articles that are referenced by other articles,
+Запрос предложений,Request for proposals,
+Зарезервировано,Reserved,
+Зарезервировано (с учетом вложенных),Reserved (including nested),
+Зарезервированое кол-во не может быть меньше 0,Reserved quantity cannot be less than 0,
+Зарезервировать,Make a reservation,
+ЗК,SO,
+Значение,Value,
+Значение атрибута,Attribute value,
+Значение[comma] %,Value[comma] %,
+Значения,Values,
+Значения по умолчанию,Default values,
+ЗП,PS,
+И2,CO,
+ИЗ,PO,
+Излишки,Surplus,
+Изменен продукт,Modified product,
+Изменен продукт в строке[space],Product changed in line[space],
+Изменен статус,Status changed,
+Изменен статус на[space],Changed status to[space],
+Изменен штрихкод,Changed barcode,
+Изменен штрихкод на,Changed barcode on,
+Изменена единица измерения,Unit of measure changed,
+Изменена категория,Modified category,
+Изменение цен,Price change,
+Изменения,Changes,
+Изменено исходное кол-во,Changed the original quantity,
+Изменено исходное кол-во продукта[space],Changed the original product quantity[space],
+Изменено полное наименование,Full name changed,
+Изменившиеся,Changed,
+Изменить на[comma] %,Change to[comma] %,
+Изменить цены,Change prices,
+Изображение,Picture,
+Изображения,Pictures,
+Израсходовано,Spent,
+Израсходовать,Use up,
+ИК,CT,
+Импорт атрибутов,Importing attributes,
+Импорт банков,Bank import,
+Импорт единиц измерения,Importing Units,
+Импорт завершен,Import completed,
+Импорт изображений,Importing images,
+Импорт касс,Import of cash registers,
+Импорт категорий,Importing categories,
+Импорт мест хранения,Importing storage locations,
+Импорт налогов на закупку,Import of purchase taxes,
+Импорт налогов на реализацию,Import sales taxes,
+Импорт организаций,Importing organizations,
+Импорт остатков,Residue import,
+Импорт производных номенклатур,Importing Derived Items,
+Импорт себестоимостей,Import of cost prices,
+Импорт соотношений единиц измерений,Importing unit ratios,
+Импорт спецификаций,Importing BOMs,
+Импорт статей ДДС,Import of DDS articles,
+Импорт стран,Import countries,
+Импорт строк спецификаций,Importing BOM Lines,
+Импорт товаров,Import of goods,
+Импорт услуг,Import of services,
+Импорт физических лиц,Import of individuals,
+Импорт штрихкодов,Импорт штрихкодов,
+Импортная закупка,Import purchase,
+Имя,Name,
+Имя файла шаблона,Template file name,
+ИН,IN,
+инвентаризации,inventory,
+Инвентаризации,Inventories,
+Инвентаризация,Inventory,
+Интервал дат,Date interval,
+Используются,Are used,
+История,History,
+История изменений,Change history,
+История изменения себестоимости,Cost change history,
+Исходное количество должно быть от 0 до максимально разрешенного,The initial amount must be between 0 and the maximum allowed,
+Исходящая задолженность,Outgoing debt,
+Исходящая проводка,Outbound posting,
+исходящего платежа,outgoing payment,
+Исходящие платежи,Outgoing payments,
+Исходящий платeж,Outgoing payment,
+Итоги,Outcome,
+Итого,Total,
+Итого по документу,Total for the document,
+Итоговая сумма,Total amount,
+К оплате,To pay,
+К отгрузке,To shipment,
+К оформлению,To registration,
+К поступлению,For admission,
+К приемке,For acceptance,
+К производству,To production,
+Каноническое имя,Canonical name,
+Карта,Card,
+Касса,Cash account,
+Касса ККМ,Fiscal device,
+Кассы,Cash accounts,
+Кассы ККМ,Fiscal devices,
+Категории,Categories,
+Категории атрибута,Attribute categories,
+Категории значений,Value categories,
+Категория,Category,
+Категория (полная),Category (full),
+Категория значения должна совпадать с категорией атрибута,The value category must match the attribute category,
+Категория номенклатуры должна совпадать с категорией значения,The item category must match the value category,
+ККМ,Fiscal,
+КН,PN,
+Код,Code,
+Код атрибута,Attribute code,It is forbidden to delete articles that are referenced by other articles
+Код банка,Bank code,
+Код владельца,Owner code,
+Код ед. изм.,Unit change code,
+Код единицы измерения,Unit code,
+Код категории,Category code,
+Код контрагента,Contractor code,
+Код места хранения,Storage location code,
+Код места хранения,Storage location code, only a company can be a Partner
+Код номенклатуры,Item code,
+Код организации,Organization code,
+Код покупателя,Buyer code,
+Код продукта,Product code,
+Код родительской категории,Parent category code,
+Код родителя,Parent code,
+Код страны,Code of the country, company cash registers are not allowed
+Код страны происхождения,Country of origin code,
+Код товара,Product code,
+Код у поставщика,Код у поставщика,
+Код услуги,Service code,
+Код учетной единицы,Accounting unit code,
+Кол-во,Quantity,
+Кол-во в месте,Qty in place,
+Кол-во в строке от,Number per line from,
+Кол-во заданных категорий,Number of preset categories,
+Кол-во компаний,Number of companies,
+Кол-во контрагента,Partner[quote]s quantity,
+Кол-во мест,Qtys in place,
+Кол-во оплат,Number of payments,
+Кол-во строк,Number of lines,
+Кол-во строк с товарами,Number of lines with goods,
+Кол-во строк с услугами,Number of lines with services,
+Кол-во типов,Number of types,
+Кол-во шаблонов,Number of templates,
+Количество,Number,
+Компании,Companies,
+Компания,Company,
+Компания по умолчанию,Default company,
+Компонентов,Components,
+Компоненты,Components,
+Компьютер,Computer,
+Контакты,Contacts,
+Контрагент,Partner,
+Контрагент должен быть покупателем,The Partner must be the buyer,
+Контрагент должен быть поставщиком,The Partner must be a supplier,
+Контрагент заказа покупателя должен быть покупателем,The Partner of the buyer[quote]s order must be the buyer,
+Контрагент заказа поставщику должен быть поставщиком,The partner of the order to the supplier must be the supplier,
+Контрагент и номенклатура реализации должны совпадать с контрагентом и товаром возврата,Partner and sales item must match the Partner and return item,
+Контрагент и товар отгрузки должны совпадать с контрагентом и товаром возврата,The Partner and shipment item must match the Partner and return item,
+Контрагент и товар поступления должны совпадать с контрагентом и товаром возврата,The Partner and the goods received must match the Partner and the returned goods,
+Контрагент реализации должен совпадать с контрагентом возврата,The sales Partner must be the same as the return Partner,
+Контрагенты,Partners,
+Копировать,Copy,
+Копия адресату,Copy to addressee,
+Коэффициент,Coefficient,
+Куда,Where,
+Масса,Weight,
+Материалы,Materials,
+Мест,Places,
+Места хранения,Storage locations,
+Места хранения откуда и куда не могут совпадать,Where and where storage locations cannot coincide,
+Место хранения,Storage,
+Место хранения (куда),Storage location (where),
+Место хранения (откуда),Storage location (from where),
+Место хранения строки инвентаризации не является потомком места хранения документа,The inventory line storage location is not a descendant of the document storage location,
+Метод оплаты,Payment method,
+Метод расчета себестоимости,Cost calculation method,
+Методы,Методы,
+Методы оплаты,Payment methods,
+Методы расчета себестоимости,Costing methods,
+Мобильное перемещение,Mobile movement,
+Мобильный заказ,Mobile order,
+Мой продукт,My product,
+Мой склад,My warehouse,
+Моя категория,My category,
+Моя компания,My company,
+Моя услуга,My service,
+на,on,
+На дату,On the date,
+На печать,To print,
+Надбавка,Surcharge,
+Надбавка (от верхней группы), %,
+Надбавка по категории[comma] %,Category markup[comma] %,
+Надбавка по товару[comma] %,Margin on goods[comma],
+Надбавка[comma] %,Surcharge %,
+Надбавки,allowances,
+Назад,Back to,
+Название,Name,
+Наименование,Name,
+Наименование (полное),Name (full),
+Наименование у поставщика,Supplier name,
+Наличные,Cash,
+Наличных в кассе,Cash at the checkout,
+Налог,Tax,
+Налоги,Taxes,
+Налоги[space],Taxes[space],
+Настройка,Customization,
+Настройки,Settings,
+Начало действия,Start of action,
+Начать,To begin,
+Наш представитель,Our representative,
+Не выбран тип отгрузки,Shipment type not selected,
+Не выбран тип производственного заказа,No production order type selected,
+Не выбрано место хранения (откуда),No storage location selected (from where),
+Не выбрано место хранения получателя в завершенном производственном заказе,No recipient storage location selected in completed production order,
+Не выбрано место хранения списания в производственном заказе,Write-off storage location not selected in production order,
+Не заполены принятые количества для поступления[space],Accepted Receipt Quantities Not Filled[space] ,
+Не заполнены отгруженные количества для отгрузки[space],Shipment quantities not filled for shipment[space],
+Неактивная,Inactive,
+Неактивный,Inactive,
+Недостачи,Gaps,
+Незапланированная,Незапланированная,
+Незапланированная отгрузка,Unplanned shipment,
+Нельзя зарезервировать товара по местам хранения больше чем в строке,You cannot reserve goods for storage locations more than in a line,
+Нельзя изменить количество в строке[comma] к которой существует действующий производственный заказ,You cannot change the quantity on a line for which a valid production order exists,
+Нельзя изменить номенклатуру в строке[comma] к которой существует действующий производственный заказ,You cannot change an item on a line for which a valid production order exists,
+Нельзя изменить спецификацию в строке[comma] к которой существует действующий производственный заказ,You cannot change a BOM on a line for which a valid production order exists,
+Нельзя отгрузить товара по местам хранения больше чем в строке,You cannot ship goods to storage locations more than in a line,
+Нельзя отменить заказ[comma] к которому существуют действующие производственные заказы,You cannot cancel an order for which there are valid production orders,
+Нельзя удалить единицу измерения на которую ссылается номенклатура,You cannot delete the unit of measure referenced by the item,
+Нельзя удалить место хранения имеющее подчиненные склады,You cannot delete a storage location that has subordinate warehouses,
+Нельзя удалить строку на основании которой создан производственный заказ,You cannot delete the line from which the production order was created,
+Нельзя удалять значение[comma] которое используется,You cannot delete the value that is in use,
+Непериодичная,Non-periodic,
+НМ,NM,
+Новый чек,New check,
+Номенклатура,Nomenclature,
+Номенклатура не предназначена для закупки,The item is not intended for purchase,
+Номенклатура не предназначена для продажи,The item is not for sale,
+Номенклатура реализации должны совпадать с номенклатурой возврата,The sales nomenclature must match the return nomenclature,
+Номенклатура спецификации компонента должна равняться номенклатуре компонента,Component BOM nomenclature must equal component item nomenclature,
+Номенклатура спецификации по умолчанию должна совпадать с номенклатурой,The default BOM nomenclature must match the nomenclature,
+Номенклатура спецификации производственного заказа должна равняться номенклатуре производственного заказа,Production order BOM item must be equal to production order item,
+Номенклатуры,Nomenclatures,
+Номер,Room,
+Номер спецификации,Specification number,
+Номер счета,Account number,
+Нумератор,Numerator,
+Область,Region,
+Оборот,Turnover,
+Объем,Volume,
+Объем единицы[comma] м3,Unit volume[comma] m3,
+Обязателен для заполнения,Required,
+Ожидает отгрузку,Awaiting shipment,
+Окончание действия,End of action,
+O2,X2,
+O3,X3,
+O4,X4,
+O5,X5,
+ОП,WT,
+Операции,Operations,
+Описание,Description,
+Описи,Descriptions,
+Оплата,Payment,
+Оплата на счет покупателем,Payment to the account by the buyer,
+Оплата на счет поставщику,Payment to the supplier[quote]s account,
+Оплата наличными покупателем,Cash payment by the buyer,It is forbidden to delete articles that are referenced by other articles
+Оплата наличными поставщику,Cash payment to supplier,
+Оплатить,Pay,
+Оплатить до,Pay before,
+Оплачено,Paid up,
+Оприходовано на склад,Posted in stock,
+Оптовая,Wholesale,
+Оптовая продажа,Wholesale trade,
+Оптовый,Wholesale,
+Оптовый возврат,Bulk return,
+Оптовый прайс,Wholesale price,
+Опции атрибута,Attribute options,
+Организацией сотрудника может быть только компания,An employee[quote]s organization can only be a company,
+Организации,Organizations,
+Организация,Organization,
+Основная номенклатура,Basic nomenclature,
+Основные,Basic,
+Осталось,Left,
+Остатки,Leftovers,
+Остаток,The remainder,
+Остаток на дату,Balance as of date,
+Остаток по счету / кассе не может быть отрицательным,Account / cash balance cannot be negative,
+Остаток после операции (получатель),Balance after surgery (recipient),
+от ,from ,
+от[space],from[space],
+Отбор,Team,
+Отгружен,Shipped,
+Отгруженное кол-во не может быть меньше 0,The shipped quantity cannot be less than 0,
+Отгруженное количество,Shipped quantity,
+Отгружено,Shipped,
+Отгружено (за период),Shipped (for the period),
+Отгружено (с учетом вложенных),Shipped (including enclosed),
+Отгруженое количество должно быть от 0 до исходного,The shipped quantity must be between 0 and original,
+Отгрузить,Ship,
+Отгрузка,Shipment,
+отгрузки,shipment,
+Отгрузки,Shipments,
+Отключен,Disabled,
+Отключить запись истории,Disable history recording,
+Открыт,Open,
+Открыта,Open,
+Открыть,Open,
+Открыть смену,Open shift,
+Откуда,From where,
+Отм,Cancel,
+Отменен,Canceled,
+Отменить,Cancel,
+Отметить все,Select all,
+Отмечено,Noted,
+Отобрано,Selected,
+Отправить,Send message,
+Отправлен,Submitted,
+Отсутствует атрибут в базе данных с кодом[space],Missing attribute in database with code[space],
+Отсутствует банк в базе данных с кодом[space],There is no bank in the database with the code[space],
+Отсутствует единица измерения в базе данных с кодом[space],Unit of measure is missing in the database with code[space],
+Отсутствует категория в базе данных с кодом[space],Missing category in database with code[space],
+Отсутствует контрагент в базе данных с кодом[space],There is no Partner in the database with the code[space],
+Отсутствует место хранения в базе данных с кодом[space],Missing storage location in database with code[space],
+Отсутствует номенклатура в базе данных с кодом[space],Missing item in database with code[space],
+Отсутствует спецификация в базе данных с кодом[space],Missing BOM in database with code[space],
+Отсутствует страна в базе данных с кодом[space],Country missing in database with code[space],
+Отсутствует товар в базе данных с кодом[space],There is no product in the database with a code[space],
+Отсутствуют типы поступлений в базе данных. Импорт отменен,There are no receipt types in the database. Import canceled,
+Отходы,Waste,
+Отчество,Middle name,
+Отчет,Report,
+Отчет по заказам,Order report,
+Отчет по приобретениям,Purchases report,
+Отчет по продажам,Sales report,
+Отчет по реализациям,Sales report,
+Отчеты,Reports,
+Оформить возврат,Make a return,
+П2,P9,
+П3,AD,
+П4,T2,
+П5,T3,
+П6,C7,
+Параметры,Parameters,
+Параметры печати,Print options,
+Параметры печати этикеток,Print options for labels,
+Параметры расчета себестоимости,Costing parameters,
+Партии,Party,
+Партионный учет,Lot accounting,
+Партия,Party,
+Партия относится к другому продукту (,The batch refers to another product (,
+ПБ,C1,
+Переместить,Move,
+Переместить с[space],Move from[space],
+Перемещение,Moving,
+Перемещение денег в ККМ,Transferring money to Fiscal device,
+Перемещение денег из ККМ,Transferring money from Fiscal device,
+Перемещение на другой счет,Transfer to another account,
+Перемещение с другого счета,Transfer from another account,
+Пересчитать себестоимость,Recalculate cost,
+Период действия,Validity,
+Период заказа,Order period,
+Печать,Printing,
+Печать накладных,Printing waybills,
+ПЗ,MO,
+Планировалось,It was planned,
+Планировалось (за период),Planned (for the period),
+Планируемая дата,Planned date,
+Планируемое кол-во,Planned quantity,
+Планируемое кол-во партий,Planned number of parties,
+Планируемое количество,Planned quantity,
+Плановая себестоимость,Planned cost,
+Платеж,Payment,
+Платежи,Payments,
+ПН,C9,
+по,by,
+По входящей задолженности разнесено больше[comma] чем сумма задолженности,Incoming debt is posted more than the amount owed,
+По заказу,By order,
+По исходящей задолженности разнесено больше[comma] чем сумма задолженности,Outgoing debt has been posted more than the outstanding amount,
+По кассе,By checkout,
+По категории,By category,
+По месту хранения,At the place of storage,
+По одному складу,One composition at a time,
+По расходу,By consumption,
+По смене,By change,
+По товару отгрузка превышает количество в заказе,For the product,
+По товару поступление превышает количество в заказе,For the goods[comma] the receipt exceeds the quantity in the order,
+По умолчанию,Default,
+по[space],by[space],
+Подбор,Selection,
+Подобрать все,Pick up all,
+Подтвердить,Confirm,
+Подтвержден,Confirmed,
+Поиск,Search,
+Показывать действующие цены,Show current prices,
+Показывать количество мест,Show number of seats,
+Показывать надбавки,Show allowances,
+Показывать себестоимость,Show cost price,
+Покупатель,Customer,
+Покупатель должен быть держателем дисконтной карты,Buyer must be a discount card holder,
+Политика оформления приобретения,Purchase registration policy,
+Политика оформления реализации,Implementation registration policy,
+Полное значение,Full value,
+Получатель,Recipient,
+Получатель,Recipient,
+Пользователь,User,
+Порядок,Order,
+Последовательность,Sequence,
+Поставка,Supply,
+Поставка сегодня,Delivery today,
+Поставщик,The supplier,
+Поставщик[space],The supplier[space],
+Поступившее количество,Поступившее количество,
+Поступило,Received,
+Поступление,Admission,
+поступления,receipts,
+Поступления,Receipts,
+Почта,mail,
+Почтовый индекс,Postcode,
+ПП,PL,
+ПР,TR,
+Прайс-лист,Price List,
+Прайс-лист поставщика,Supplier price list,
+прайс-листа поставщика,supplier price list,
+Прайс-листы,Price lists,
+Прайс-листы поставщиков,Supplier price lists,
+Предназначен для закупки,Designed for purchase,
+Предназначен для продажи,Intended for sale,
+Предыдущий заказ,Previous order,
+Префикс,Prefix,
+При внутреннем платеже контрагентом может быть только компания,With an internal payment,
+Применяется вручную,Applied manually,
+Примечание,Note,
+Принтер,Printer,
+Принят,Accepted,
+Принят,Accepted,
+Принятое количество,Accepted quantity,
+Принятое количество должно быть от 0 до исходного,The accepted amount must be between 0 and the original,
+Принять,To accept,
+Приобрести,Purchase,
+Приобретение,Acquisition,
+Приобретение,Acquisition,
+приобретения,acquisitions,
+Приобретения,Acquisitions,
+Приобретено,Purchased,
+Проведен,Carried out,
+Провести,Conduct,
+Продаж,Selling,
+Продажа,Sale,
+продажи,sales,
+Продажи,Sales,
+Продажи по категориям,Sales by category,
+Продажи по контрагенту,Sales by counterparty,
+Продажи по местам хранения,Sales by location,
+Продажи по неделям,Sales by week,
+Продажи по покупателям,Sales by customer,
+Продано,Sold,
+Продано за предыдущий месяц,Sold in the previous month,
+Продано клиенту всего от,Sold to a client from,
+Продано клиенту за прошедший месяц от,Sold to a client in the past month from,
+Продукт,Product,
+Продукция,Products,
+Продукция,Products,
+Произведено,Produced by,
+Произвести,Produce,
+производственного заказа,Manufacturing Order,
+Производственные заказы,Manufacturing Orders,
+Производственный заказ,Manufacturing Order,
+Производство,Production,
+Промежуточная,Intermediate,
+Просроченные,Overdue,
+Просроченный долг,Overdue debt,
+Процессы,Processes,
+Прочая информация,other information,
+Прочие,Others,
+P2,RG,
+Р3,RP,
+Разборка,Disassembly,
+Размещен,Posted,
+Размещение,Accommodation,
+Разнесение оплат,Payment spread,
+Разнесенные,Spaced,
+Разнести,Blow up,
+Разновидность,Variety,
+Разрешенные типы счетов,Allowed account types,
+Разрешить отрицательный остаток,Allow negative balance,
+Распределение на себестоимость,Allocation to cost,
+Распределенная сумма не может превышать стоимость услуги,The allocated amount cannot exceed the cost of the service,
+Распределено,Distributed,
+Распределить,Distribute,
+Рассчитать скидки,Calculate discounts,
+Расход со склада,Warehouse consumption,
+Расходовано,Spent,
+Расхождения,Discrepancies,
+Расценить,Rate,
+Расчет себестоимости,Cost calculation,
+Расчеты,Calculations,
+Реализации,Implementation,
+реализации,implementation,
+Реализация,Implementation,
+Реализовано,Implemented,
+Реализовать,To implement,
+Регистр изменения остатка,Remaining change register,
+Регистр продаж,Sales register,
+Регистр резервов,Reserves register,
+Регистр себестоимости,Cost register,
+Редактировать,Edit,
+Резервирование,Reservation,
+Родитель,Parent,
+Розничная,Retail,
+Розничная продажа,Retail,
+Розничная торговля,Retail,
+Розничный,Retail,
+Розничный возврат,Retail return,
+Розничный прайс,Retail price,
+РП,RA,
+С движением,With movement,
+С остатком,With the change,
+С приходом,With income,
+С учетом налогов,Tax included,
+С ценой,With a price,
+Самый лучший продукт,The best product,
+Сбросить,Reset,
+Сводка по продажам,Sales summary,
+Сдача,Surrender,
+Себестоимости номенклатуры,Item cost price,
+Себестоимость,Cost price,
+Себестоимость за единицу,Unit cost,
+Себестоимость остатков,Cost of residues,
+Сегодня,Today,
+Скидка,A discount,
+Скидка[comma] %,Discount[comma] %,
+Скидки,Discounts,
+Склад,Storage,
+СМ,SH,
+Смена,Shift,
+Смена не может быть закрыта раньше чем была открыта,The shift cannot be closed earlier than it was open,
+Смена открыта,The shift is open,
+Смены,Shifts,
+Снять резервирование,Cancel reservation,
+Создан,Created by,
+Создать входящий платеж,Create an incoming payment,
+Создать заказы,Create orders,
+Создать исходящий платеж,Create outgoing payment,
+Создать перемещения,Create displacements,
+Соотношение,Ratio,
+Соотношения единиц измерений,Unit ratios,
+Сотрудник,Employee,
+Сотрудники,Employees,
+СП,SP,
+Спецификации,Specifications,
+Спецификация,Specification,
+Спецификация должна соответствовать выбранной номенклатуре,The specification must match the selected nomenclature,
+Спецификация по умолчанию должна быть активной,The default spec should be active,
+Списание,Magazine,
+Списание сырья,Write-off of raw materials,
+Списание товара,Write-off of goods,
+списания,magazines,
+Списания,Magazines,
+Списать,Write off,
+Списать из,writeOffFrom,
+Список,List,
+Списывать из,Cheat from,
+Спрятать,Hide,
+Средняя себестоимость,Average cost,
+Срок действия,Validity,
+Срок поставки,Delivery time,
+Ссылка,Link,
+СТ,WO,
+Ставка,Rate,
+Статус,Status,
+Статусы,Statuses,
+Статьи ДДС,DDS Articles,
+Статья ДДС,DDS article,
+Статья ДДС должна соответствовать типу платежа,The DDS article must correspond to the type of payment,
+Стоимость изделия,Product cost,
+Стоимость компонентов,Component cost,
+Стоимость приобретения,Acquisition cost,
+Страна,Country,
+Страна происхождения,Country of origin,
+Страны,Country,
+Строк материалов,Material lines,
+Строк продукции,Product lines,
+Строка для партии должна относится к тому же продукту[comma] что и партия,The line for the batch must refer to the same product as the batch,
+Строка инвентаризации,Inventory line,
+Строка компонентов,Component string,
+Строка описи,Inventory line,
+Строка отгрузки,Shipment line,
+Строка приобретения,Acquisition line,
+Строка производных номенклатур,Derived item row,
+Строка реализации,Implementation line,
+Строка списания,Debit line,
+Строки,Strings,
+Строки отгрузки,Shipping lines,
+Строки приобретения,Acquisition lines,
+Строки реализаций,Implementation strings,
+Структура и стоимость,Structure and cost,
+Сумма,Amount,
+Сумма (первичная),Amount (primary),
+Сумма (расчетная),Amount (calculated),
+Сумма по ценам продажи,Sum at selling prices,
+Сумма покупки от,Purchase amount from,
+Сумма скидки,Discount amount,
+Суффикс,Suffix,
+Сформировать,To shape,
+Счет,Account,
+Счет должен принадлежать выбранной компании,The account must belong to the selected company,
+Счет должен принадлежать выбранному контрагенту,The account must belong to the selected Partner,
+Счет компании,Company account,
+Счет контрагента,Partner account,
+Счет покупателя,Customer[quote]s account,
+Счет поставщика,Supplier invoice,
+Счета,Accounts,
+счета,accounts,
+Считать надбавку от,Calculate the markup from,
+Таможенная декларация,Customs declaration,
+Таможенные декларации,Customs declarations,
+Текущая надбавка,Current allowance,
+Текущие остатки,Current balances,
+Текущие остатки,Current balances,
+Телефон,Phone,
+Тема,Subject,
+Теоретическое кол-во,Theoretical quantity,
+Тип,Type,
+Тип внесения денег,Deposit type,
+Тип возврата,Return type,
+Тип возвратного платежа,Chargeback type,
+Тип входящего платежа,Incoming payment type,
+Тип заказа,Order type,
+Тип заказа на производство,Manufacturing order type,
+Тип изъятия денег,Withdrawal type,
+Тип инвентаризации,Inventory type,
+Тип исходящего платежа,Outgoing payment type,
+Тип контрагента,Type of counterparty,
+Тип отгрузки,Shipment type,
+Тип платежа,Payment type,
+Тип поступления,Receipt type,
+Тип прайс-листа,Price list type,
+Тип прайс-листа на продажу,Type of price list for sale,
+Тип приобретения,Acquisition type,
+Тип производственного заказа,Production order type,
+Тип реализации,Implementation type,
+Тип счета,Account type,
+Типы входящих платежей,Types of incoming payments,
+Типы заказов,Types of orders,
+Типы исходящих платежей,Types of outgoing payments,
+Типы прайс-листов,Types of price lists,
+Типы приобретения,Acquisition types,
+Типы производственных заказов,Types of production orders,
+Типы реализации,Implementation types,
+Товар,Product,
+Товар не предназначен для продажи,This product is not for sale,
+Товары,Products,
+У текущего пользователя нет прав доступа к выбранному месту хранения,The current user does not have permission to access the selected storage location,
+Удален штрихкод,Deleted barcode,
+Удалена номенклатура,Item removed,
+Удалена строка,Removed line,
+Удалена строка с индексом[space],Deleted line with index[space],
+Удалить,Delete,
+Уже есть открытая смена,There is already an open shift,
+Уровень,Level,
+Условия,Conditions,
+Условия оплаты,Terms of payment,
+Услуга,Service,
+Услуги,Services,
+Установить в себестоимость цену,Set cost price,
+Установить надбавки из видов цен,Set markups from price types,
+Установить надбавки из предыдущих прайсов,Set markups from previous prices,
+Установить налог,Set tax,
+Установить цены из предыдущих прайсов,Set prices from previous prices,
+Фактическое кол-во,Actual Qty,
+Фамилия,Surname,
+Физ лица,Individuals,
+Физические лица,Individuals,
+Физическое лицо,Individual,
+Фильтры,Filters,
+Фискализация,Fiscalization,
+Фискальный,Fiscal,
+Формат,Format,
+Формат шаблона,Template format,
+Формирование наименования,Formation of the name,
+Хост,Host,
+Цвет,Colour,
+Цена,Price,
+Цена без скидки,Price without discount,
+Цена включает налоги,Price includes taxes,
+Цена итоговая,Final price,
+Цена контрагента,Partner price,
+Цена продажи,Selling price,
+Цена со скидкой,Discount price,
+Центральная касса,Central cash desk,
+Цены,Prices,
+Чек расхода,Expense receipt,
+Черновик,Draft,
+Шаблон,Template,
+Шаблон должен быть включен для данного типа заказа,Template must be included for this type of order,
+Шаблон по умолчанию,Default template,
+Шаблон прайс-листа,Price list template,
+Шаблон этикетки,Label template,
+Шаблоны прайс-листа,Price list templates,
+Шаблоны этикетки,Label templates,
+Штрих-код не найден,Barcode not found,
+Штрихкод,Barcode,
+Штрихкод не найден,Barcode not found,
+Штрихкод уже присутствует в базе данных.,The barcode is already in the database.,
+Штрихкоды,Barcodes,
+Штука,Thing,
+Экспорт атрибутов,Exporting attributes,
+Экспорт банков,Bank export,
+Экспорт единиц измерения,Exporting Units,
+Экспорт касс,Export cash registers,
+Экспорт категорий,Export categories,
+Экспорт мест хранения,Export of storage locations,
+Экспорт налогов на закупку,Export purchase taxes,
+Экспорт налогов на реализацию,Export sales taxes,
+Экспорт организаций,Export organizations,
+Экспорт остатков,Export of residues,
+Экспорт производных номенклатур,Exporting Derived Items,
+Экспорт себестоимостей,Export of cost prices,
+Экспорт соотношений единиц измерений,Exporting unit ratios,
+Экспорт спецификаций,Export specifications,
+Экспорт статей ДДС,Export of DDS articles,
+Экспорт стран,Export countries,
+Экспорт строк спецификаций,Exporting BOM Lines,
+Экспорт счетов,Export accounts,
+Экспорт товаров,Export of goods,
+Экспорт услуг,Export of services,
+Экспорт физических лиц,Export of individuals,
+Экспорт штрихкодов,Экспорт штрихкодов,
+Электронная почта,Email,
+Этикетка,Label,
+Этикетка 58x40,Label 58x40,
+Этикетка 58x60,Label 58x60,
+Этикетки,Labels,
+Этот год,This year,
+Этот месяц,This month,
+Юридические данные,Legal data,
+Является покупателем,Is a Buyer,
+Является поставщиком,Is a Supplier,
