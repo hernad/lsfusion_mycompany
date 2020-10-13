@@ -409,6 +409,7 @@ Cost price,Cost price
 Оплата наличными покупателем,Cash payment by the buyer
 ПН,C2
 Возврат на счет поставщику,Return to supplier account
+ВБ,R2
 Возврат наличных поставщику,Cash back to supplier
 Перемещение с другого счета,Transfer from another account
 Перемещение на другой счет,Transfer to another account
