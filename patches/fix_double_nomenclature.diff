@@ -53,7 +53,7 @@ index 5796390..dd2b8ec 100644
          NEW n = Numerator {
              name(n) <- 'Оптовая продажа';
 -            series(n) <- 'ОП';
-+            series(n) <- 'О4';
++            series(n) <- 'ОФ';
              minValue(n) <- 1;
              maxValue(n) <- 999999;
              stringLength(n) <- 6;
