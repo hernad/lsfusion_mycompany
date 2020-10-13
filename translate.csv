@@ -105,16 +105,18 @@ MX,SL
 поступления,receipts
 Возврат,Return
 Без изображени,No picture
-ВЗ,RT
+ВЗ,RX
 Описи,Descriptions
 WP,DE
 Строка описи,Inventory line
 Внесение денег в ККМ,Depositing money to Fiscal printer
+B4,R7
 CI,FM
 Тип возврата,Return type
-Поступление,Поступление
+Поступление,Admission
+П3,AD
 Отгрузка,Shipment
-WP,DL
+O2,DL
 Контрагент и товар поступления должны совпадать с контрагентом и товаром возврата,The Partner and the goods received must match the Partner and the returned goods
 Вернуть,Return
 Возвращено,Returned
@@ -413,8 +415,11 @@ Cost price,Cost price
 ВБ,R2
 Возврат наличных поставщику,Cash back to supplier
 Перемещение с другого счета,Transfer from another account
+П4,T2
 Перемещение на другой счет,Transfer to another account
+П5,T3
 Ввод начальных остатков денежных средств,Entering initial cash balances
+H2,C0
 Тип входящего платежа,Incoming payment type
 Исходящий платеж,Outgoing payment
 Создать входящий платеж,Create an incoming payment
@@ -435,9 +440,13 @@ Cost price,Cost price
 Создать исходящий платеж,Create outgoing payment
 Автоматически создавать исходящий платеж,Automatically create outgoing payment
 Оплата на счет поставщику,Payment to the supplier[quote]s account
+П2,P9
 Оплата наличными поставщику,Cash payment to supplier
+П6,C7
 Возврат на счет покупателю,Return to customer account
+В2,R5
 Возврат наличными покупателю,Cash back to buyer
+B3,R6
 К оплате,To pay
 Типы исходящих платежей,Types of outgoing payments
 Отчет по приобретениям,Purchases report
@@ -517,7 +526,9 @@ Cost price,Cost price
 К отгрузке,To shipment
 Распределить,Distribute
 Оптовая продажа,Wholesale trade
+O3,W3
 Розничная продажа,Retail
+P2,RT
 Тип реализации,Implementation type
 Типы реализации,Implementation types
 Задолженность,Debt
@@ -932,7 +943,7 @@ X-отчет,X-report
 Заказы покупателей,Buyer orders
 заказе,ordering
 ОП,WT
-РП,RT
+РП,RA
 Заказы покупателям,Buyer orders
 Открыт,Open
 Отправлен,Submitted
@@ -968,10 +979,10 @@ X-отчет,X-report
 Изменить цены,Change prices
 Оптовый,Wholesale
 Оптовый прайс,Wholesale price
-WT,WP
+O5,WP
 Розничный,Retail
 Розничный прайс,Retail price
-RT,RP
+Р3,RP
 Акционный,Promotional
 Акционный прайс,Promotional price
 АП,AP
