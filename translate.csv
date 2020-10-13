@@ -109,8 +109,8 @@ MX,SL
 Описи,Descriptions
 WP,DE
 Строка описи,Inventory line
-Внесение денег в ККМ,Depositing money to KKM
-CI,DC
+Внесение денег в ККМ,Depositing money to Fiscal printer
+CI,FM
 Тип возврата,Return type
 Поступление,Поступление
 Отгрузка,Shipment
@@ -226,6 +226,7 @@ Cost price,Cost price
 Действия,Actions
 Отходы,Waste
 Спецификации,Specifications
+СП,SP
 Выбор спецификации,Specification selection
 Экспорт спецификаций,Export specifications
 Единица измерения,Unit of measurement
@@ -407,7 +408,7 @@ Cost price,Cost price
 Оплата на счет покупателем,Payment to the account by the buyer
 ПБ,C1
 Оплата наличными покупателем,Cash payment by the buyer
-ПН,C2
+ПН,CB
 Возврат на счет поставщику,Return to supplier account
 ВБ,R2
 Возврат наличных поставщику,Cash back to supplier
@@ -815,7 +816,7 @@ X-отчет,X-report
 Перемещение денег из ККМ,Transferring money from cash register
 ИК,CT
 Перемещение денег в ККМ,Transferring money to cash register
-ВК,CI
+ВК,CX
 Выемка денег из ККМ,Taking money out of the cash register
 ИК,CO
 Оформить возврат,Make a return
