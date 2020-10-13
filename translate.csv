@@ -326,7 +326,6 @@ Cost price,Cost price
 Контрагент реализации должен совпадать с контрагентом возврата,The sales Partner must be the same as the return Partner
 Номенклатура реализации должны совпадать с номенклатурой возврата,The sales nomenclature must match the return nomenclature
 Оптовый возврат,Bulk return
-Оптовый возврат,Bulk return
 Розничный возврат,Retail return
 реализации,implementation
 Покупатель,Customer
@@ -406,7 +405,9 @@ Cost price,Cost price
 Входящие платежи,Incoming payments
 Статья ДДС,DDS article
 Оплата на счет покупателем,Payment to the account by the buyer
+ПБ,C1
 Оплата наличными покупателем,Cash payment by the buyer
+ПН,C2
 Возврат на счет поставщику,Return to supplier account
 Возврат наличных поставщику,Cash back to supplier
 Перемещение с другого счета,Transfer from another account
