@@ -1,0 +1,196 @@
+diff --git a/src/main/lsfusion/inventory/receipts/ReceiptInitial.lsf b/src/main/lsfusion/inventory/receipts/ReceiptInitial.lsf
+index 8348e69..71091b5 100644
+--- a/src/main/lsfusion/inventory/receipts/ReceiptInitial.lsf
++++ b/src/main/lsfusion/inventory/receipts/ReceiptInitial.lsf
+@@ -10,7 +10,7 @@ loadDefaultData () + {
+         id(r) <- 'receipt';
+         NEW n = Numerator {
+             name(n) <- 'Поступление';
+-            series(n) <- 'ПП';
++            series(n) <- 'П3';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+diff --git a/src/main/lsfusion/inventory/receipts/shipment/ReceiptShipmentInitial.lsf b/src/main/lsfusion/inventory/receipts/shipment/ReceiptShipmentInitial.lsf
+index 11e9893..4a7c029 100644
+--- a/src/main/lsfusion/inventory/receipts/shipment/ReceiptShipmentInitial.lsf
++++ b/src/main/lsfusion/inventory/receipts/shipment/ReceiptShipmentInitial.lsf
+@@ -11,15 +11,6 @@ loadDefaultData () + {
+         isReturn(s) <- TRUE;
+         nonperiodic(s) <- TRUE;
+         
+-        NEW n = Numerator {
+-            name(n) <- 'Возврат поставщику';
+-            series(n) <- 'ВП';
+-            minValue(n) <- 1;
+-            maxValue(n) <- 999999;
+-            stringLength(n) <- 6;
+-            numerator(s) <- n;
+-        }
+-
+         shipmentType(ReceiptType t) <- s WHERE id(t) = 'receipt';
+     }
+ }
+diff --git a/src/main/lsfusion/inventory/shipments/ShipmentInitial.lsf b/src/main/lsfusion/inventory/shipments/ShipmentInitial.lsf
+index 9d301af..420cf28 100644
+--- a/src/main/lsfusion/inventory/shipments/ShipmentInitial.lsf
++++ b/src/main/lsfusion/inventory/shipments/ShipmentInitial.lsf
+@@ -10,7 +10,7 @@ loadDefaultData () + {
+         id(s) <- 'shipment';
+         NEW n = Numerator {
+             name(n) <- 'Отгрузка';
+-            series(n) <- 'ОП';
++            series(n) <- 'О2';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+diff --git a/src/main/lsfusion/invoicing/invoices/InvoiceInitial.lsf b/src/main/lsfusion/invoicing/invoices/InvoiceInitial.lsf
+index 5796390..dd2b8ec 100644
+--- a/src/main/lsfusion/invoicing/invoices/InvoiceInitial.lsf
++++ b/src/main/lsfusion/invoicing/invoices/InvoiceInitial.lsf
+@@ -10,7 +10,7 @@ loadDefaultData () + {
+         id(t) <- 'wholesale';
+         NEW n = Numerator {
+             name(n) <- 'Оптовая продажа';
+-            series(n) <- 'ОП';
++            series(n) <- 'О4';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+@@ -23,7 +23,7 @@ loadDefaultData () + {
+         taxIncluded(t) <- TRUE;
+         NEW n = Numerator {
+             name(n) <- 'Розничная продажа';
+-            series(n) <- 'РП';
++            series(n) <- 'Р2';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+diff --git a/src/main/lsfusion/invoicing/payments/incoming/IncomingPaymentInitial.lsf b/src/main/lsfusion/invoicing/payments/incoming/IncomingPaymentInitial.lsf
+index 6267340..c4ec96b 100644
+--- a/src/main/lsfusion/invoicing/payments/incoming/IncomingPaymentInitial.lsf
++++ b/src/main/lsfusion/invoicing/payments/incoming/IncomingPaymentInitial.lsf
+@@ -67,7 +67,7 @@ loadDefaultData () + {
+         bank(i) <- TRUE;
+         NEW n = Numerator {
+             name(n) <- 'Перемещение с другого счета';
+-            series(n) <- 'ПР';
++            series(n) <- 'П4';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+@@ -80,7 +80,7 @@ loadDefaultData () + {
+         bank(i) <- TRUE;
+         NEW n = Numerator {
+             name(n) <- 'Перемещение на другой счет';
+-            series(n) <- 'ПР';
++            series(n) <- 'П5';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+@@ -96,7 +96,7 @@ loadDefaultData () + {
+         cash(i) <- TRUE;
+         NEW n = Numerator {
+             name(n) <- 'Ввод начальных остатков денежных средств';
+-            series(n) <- 'НО';
++            series(n) <- 'Н2';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+diff --git a/src/main/lsfusion/invoicing/payments/outgoing/OutgoingPaymentInitial.lsf b/src/main/lsfusion/invoicing/payments/outgoing/OutgoingPaymentInitial.lsf
+index 062d249..d1b8fa7 100644
+--- a/src/main/lsfusion/invoicing/payments/outgoing/OutgoingPaymentInitial.lsf
++++ b/src/main/lsfusion/invoicing/payments/outgoing/OutgoingPaymentInitial.lsf
+@@ -11,7 +11,7 @@ loadDefaultData () + {
+         bank(i) <- TRUE;
+         NEW n = Numerator {
+             name(n) <- 'Оплата на счет поставщику';
+-            series(n) <- 'ПБ';
++            series(n) <- 'П2';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+@@ -24,7 +24,7 @@ loadDefaultData () + {
+         cash(i) <- TRUE;
+         NEW n = Numerator {
+             name(n) <- 'Оплата наличными поставщику';
+-            series(n) <- 'ПН';
++            series(n) <- 'П6';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+@@ -37,7 +37,7 @@ loadDefaultData () + {
+         bank(i) <- TRUE;
+         NEW n = Numerator {
+             name(n) <- 'Возврат на счет покупателю';
+-            series(n) <- 'ВБ';
++            series(n) <- 'В2';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+@@ -50,7 +50,7 @@ loadDefaultData () + {
+         cash(i) <- TRUE;
+         NEW n = Numerator {
+             name(n) <- 'Возврат наличными покупателю';
+-            series(n) <- 'ВН';
++            series(n) <- 'В3';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+diff --git a/src/main/lsfusion/retail/pos/dashboard/cash/PosDashboardCashInitial.lsf b/src/main/lsfusion/retail/pos/dashboard/cash/PosDashboardCashInitial.lsf
+index 9979f9b..f888336 100644
+--- a/src/main/lsfusion/retail/pos/dashboard/cash/PosDashboardCashInitial.lsf
++++ b/src/main/lsfusion/retail/pos/dashboard/cash/PosDashboardCashInitial.lsf
+@@ -40,7 +40,7 @@ loadDefaultData () + {
+         cash(i) <- TRUE;
+         NEW n = Numerator {
+             name(n) <- 'Внесение денег в ККМ';
+-            series(n) <- 'ВК';
++            series(n) <- 'В4';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+@@ -58,7 +58,7 @@ loadDefaultData () + {
+         cash(i) <- TRUE;
+         NEW n = Numerator {
+             name(n) <- 'Выемка денег из ККМ';
+-            series(n) <- 'ИК';
++            series(n) <- 'И2';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+diff --git a/src/main/lsfusion/sales/orders/SalesOrderInitial.lsf b/src/main/lsfusion/sales/orders/SalesOrderInitial.lsf
+index 65267e2..6de3f01 100644
+--- a/src/main/lsfusion/sales/orders/SalesOrderInitial.lsf
++++ b/src/main/lsfusion/sales/orders/SalesOrderInitial.lsf
+@@ -11,7 +11,7 @@ loadDefaultData () + {
+ 
+         NEW n = Numerator {
+             name(n) <- 'Оптовая продажа';
+-            series(n) <- 'ОП';
++            series(n) <- 'О3';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+diff --git a/src/main/lsfusion/sales/pricelists/SalesPricelistInitial.lsf b/src/main/lsfusion/sales/pricelists/SalesPricelistInitial.lsf
+index 933db72..2221beb 100644
+--- a/src/main/lsfusion/sales/pricelists/SalesPricelistInitial.lsf
++++ b/src/main/lsfusion/sales/pricelists/SalesPricelistInitial.lsf
+@@ -16,7 +16,7 @@ loadDefaultData () + {
+ 
+         NEW n = Numerator {
+             name(n) <- 'Оптовый прайс';
+-            series(n) <- 'ОП';
++            series(n) <- 'О5';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
+@@ -34,7 +34,7 @@ loadDefaultData () + {
+ 
+         NEW n = Numerator {
+             name(n) <- 'Розничный прайс';
+-            series(n) <- 'РП';
++            series(n) <- 'Р3';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
+             stringLength(n) <- 6;
