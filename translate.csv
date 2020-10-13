@@ -104,6 +104,13 @@ MX,SL
 Задание на поступление,Assignment for admission
 поступления,receipts
 Возврат,Return
+Без изображени,No picture
+ВЗ,RT
+Описи,Descriptions
+WP,DE
+Строка описи,Inventory line
+Внесение денег в ККМ,Depositing money to KKM
+CI,DC
 Тип возврата,Return type
 Поступление,Поступление
 Отгрузка,Shipment
