@@ -1,9 +1,10 @@
 #!/bin/bash
 
-
+cnt=0
 while IFS=, read -r ORIG TRANS
 do
-    
+    ((cnt=cnt+1))
+  
     ORIG=`echo $ORIG | sed -e 's/\[comma\]/,/g'`
     TRANS=`echo $TRANS | sed -e 's/\[comma\]/,/g'`
     ORIG=`echo $ORIG | sed -e 's/\[space\]/ /g'`
@@ -14,6 +15,6 @@ do
     TRANS=`echo $TRANS | sed -e 's/\[space\]/\\x20/g'`
 
    
-    echo "'$ORIG' -> '$TRANS'"
+    echo "$cnt: '$ORIG' -> '$TRANS'"
     find -name  '*.lsf' | xargs sed -i "s@'$ORIG'@'$TRANS'@g"
 done < translate.csv

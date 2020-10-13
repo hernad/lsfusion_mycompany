@@ -107,6 +107,7 @@ MX,SL
 Тип возврата,Return type
 Поступление,Поступление
 Отгрузка,Shipment
+WP,DL
 Контрагент и товар поступления должны совпадать с контрагентом и товаром возврата,The Partner and the goods received must match the Partner and the returned goods
 Вернуть,Return
 Возвращено,Returned
@@ -207,6 +208,8 @@ Cost price,Cost price
 Активная,Active
 Активные,Active
 Номенклатура,Nomenclature
+Номенклатуры,Nomenclatures
+НМ,NM
 Номенклатура спецификации по умолчанию должна совпадать с номенклатурой,The default BOM nomenclature must match the nomenclature
 Спецификация по умолчанию должна быть активной,The default spec should be active
 Строка компонентов,Component string
@@ -368,7 +371,7 @@ Cost price,Cost price
 Не заполнены отгруженные количества для отгрузки[space],Shipment quantities not filled for shipment[space]
 . Проставить зарезервированными?,. Leave reserved?
 Куда,Where
-ПР,MV
+ПР,TR
 Экспорт статей ДДС,Export of DDS articles
 Импорт статей ДДС,Import of DDS articles
 Статьи ДДС,DDS Articles
@@ -572,7 +575,11 @@ Cost price,Cost price
 Шаблоны этикетки,Label templates
 Кол-во шаблонов,Number of templates
 Вес единицы[comma] кг,Unit weight[comma] kg
-Объем единицы[comma] м3,Unit volume [comma] m3
+Объем единицы[comma] м3,Unit volume[comma] m3
+Доступно (откуда),Available (from)
+Зарезервированое кол-во не может быть меньше 0,Reserved quantity cannot be less than 0
+Нельзя зарезервировать товара по местам хранения больше чем в строке,You cannot reserve goods for storage locations more than in a line
+Введите планируемую дату,Enter the planned date
 Страна происхождения,Country of origin
 Товары,Products
 Неактивный,Inactive
@@ -968,3 +975,42 @@ RT,RP
 Считать надбавку от,Calculate the markup from
 Типы прайс-листов,Types of price lists
 [space](текущая),[space](current)
+Тип прайс-листа на продажу,Type of price list for sale
+Отчет по продажам,Sales report
+Сводка по продажам,Sales summary
+Продажи по неделям,Sales by week
+Продажи по покупателям,Sales by customer
+Оборот,Turnover
+Доход,Income
+Продажи по местам хранения,Sales by location
+Продажи по категориям,Sales by category
+Интервал дат,Date interval
+Сегодня,Today
+Вчера,Yesterday
+Завтра,Tomorrow
+7 дней,7 days
+30 дней,30 days
+Этот месяц,This month
+Этот год,This year
+Черновик,Draft
+Цвет,Colour
+Отключить запись истории,Disable history recording
+Добавлена строка,Added line
+Добавлена строка с индексом[space],Added line with index[space]
+Удалена строка,Removed line
+Удалена строка с индексом[space],Deleted line with index[space]
+Изменено исходное кол-во,Changed the original quantity
+Изменено исходное кол-во продукта[space],Changed the original product quantity[space]
+Изменен продукт,Modified product
+Изменен продукт в строке[space],Product changed in line[space]
+Изменен статус,Status changed
+Изменен статус на[space],Changed status to[space]
+Цена итоговая,Final price
+Формат шаблона,Template format
+Имя файла шаблона,Template file name
+Принтер,Printer
+Ввод количества,Quantity input
+Введите количество :,Enter quantity:
+Отм,Cancel
+Отмечено,Noted
+Удалить,Delete
