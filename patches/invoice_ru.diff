@@ -1,0 +1,17 @@
+diff --git a/src/main/lsfusion/invoicing/invoices/InvoiceInitial.lsf b/src/main/lsfusion/invoicing/invoices/InvoiceInitial.lsf
+index 5796390..b98e8fb 100644
+--- a/src/main/lsfusion/invoicing/invoices/InvoiceInitial.lsf
++++ b/src/main/lsfusion/invoicing/invoices/InvoiceInitial.lsf
+@@ -6,10 +6,10 @@ NAMESPACE Invoicing;
+ 
+ loadDefaultData () + {
+     NEW t = InvoiceType {
+-        name(t) <- 'Оптовая продажа';
++        name(t) <- 'Счет-фактура';
+         id(t) <- 'wholesale';
+         NEW n = Numerator {
+-            name(n) <- 'Оптовая продажа';
++            name(n) <- 'Счет-фактура';
+             series(n) <- 'ФA';
+             minValue(n) <- 1;
+             maxValue(n) <- 999999;
