@@ -136,8 +136,8 @@ X-отчет,X-report
 Вчера,Yesterday
 Выбор,Choice
 Выбор категории,Category selection
-Выбор контрагента,Choosing an Partner
-Выбор номенклатуры,Choice of nomenclature
+Выбор контрагента,Select Partner
+Выбор номенклатуры,Select Item
 Выбор продукции,Product selection
 Выбор скидки,Discount selection
 Выбор спецификации,Specification selection
@@ -198,7 +198,7 @@ X-отчет,X-report
 Добавить,Add to
 Добавить в чек,Add to check
 Добавлен штрихкод,Added barcode
-Добавлена номенклатура,Nomenclature added
+Добавлена номенклатура,Item added
 Добавлена строка,Added line
 Добавлена строка с индексом[space],Added line with index[space]
 Документ,Document
@@ -495,14 +495,14 @@ X-отчет,X-report
 Непериодичная,Non-periodic
 НМ,NM
 Новый чек,New check
-Номенклатура,Nomenclature
+Номенклатура,Item
 Номенклатура не предназначена для закупки,The item is not intended for purchase
 Номенклатура не предназначена для продажи,The item is not for sale
-Номенклатура реализации должны совпадать с номенклатурой возврата,The sales nomenclature must match the return nomenclature
-Номенклатура спецификации компонента должна равняться номенклатуре компонента,Component BOM nomenclature must equal component item nomenclature
-Номенклатура спецификации по умолчанию должна совпадать с номенклатурой,The default BOM nomenclature must match the nomenclature
+Номенклатура реализации должны совпадать с номенклатурой возврата,The sales item must match the return item
+Номенклатура спецификации компонента должна равняться номенклатуре компонента,Component BOM item must equal component item
+Номенклатура спецификации по умолчанию должна совпадать с номенклатурой,The default BOM item must match the item
 Номенклатура спецификации производственного заказа должна равняться номенклатуре производственного заказа,Manufacturing order BOM item must be equal to manufacturing order item
-Номенклатуры,Nomenclatures
+Номенклатуры,Items
 Номер,Room
 Номер спецификации,Specification number
 Номер счета,Account number
@@ -540,7 +540,7 @@ O5,X5
 Организацией сотрудника может быть только компания,An employee[quote]s organization can only be a company
 Организации,Organizations
 Организация,Organization
-Основная номенклатура,Basic nomenclature
+Основная номенклатура,Basic items
 Основные,Basic
 Осталось,Left
 Остатки,Leftovers
@@ -699,10 +699,10 @@ O5,X5
 Принятое количество должно быть от 0 до исходного,The accepted amount must be between 0 and the original
 Принять,To accept
 Приобрести,Purchase
-Приобретение,Acquisition
-Приобретение,Acquisition
-приобретения,acquisitions
-Приобретения,Acquisitions
+Приобретение,Purchase
+Приобретение,Purchase
+приобретения,purchases
+Приобретения,Purchases
 Приобретено,Purchased
 Проведен,Carried out
 Провести,Conduct
@@ -811,7 +811,7 @@ P2,RG
 СП,SP
 Спецификации,Specifications
 Спецификация,Specification
-Спецификация должна соответствовать выбранной номенклатуре,The specification must match the selected nomenclature
+Спецификация должна соответствовать выбранной номенклатуре,The specification must match the selected item
 Спецификация по умолчанию должна быть активной,The default spec should be active
 Списание,Magazine
 Списание сырья,Write-off of raw materials
