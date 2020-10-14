@@ -177,7 +177,7 @@ X-отчет,X-report
 Дата с,Date s
 Дата[comma] с которой пересчитывать,Date from which to recalculate
 Движение денежных средств,Flow of funds
-Движение товара,Movement of goods
+Движение товара,Movement of Products
 Движения,Movement
 Действия,Actions
 Действует с,Valid from
@@ -321,7 +321,7 @@ X-отчет,X-report
 Импорт статей ДДС,Import of DDS articles
 Импорт стран,Import countries
 Импорт строк спецификаций,Importing BOM Lines
-Импорт товаров,Import goods
+Импорт товаров,Import Products
 Импорт услуг,Import services
 Импорт физических лиц,Import individuals
 Импорт штрихкодов,Import barcodes
@@ -399,8 +399,8 @@ X-отчет,X-report
 Кол-во мест,Qtys in place
 Кол-во оплат,Number of payments
 Кол-во строк,Number of lines
-Кол-во строк с товарами,Number of lines with goods
-Кол-во строк с услугами,Number of lines with services
+Кол-во строк с товарами,Number of lines with Products
+Кол-во строк с услугами,Number of lines with Services
 Кол-во типов,Number of types
 Кол-во шаблонов,Number of templates
 Количество,Number
@@ -418,7 +418,7 @@ X-отчет,X-report
 Контрагент заказа поставщику должен быть поставщиком,The Partner of the Purchase order must be Vendor
 Контрагент и номенклатура реализации должны совпадать с контрагентом и товаром возврата,Partner and sales item must match the Partner and return item
 Контрагент и товар отгрузки должны совпадать с контрагентом и товаром возврата,The Partner and shipment item must match the Partner and return item
-Контрагент и товар поступления должны совпадать с контрагентом и товаром возврата,The Partner and the goods received must match the Partner and the returned goods
+Контрагент и товар поступления должны совпадать с контрагентом и товаром возврата,The Partner and the Products received must match the Partner and the returned Products
 Контрагент реализации должен совпадать с контрагентом возврата,The sales Partner must be the same as the return Partner
 Контрагенты,Partners
 Копировать,Copy
@@ -452,7 +452,7 @@ X-отчет,X-report
 Надбавка,Surcharge
 Надбавка (от верхней группы), %
 Надбавка по категории[comma] %,Category markup[comma] %
-Надбавка по товару[comma] %,Margin on goods[comma]
+Надбавка по товару[comma] %,Margin on Products[comma]
 Надбавка[comma] %,Surcharge %
 Надбавки,allowances
 Назад,Back to
@@ -482,11 +482,11 @@ X-отчет,X-report
 Недостачи,Gaps
 Незапланированная,Незапланированная
 Незапланированная отгрузка,Unplanned shipment
-Нельзя зарезервировать товара по местам хранения больше чем в строке,You cannot reserve goods for storage locations more than in a line
+Нельзя зарезервировать товара по местам хранения больше чем в строке,You cannot reserve Products for storage locations more than in a line
 Нельзя изменить количество в строке[comma] к которой существует действующий производственный заказ,You cannot change the quantity on a line for which a valid manufacturing order exists
 Нельзя изменить номенклатуру в строке[comma] к которой существует действующий производственный заказ,You cannot change an item on a line for which a valid manufacturing order exists
 Нельзя изменить спецификацию в строке[comma] к которой существует действующий производственный заказ,You cannot change a BOM on a line for which a valid manufacturing order exists
-Нельзя отгрузить товара по местам хранения больше чем в строке,You cannot ship goods to storage locations more than in a line
+Нельзя отгрузить товара по местам хранения больше чем в строке,You cannot ship Products to storage locations more than in a line
 Нельзя отменить заказ[comma] к которому существуют действующие производственные заказы,You cannot cancel an order for which there are valid manufacturing orders
 Нельзя удалить единицу измерения на которую ссылается номенклатура,You cannot delete the unit of measure referenced by the item
 Нельзя удалить место хранения имеющее подчиненные склады,You cannot delete a storage location that has subordinate warehouses
@@ -645,7 +645,7 @@ O5,X5
 По расходу,By consumption
 По смене,By change
 По товару отгрузка превышает количество в заказе,For the product
-По товару поступление превышает количество в заказе,For the goods[comma] the receipt exceeds the quantity in the order
+По товару поступление превышает количество в заказе,For the Products[comma] the receipt exceeds the quantity in the order
 По умолчанию,Default
 по[space],by[space]
 Подбор,Selection
@@ -815,7 +815,7 @@ P2,RG
 Спецификация по умолчанию должна быть активной,The default spec should be active
 Списание,Magazine
 Списание сырья,Write-off of raw materials
-Списание товара,Write-off of goods
+Списание товара,Write-off of Products
 списания,magazines
 Списания,Magazines
 Списать,Write off
@@ -983,8 +983,9 @@ P2,RG
 Экспорт статей ДДС,Export of DDS articles
 Экспорт стран,Export countries
 Экспорт строк спецификаций,Exporting BOM Lines
+Импорт счетов,Import accounts
 Экспорт счетов,Export accounts
-Экспорт товаров,Export of goods
+Экспорт товаров,Export of Products
 Экспорт услуг,Export of services
 Экспорт физических лиц,Export of individuals
 Экспорт штрихкодов,Exporting barcodes
@@ -1024,3 +1025,27 @@ P2,RG
 Строки поступлений,Receipt lines
 Незапланированное поступление,Unscheduled admission
 Не задано место хранение (куда) для перемещения,Storage location (where) for moving is not specified
+Разновидности,Variations
+Заказ поставщику[space],Purchase order[space]
+Результат инвентаризации,Inventory result
+Место хранения должно быть дочерним от места хранения из документа потупления,The storage location must be a child of the storage location from the document
+Разместить (+),Place (+)
+Незапланированная,Unplanned
+[space]отгрузки,[space]delivery
+Типы отгрузок,Delivery types
+Нельзя удалять налог, участвующий в расчетах,You cannot remove tax involved in calculations
+Ед .изм.,Unit.
+Без изображения,No picture
+Отпуск разрешил,Vacation allowed
+Главный (старший) бухгалтер,Chief (senior) accountant
+Отпуск произвел,The leave produced
+Отпуск разрешил,Vacation allowed
+Руководитель организации,Head of the organization
+ИНН и ОКПО организаций,TIN and OKPO organizations
+Запрос ценового предложения,Request for a quote
+Ошибка -[space],Error -[space]
+Ошибка - нет связи с хостом АТОЛ v.10,Error - there is no connection with the ATOL v.10 host
+Ошибка - потеряна связь с хостом АТОЛ v.10,Error - lost connection with ATOL v.10 host
+Заказы покупателю[space],Sales orders[space]
+Заказ-наряд,Work order
+Акт выполненных работ,Certificate of completion
