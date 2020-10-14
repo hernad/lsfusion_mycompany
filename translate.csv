@@ -9,6 +9,7 @@ ru,en
 [space]на[space],[space]on[space]
 [space]начала,[space]start
 [space]от[space],[space]from[space]
+[space]отгрузки,[space]delivery
 [space]открытия,[space]discoveries
 [space]планируемая,[space]the planned
 30 дней,30 days
@@ -18,15 +19,18 @@ B3,R6
 B4,R7
 CI,FM
 Cost price,Cost price
-Счет-фактура,Invoice
 H2,C0
 MX,SL
 №,No
 O2,DL
-ФA,IN
+O2,X2
 O3,W3
+O3,X3
+O4,X4
 O5,W5
+O5,X5
 P2,RT
+P2,RG
 WP,DE
 X-отчет,X-report
 Автозаказ,Auto order
@@ -40,6 +44,7 @@ X-отчет,X-report
 Адрес доставки,Delivery address
 Адрес получателя,Recipient[quote]s address
 Адрес поставщика,Supplier address
+Акт выполненных работ,Certificate of completion
 Активен,Active
 Активная,Active
 Активные,Active
@@ -63,6 +68,7 @@ X-отчет,X-report
 Банковский счет,Bank account
 Без изображени,No picture
 Без изображения,Без изображения
+Без изображения,No picture
 Без цены,No price
 БИК,BAC
 Был заказ,There was an order
@@ -135,6 +141,7 @@ X-отчет,X-report
 Входящий платeж,Incoming payment
 Вчера,Yesterday
 Выбор,Choice
+Выбор видов цен,Selection of price types
 Выбор категории,Category selection
 Выбор контрагента,Select Partner
 Выбор номенклатуры,Select Item
@@ -153,6 +160,7 @@ X-отчет,X-report
 Выемка денег из ККМ,Taking money out of the cash register
 Выставлено счетов,Billed
 Габаритный вес,Overall weight
+Главный (старший) бухгалтер,Chief (senior) accountant
 Город,City
 Группа,Group
 Группа 1,Group 1
@@ -171,6 +179,7 @@ X-отчет,X-report
 Дата начала,start date
 Дата отгрузки,Shipping date
 Дата последнего прихода, Date of last arrival
+Дата последней отгрузки,Last Ship Date
 Дата поставки,Delivery date
 Дата поступления,Receipt Date
 Дата производства,date of manufacture
@@ -215,11 +224,16 @@ X-отчет,X-report
 Доступно (откуда),Available (from)
 Доступные,Available
 Доступный остаток,Available balance
+Доступный остаток (без учета изменений),Available balance (excluding changes)
+Доступный остаток (с учетом вложенности без учета изменений),Available balance (including nesting, excluding changes)
+Доступный остаток (с учетом вложенности),Available balance (including nesting)
+Доступный остаток не может быть отрицательным,Available balance cannot be negative
 Доход,Income
 Драйвер,Driver
 Драйвер ККТ,Fiscal driver
 Драйверы,Drivers
 Другие единицы измерений,Other UOMs
+Ед .изм.,Unit.
 Ед. изм.,UOM name
 Ед. изм. контрагента,Unit rev. Partner
 Единица измерения,Unit of measurement
@@ -240,6 +254,8 @@ X-отчет,X-report
 Заказ мобильный,Mobile order
 Заказ покупателя,Purchase Order
 Заказ поставщику,Purchase Order
+Заказ поставщику[space],Purchase order[space]
+Заказ-наряд,Work order
 заказа покупателя,Sales order
 заказа поставщику,Purchase order
 Заказанное количество,Ordered quantity
@@ -248,6 +264,7 @@ X-отчет,X-report
 Заказчик,Customer
 Заказы,Orders
 Заказы покупателей,Sales orders
+Заказы покупателю[space],Sales orders[space]
 Заказы покупателям,Sales orders
 Заказы поставщикам,Purchase orders
 Закрыт,Closed
@@ -264,11 +281,16 @@ X-отчет,X-report
 Заполнить Отгружено,Fill Shipped
 Заполнить по спецификации,Fill in according to specification
 Заполнить Принято,Fill Accepted
+Запрет отрицательных остатков,Prohibiting negative balances
+Запрещено удалять виды цен[comma] по которым есть прайсы,It is forbidden to delete the types of prices for which there are prices
 Запрещено удалять категории[comma] на которые ссылаются другие категории,It is forbidden to delete categories that are referenced by other categories
 Запрещено удалять статьи[comma] на которые ссылаются другие статьи,It is forbidden to delete articles that are referenced by other articles
 Запрос предложений,Request for proposals
+Запрос ценового предложения,Request for a quote
 Зарезервировано,Reserved
+Зарезервировано (с учетом вложенности),Reserved (including nesting)
 Зарезервировано (с учетом вложенных),Reserved (including nested)
+Зарезервированое кол-во,Reserved quantity
 Зарезервированое кол-во не может быть меньше 0,Reserved quantity cannot be less than 0
 Зарезервировать,Make a reservation
 ЗК,PO
@@ -297,6 +319,7 @@ X-отчет,X-report
 Изменившиеся,Changed
 Изменить на[comma] %,Change to[comma] %
 Изменить цены,Change prices
+Изменять цены,Change prices
 Изображение,Picture
 Изображения,Pictures
 Израсходовано,Spent
@@ -321,6 +344,7 @@ X-отчет,X-report
 Импорт статей ДДС,Import of DDS articles
 Импорт стран,Import countries
 Импорт строк спецификаций,Importing BOM Lines
+Импорт счетов,Import accounts
 Импорт товаров,Import Products
 Импорт услуг,Import services
 Импорт физических лиц,Import individuals
@@ -332,6 +356,7 @@ X-отчет,X-report
 инвентаризации,inventory
 Инвентаризации,Inventories
 Инвентаризация,Inventory
+ИНН и ОКПО организаций,TIN and OKPO organizations
 Интервал дат,Date interval
 Используются,Are used
 История,History
@@ -375,19 +400,19 @@ X-отчет,X-report
 Код ед. изм.,Unit change code
 Код единицы измерения,Unit code
 Код категории,Category code
-Код контрагента,Contractor code
+Код контрагента,Partner code
 Код места хранения,Storage location code
 Код места хранения,Storage location code
 Код номенклатуры,Item code
 Код организации,Organization code
-Код покупателя,Buyer code
+Код покупателя,Customer code
 Код продукта,Product code
 Код родительской категории,Parent category code
 Код родителя,Parent code
 Код страны,Code of the country
 Код страны происхождения,Country of origin code
 Код товара,Product code
-Код у поставщика,Код у поставщика
+Код у поставщика,Vendor code
 Код услуги,Service code
 Код учетной единицы,Accounting unit code
 Кол-во,Quantity
@@ -398,6 +423,8 @@ X-отчет,X-report
 Кол-во контрагента,Partner[quote]s quantity
 Кол-во мест,Qtys in place
 Кол-во оплат,Number of payments
+Кол-во отправленное,Quantity sent
+Кол-во поступившее,Number of received
 Кол-во строк,Number of lines
 Кол-во строк с товарами,Number of lines with Products
 Кол-во строк с услугами,Number of lines with Services
@@ -433,6 +460,7 @@ X-отчет,X-report
 Место хранения,Storage
 Место хранения (куда),Storage location (where)
 Место хранения (откуда),Storage location (from where)
+Место хранения должно быть дочерним от места хранения из документа потупления,The storage location must be a child of the storage location from the document
 Место хранения строки инвентаризации не является потомком места хранения документа,The inventory line storage location is not a descendant of the document storage location
 Метод оплаты,Payment method
 Метод расчета себестоимости,Cost calculation method
@@ -475,13 +503,17 @@ X-отчет,X-report
 Не выбрано место хранения (откуда),No storage location selected (from where)
 Не выбрано место хранения получателя в завершенном производственном заказе,No recipient storage location selected in completed manufacturing order
 Не выбрано место хранения списания в производственном заказе,Write-off storage location not selected in manufacturing order
+Не задано место хранение (куда) для перемещения,Storage location (where) for moving is not specified
 Не заполены принятые количества для поступления[space],Accepted Receipt Quantities Not Filled[space] 
 Не заполнены отгруженные количества для отгрузки[space],Shipment quantities not filled for shipment[space]
 Неактивная,Inactive
 Неактивный,Inactive
 Недостачи,Gaps
 Незапланированная,Незапланированная
+Незапланированная,Unplanned
 Незапланированная отгрузка,Unplanned shipment
+Незапланированное,Unplanned
+Незапланированное поступление,Unscheduled admission
 Нельзя зарезервировать товара по местам хранения больше чем в строке,You cannot reserve Products for storage locations more than in a line
 Нельзя изменить количество в строке[comma] к которой существует действующий производственный заказ,You cannot change the quantity on a line for which a valid manufacturing order exists
 Нельзя изменить номенклатуру в строке[comma] к которой существует действующий производственный заказ,You cannot change an item on a line for which a valid manufacturing order exists
@@ -492,6 +524,7 @@ X-отчет,X-report
 Нельзя удалить место хранения имеющее подчиненные склады,You cannot delete a storage location that has subordinate warehouses
 Нельзя удалить строку на основании которой создан производственный заказ,You cannot delete the line from which the manufacturing order was created
 Нельзя удалять значение[comma] которое используется,You cannot delete the value that is in use
+Нельзя удалять налог, участвующий в расчетах,You cannot remove tax involved in calculations
 Непериодичная,Non-periodic
 НМ,NM
 Новый чек,New check
@@ -514,10 +547,6 @@ X-отчет,X-report
 Обязателен для заполнения,Required
 Ожидает отгрузку,Awaiting shipment
 Окончание действия,End of action
-O2,X2
-O3,X3
-O4,X4
-O5,X5
 ОП,WT
 Операции,Actions
 Описание,Description
@@ -577,6 +606,9 @@ O5,X5
 Отобрано,Selected
 Отправить,Send message
 Отправлен,Submitted
+Отпуск произвел,The leave produced
+Отпуск разрешил,Vacation allowed
+Отпуск разрешил,Vacation allowed
 Отсутствует атрибут в базе данных с кодом[space],Missing attribute in database with code[space]
 Отсутствует банк в базе данных с кодом[space],There is no bank in the database with the code[space]
 Отсутствует единица измерения в базе данных с кодом[space],Unit of measure is missing in the database with code[space]
@@ -597,6 +629,9 @@ O5,X5
 Отчет по реализациям,Sales report
 Отчеты,Reports
 Оформить возврат,Make a return
+Ошибка - нет связи с хостом АТОЛ v.10,Error - there is no connection with the ATOL v.10 host
+Ошибка - потеряна связь с хостом АТОЛ v.10,Error - lost connection with ATOL v.10 host
+Ошибка -[space],Error -[space]
 П2,P9
 П3,AD
 П4,T2
@@ -630,6 +665,7 @@ O5,X5
 Планируемое кол-во,Planned quantity
 Планируемое кол-во партий,Planned number of parties
 Планируемое количество,Planned quantity
+Планируемое количество должно быть от 0 до максимально разрешенного,The planned amount should be between 0 and the maximum allowed
 Плановая себестоимость,Planned cost
 Платеж,Payment
 Платежи,Payments
@@ -734,14 +770,17 @@ O5,X5
 Процессы,Processes
 Прочая информация,other information
 Прочие,Others
-P2,RG
 Р3,RP
 Разборка,Disassembly
+Разместить (+),Place (+)
 Размещен,Posted
 Размещение,Accommodation
+Размещенное количество не может быть больше принятого,The amount placed cannot be greater than the accepted amount
+Размещено,Posted by
 Разнесение оплат,Payment spread
 Разнесенные,Spaced
 Разнести,Blow up
+Разновидности,Variations
 Разновидность,Variety
 Разрешенные типы счетов,Allowed account types
 Разрешить отрицательный остаток,Allow negative balance
@@ -763,10 +802,12 @@ P2,RG
 Реализовать,To implement
 Регистр изменения остатка,Remaining change register
 Регистр продаж,Sales register
+Регистр резервирования,Reservation register
 Регистр резервов,Reserves register
 Регистр себестоимости,Cost register
 Редактировать,Edit
 Резервирование,Reservation
+Результат инвентаризации,Inventory result
 Родитель,Parent
 Розничная,Retail
 Розничная продажа,Retail
@@ -775,6 +816,7 @@ P2,RG
 Розничный возврат,Retail return
 Розничный прайс,Retail price
 РП,RA
+Руководитель организации,Head of the organization
 С движением,With movement
 С остатком,With the change
 С приходом,With income
@@ -847,12 +889,14 @@ P2,RG
 Строка компонентов,Component string
 Строка описи,Inventory line
 Строка отгрузки,Shipment line
+Строка поступления,Receipt line
 Строка приобретения,Acquisition line
 Строка производных номенклатур,Derived item row
 Строка реализации,Implementation line
 Строка списания,Debit line
 Строки,Strings
 Строки отгрузки,Shipping lines
+Строки поступлений,Receipt lines
 Строки приобретения,Acquisition lines
 Строки реализаций,Implementation strings
 Структура и стоимость,Structure and cost
@@ -871,6 +915,7 @@ P2,RG
 Счет контрагента,Partner account
 Счет покупателя,Customer[quote]s account
 Счет поставщика,Vendor invoice
+Счет-фактура,Invoice
 Счета,Accounts
 счета,accounts
 Считать надбавку от,Calculate the markup from
@@ -879,6 +924,9 @@ P2,RG
 Текущая надбавка,Current allowance
 Текущие остатки,Current balances
 Текущие остатки,Current balances
+Текущий остаток,Current balance
+Текущий остаток (с учетом вложенности),Current balance (including nesting)
+Текущий остаток не может быть отрицательным,The current balance cannot be negative
 Телефон,Phone
 Тема,Subject
 Теоретическое кол-во,Theoretical quantity
@@ -905,11 +953,13 @@ P2,RG
 Типы входящих платежей,Types of incoming payments
 Типы заказов,Types of orders
 Типы исходящих платежей,Types of outgoing payments
+Типы отгрузок,Delivery types
 Типы прайс-листов,Types of price lists
 Типы приобретения,Acquisition types
 Типы производственных заказов,Types of manufacturing orders
 Типы реализации,Implementation types
 Товар,Product
+Товар не предназначен для закупки,The product is not intended for purchase
 Товар не предназначен для продажи,This product is not for sale
 Товары,Products
 У текущего пользователя нет прав доступа к выбранному месту хранения,The current user does not have permission to access the selected storage location
@@ -929,6 +979,7 @@ P2,RG
 Установить надбавки из предыдущих прайсов,Set markups from previous prices
 Установить налог,Set tax
 Установить цены из предыдущих прайсов,Set prices from previous prices
+ФA,IN
 Фактическое кол-во,Actual Qty
 Фамилия,Surname
 Физ лица,Individuals
@@ -983,7 +1034,6 @@ P2,RG
 Экспорт статей ДДС,Export of DDS articles
 Экспорт стран,Export countries
 Экспорт строк спецификаций,Exporting BOM Lines
-Импорт счетов,Import accounts
 Экспорт счетов,Export accounts
 Экспорт товаров,Export of Products
 Экспорт услуг,Export of services
@@ -997,55 +1047,5 @@ P2,RG
 Этот год,This year
 Этот месяц,This month
 Юридические данные,Legal data
-Является покупателем,Is a Customer
-Является поставщиком,Is a Vendor
-Выбор видов цен,Selection of price types
-Кол-во поступившее,Number of received
-Кол-во отправленное,Quantity sent
-Текущий остаток,Current balance
-Текущий остаток (с учетом вложенности),Current balance (including nesting)
-Дата последней отгрузки,Last Ship Date
-Запрет отрицательных остатков,Prohibiting negative balances
-Текущий остаток не может быть отрицательным,The current balance cannot be negative
-Размещенное количество не может быть больше принятого,The amount placed cannot be greater than the accepted amount
-Размещено,Posted by
-Изменять цены,Change prices
-Запрещено удалять виды цен[comma] по которым есть прайсы,It is forbidden to delete the types of prices for which there are prices
-Регистр резервирования,Reservation register
-Зарезервированое кол-во,Reserved quantity
-Зарезервировано (с учетом вложенности),Reserved (including nesting)
-Доступный остаток (без учета изменений),Available balance (excluding changes)
-Доступный остаток (с учетом вложенности),Available balance (including nesting)
-Доступный остаток (с учетом вложенности без учета изменений),Available balance (including nesting, excluding changes)
-Доступный остаток не может быть отрицательным,Available balance cannot be negative
-Незапланированное,Unplanned
-Строка поступления,Receipt line
-Товар не предназначен для закупки,The product is not intended for purchase
-Планируемое количество должно быть от 0 до максимально разрешенного,The planned amount should be between 0 and the maximum allowed
-Строки поступлений,Receipt lines
-Незапланированное поступление,Unscheduled admission
-Не задано место хранение (куда) для перемещения,Storage location (where) for moving is not specified
-Разновидности,Variations
-Заказ поставщику[space],Purchase order[space]
-Результат инвентаризации,Inventory result
-Место хранения должно быть дочерним от места хранения из документа потупления,The storage location must be a child of the storage location from the document
-Разместить (+),Place (+)
-Незапланированная,Unplanned
-[space]отгрузки,[space]delivery
-Типы отгрузок,Delivery types
-Нельзя удалять налог, участвующий в расчетах,You cannot remove tax involved in calculations
-Ед .изм.,Unit.
-Без изображения,No picture
-Отпуск разрешил,Vacation allowed
-Главный (старший) бухгалтер,Chief (senior) accountant
-Отпуск произвел,The leave produced
-Отпуск разрешил,Vacation allowed
-Руководитель организации,Head of the organization
-ИНН и ОКПО организаций,TIN and OKPO organizations
-Запрос ценового предложения,Request for a quote
-Ошибка -[space],Error -[space]
-Ошибка - нет связи с хостом АТОЛ v.10,Error - there is no connection with the ATOL v.10 host
-Ошибка - потеряна связь с хостом АТОЛ v.10,Error - lost connection with ATOL v.10 host
-Заказы покупателю[space],Sales orders[space]
-Заказ-наряд,Work order
-Акт выполненных работ,Certificate of completion
+Является покупателем,Is Customer
+Является поставщиком,Is Vendor
