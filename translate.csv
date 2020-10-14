@@ -495,7 +495,7 @@ X-отчет,X-report
 Непериодичная,Non-periodic
 НМ,NM
 Новый чек,New check
-Номенклатура,Item
+Номенклатура,Items
 Номенклатура не предназначена для закупки,The item is not intended for purchase
 Номенклатура не предназначена для продажи,The item is not for sale
 Номенклатура реализации должны совпадать с номенклатурой возврата,The sales item must match the return item
@@ -839,7 +839,7 @@ P2,RG
 Стоимость приобретения,Acquisition cost
 Страна,Country
 Страна происхождения,Country of origin
-Страны,Country
+Страны,Countries
 Строк материалов,Material lines
 Строк продукции,Product lines
 Строка для партии должна относится к тому же продукту[comma] что и партия,The line for the batch must refer to the same product as the batch
