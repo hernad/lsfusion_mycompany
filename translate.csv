@@ -874,8 +874,8 @@ X-отчет,X-report
 Статус,Status
 Статусы,Statuses
 Статьи ДДС,Cash flow items
-Статья ДДС,Cash flow item
-Статья ДДС должна соответствовать типу платежа,Cash flow item must correspond to the type of payment
+Статья ДДС,Cash flow teim
+Статья ДДС должна соответствовать типу платежа,The Cash flow item must correspond to the type of payment
 Стоимость изделия,Product cost
 Стоимость компонентов,Component cost
 Стоимость приобретения,Purchase cost
@@ -1029,8 +1029,8 @@ X-отчет,X-report
 Экспорт остатков,Export of residues
 Экспорт производных номенклатур,Exporting Derived Items
 Экспорт себестоимостей,Export of cost prices
-Экспорт соотношений единиц измерений,Exporting Unit ratios
-Экспорт спецификаций,Export Specifications
+Экспорт соотношений единиц измерений,Exporting unit ratios
+Экспорт спецификаций,Export specifications
 Экспорт статей ДДС,Export Cash flow items
 Экспорт стран,Export Countries
 Экспорт строк спецификаций,Exporting BOM Lines
