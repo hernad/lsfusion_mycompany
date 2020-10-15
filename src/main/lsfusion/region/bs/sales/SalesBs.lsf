@@ -1,5 +1,5 @@
-MODULE SalesRu;
+MODULE SalesBs;
 
-REQUIRE SalesOrderPrintRu, SalesOrderPrintInitialRu,
-        SalesOrderShipmentPrintRu,
-        SalesPricelistPrintInitialRu;
+REQUIRE SalesOrderPrintBs, SalesOrderPrintInitialBs,
+        SalesOrderShipmentPrintBs,
+        SalesPricelistPrintInitialBs;

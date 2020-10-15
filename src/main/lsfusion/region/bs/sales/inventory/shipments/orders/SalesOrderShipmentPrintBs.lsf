@@ -1,6 +1,6 @@
-MODULE SalesOrderShipmentPrintRu;
+MODULE SalesOrderShipmentPrintBs;
 
-REQUIRE SalesOrderShipment, ShipmentPrintRu;
+REQUIRE SalesOrderShipment, ShipmentPrintBs;
 
 NAMESPACE Sales;
 

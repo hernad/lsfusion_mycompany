@@ -1,4 +1,4 @@
-MODULE PurchaseOrderPrintInitialRu;
+MODULE PurchaseOrderPrintInitialBs;
 
 REQUIRE PurchaseOrderPrint, DocTemplate;
 

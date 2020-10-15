@@ -1,6 +1,6 @@
-MODULE BillReceiptPrintRu;
+MODULE BillReceiptPrintBs;
 
-REQUIRE BillReceipt, ReceiptPrintRu;
+REQUIRE BillReceipt, ReceiptPrintBs;
 
 NAMESPACE Invocing;
 

@@ -1,6 +1,6 @@
-MODULE LegalEntityImportRu;
+MODULE LegalEntityImportBs;
 
-REQUIRE LegalEntityRu, PartnerPurchase, PartnerSales;
+REQUIRE LegalEntityBs, PartnerPurchase, PartnerSales;
 
 NAMESPACE MasterData;
 

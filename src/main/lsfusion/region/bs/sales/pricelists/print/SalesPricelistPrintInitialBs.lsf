@@ -1,4 +1,4 @@
-MODULE SalesPricelistPrintInitialRu;
+MODULE SalesPricelistPrintInitialBs;
 
 REQUIRE SalesPricelistPrint;
 

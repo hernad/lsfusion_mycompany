@@ -1,6 +1,6 @@
-MODULE IncomingPaymentPrintInitialRu;
+MODULE IncomingPaymentPrintInitialBs;
 
-REQUIRE IncomingPaymentPrintRu;
+REQUIRE IncomingPaymentPrintBs;
 
 NAMESPACE Invoicing;
 

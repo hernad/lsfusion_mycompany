@@ -1,6 +1,6 @@
-MODULE SalesOrderPrintRu;
+MODULE SalesOrderPrintBs;
 
-REQUIRE LegalEntityRu, SalesOrderPrint;
+REQUIRE LegalEntityBs, SalesOrderPrint;
 
 NAMESPACE Sales;
 

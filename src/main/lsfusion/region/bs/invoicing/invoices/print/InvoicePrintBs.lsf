@@ -1,7 +1,7 @@
-MODULE InvoicePrintRu;
+MODULE InvoicePrintBs;
 
-REQUIRE InvoicePrint, InvoicePrintShipment, InvoicePack, LegalEntityRu, UomRu,
-        Individual, LocationEmployeeRu, BillCustomsDeclaration;
+REQUIRE InvoicePrint, InvoicePrintShipment, InvoicePack, LegalEntityBs, UomBs,
+        Individual, LocationEmployeeBs, BillCustomsDeclaration;
 
 NAMESPACE Invoicing;
 

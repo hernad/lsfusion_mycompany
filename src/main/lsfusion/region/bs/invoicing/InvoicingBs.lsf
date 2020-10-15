@@ -1,7 +1,7 @@
-MODULE InvoicingRu;
+MODULE InvoicingBs;
 
-REQUIRE TaxInitialRu, BankRu,
-        InvoicePrintRu, InvoicePrintInitialRu,
-        IncomingPaymentPrintRu, IncomingPaymentPrintInitialRu,
-        OutgoingPaymentPrintRu, OutgoingPaymentPrintInitialRu,
-        BillReceiptPrintRu;
+REQUIRE TaxInitialBs, BankBs,
+        InvoicePrintBs, InvoicePrintInitialBs,
+        IncomingPaymentPrintBs, IncomingPaymentPrintInitialBs,
+        OutgoingPaymentPrintBs, OutgoingPaymentPrintInitialBs,
+        BillReceiptPrintBs;

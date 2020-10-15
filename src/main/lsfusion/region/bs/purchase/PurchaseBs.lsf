@@ -1,4 +1,4 @@
-MODULE PurchaseRu;
+MODULE PurchaseBs;
 
-REQUIRE PurchaseOrderPrintRu, PurchaseOrderPrintInitialRu,
-        PurchaseOrderReceiptPrintRu;
+REQUIRE PurchaseOrderPrintBs, PurchaseOrderPrintInitialBs,
+        PurchaseOrderReceiptPrintBs;

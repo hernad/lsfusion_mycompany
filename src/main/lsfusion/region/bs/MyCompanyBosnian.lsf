@@ -1,4 +1,4 @@
-MODULE MyCompanyRu;
+MODULE MyCompanyBs;
 
 REQUIRE MyCompany,
         LegalEntityBs,

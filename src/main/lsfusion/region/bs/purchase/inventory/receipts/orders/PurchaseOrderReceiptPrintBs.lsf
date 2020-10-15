@@ -1,6 +1,6 @@
-MODULE PurchaseOrderReceiptPrintRu;
+MODULE PurchaseOrderReceiptPrintBs;
 
-REQUIRE PurchaseOrderReceipt, ReceiptPrintRu;
+REQUIRE PurchaseOrderReceipt, ReceiptPrintBs;
 
 NAMESPACE Purchase;
 

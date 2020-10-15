@@ -1,4 +1,4 @@
-MODULE LegalEntityRu;
+MODULE LegalEntityBs;
 
 REQUIRE LegalEntity;
 

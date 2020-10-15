@@ -1,6 +1,6 @@
-MODULE IncomingPaymentPrintRu;
+MODULE IncomingPaymentPrintBs;
 
-REQUIRE IncomingPaymentPrint, LegalEntityRu, Individual;
+REQUIRE IncomingPaymentPrint, LegalEntityBs, Individual;
 
 NAMESPACE Invoicing;
 

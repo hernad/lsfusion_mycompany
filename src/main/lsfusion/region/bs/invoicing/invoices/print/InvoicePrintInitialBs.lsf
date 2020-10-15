@@ -1,6 +1,6 @@
-MODULE InvoicePrintInitialRu;
+MODULE InvoicePrintInitialBs;
 
-REQUIRE InvoicePrintRu;
+REQUIRE InvoicePrintBs;
 
 NAMESPACE Invoicing;
 

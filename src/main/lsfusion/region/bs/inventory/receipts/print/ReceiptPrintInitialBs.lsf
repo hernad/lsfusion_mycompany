@@ -1,6 +1,6 @@
-MODULE ReceiptPrintInitialRu;
+MODULE ReceiptPrintInitialBs;
 
-REQUIRE ReceiptPrintRu;
+REQUIRE ReceiptPrintBs;
 
 NAMESPACE Inventory;
 

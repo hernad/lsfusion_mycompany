@@ -1,4 +1,4 @@
-MODULE BankRu;
+MODULE BankBs;
 
 REQUIRE Bank;
 

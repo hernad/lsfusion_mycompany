@@ -1,6 +1,6 @@
-MODULE PurchaseOrderPrintRu;
+MODULE PurchaseOrderPrintBs;
 
-REQUIRE PurchaseOrderPrint, LegalEntityRu, UomRu;
+REQUIRE PurchaseOrderPrint, LegalEntityBs, UomBs;
 
 NAMESPACE Purchase;
 

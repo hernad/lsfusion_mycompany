@@ -1,4 +1,4 @@
-MODULE SalesOrderPrintInitialRu;
+MODULE SalesOrderPrintInitialBs;
 
 REQUIRE SalesOrderPrint, DocTemplate;
 

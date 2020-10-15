@@ -1,4 +1,4 @@
-MODULE LocationEmployeeRu;
+MODULE LocationEmployeeBs;
 
 REQUIRE Location, Individual;
 

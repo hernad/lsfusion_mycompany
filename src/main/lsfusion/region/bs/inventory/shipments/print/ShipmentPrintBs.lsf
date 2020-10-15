@@ -1,6 +1,6 @@
-MODULE ShipmentPrintRu;
+MODULE ShipmentPrintBs;
 
-REQUIRE ShipmentPrint, LocationEmployeeRu, LegalEntityRu, UomRu;
+REQUIRE ShipmentPrint, LocationEmployeeBs, LegalEntityBs, UomBs;
 
 NAMESPACE Inventory;
 

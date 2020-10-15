@@ -1,6 +1,6 @@
-MODULE ReceiptPrintRu;
+MODULE ReceiptPrintBs;
 
-REQUIRE ReceiptPrint, LocationEmployeeRu;
+REQUIRE ReceiptPrint, LocationEmployeeBs;
 
 NAMESPACE Inventory;
 
