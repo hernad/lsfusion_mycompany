@@ -1,4 +1,4 @@
-MODULE MyCompanyBs;
+MODULE MyCompanyBosnian;
 
 REQUIRE MyCompany,
         LegalEntityBs,
@@ -6,5 +6,4 @@ REQUIRE MyCompany,
         InventoryBs,
         InvoicingBs, 
         PurchaseBs,
-        SalesBs,
-        CashRegisterAtol;
+        SalesBs;
