@@ -1,0 +1,4 @@
+MODULE PurchaseBs;
+
+REQUIRE PurchaseOrderPrintBs, PurchaseOrderPrintInitialBs,
+        PurchaseOrderReceiptPrintBs;

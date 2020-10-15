@@ -1,0 +1,5 @@
+MODULE SalesBs;
+
+REQUIRE SalesOrderPrintBs, SalesOrderPrintInitialBs,
+        SalesOrderShipmentPrintBs,
+        SalesPricelistPrintInitialBs;

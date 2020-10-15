@@ -1,0 +1,7 @@
+MODULE InvoicingBs;
+
+REQUIRE TaxInitialBs, BankBs,
+        InvoicePrintBs, InvoicePrintInitialBs,
+        IncomingPaymentPrintBs, IncomingPaymentPrintInitialBs,
+        OutgoingPaymentPrintBs, OutgoingPaymentPrintInitialBs,
+        BillReceiptPrintBs;

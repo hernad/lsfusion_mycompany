@@ -1,0 +1,38 @@
+MODULE SalesOrderPrintInitialBs;
+
+REQUIRE SalesOrderPrint, DocTemplate;
+
+NAMESPACE Sales;
+
+loadDefaultData () + {
+    NEW tm = OrderTemplate {
+        name(tm) <- 'Purchase Order';
+        template(tm) <- 'SalesOrderRu.jrxml';
+        in(tm, OrderType t) <- TRUE;
+    }
+    NEW tm = OrderTemplate {
+        name(tm) <- 'Приложение к договору';
+        template(tm) <- 'SalesAnnexRu.jrxml';
+        in(tm, OrderType t) <- TRUE;
+    }
+    NEW tm = OrderTemplate {
+        name(tm) <- 'Коммерческое предложение';
+        template(tm) <- 'SalesProposalRu.jrxml';
+        in(tm, OrderType t) <- TRUE;
+    }
+    NEW tm = OrderTemplate {
+        name(tm) <- 'Invoice';
+        template(tm) <- 'InvoiceRu.jrxml';
+        in(tm, OrderType t) <- TRUE;
+    }
+    NEW tm = OrderTemplate {
+        name(tm) <- 'Work order';
+        template(tm) <- 'SalesWorkOrderRu.jrxml';
+        in(tm, OrderType t) <- TRUE;
+    }
+    NEW tm = OrderTemplate {
+        name(tm) <- 'Certificate of completion';
+        template(tm) <- 'SalesCompletionStatementRu.jrxml';
+        in(tm, OrderType t) <- TRUE;
+    }
+}

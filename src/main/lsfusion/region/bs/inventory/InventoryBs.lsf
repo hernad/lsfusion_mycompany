@@ -1,0 +1,4 @@
+MODULE InventoryBs;
+
+REQUIRE ReceiptPrintBs, ReceiptPrintInitialBs,
+        ShipmentPrintBs, ShipmentPrintInitialBs;

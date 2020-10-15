@@ -1,0 +1,7 @@
+MODULE PurchaseOrderReceiptPrintBs;
+
+REQUIRE PurchaseOrderReceipt, ReceiptPrintBs;
+
+NAMESPACE Purchase;
+
+order (Receipt r) += 'Purchase order ' + numberDateOrder(r);

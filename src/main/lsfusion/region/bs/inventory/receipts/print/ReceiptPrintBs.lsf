@@ -1,0 +1,12 @@
+MODULE ReceiptPrintBs;
+
+REQUIRE ReceiptPrint, LocationEmployeeBs;
+
+NAMESPACE Inventory;
+
+order = ABSTRACT STRING (Receipt);
+document = ABSTRACT STRING (Receipt);
+
+EXTEND FORM printReceipt
+    PROPERTIES performed = namePerformed(location(o)), order(o), document(o)  
+;

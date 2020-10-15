@@ -1,0 +1,22 @@
+MODULE TaxInitialBs;
+
+REQUIRE Tax, DefaultData;
+
+NAMESPACE Invoicing;
+
+loadDefaultData() + {
+    NEW g = TaxGroup {
+        name(g) <- 'PDV';
+        id(g) <- 'vat';
+        NEW t = Tax {
+            name(t) <- '17%';
+            value(t) <- 17; 
+            taxGroup(t) <- g;
+        }
+        NEW t = Tax {
+            name(t) <- '0%';
+            value(t) <- 0; 
+            taxGroup(t) <- g;
+        }
+    }
+}

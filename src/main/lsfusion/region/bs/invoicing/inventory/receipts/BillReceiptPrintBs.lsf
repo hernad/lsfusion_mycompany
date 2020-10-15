@@ -1,0 +1,7 @@
+MODULE BillReceiptPrintBs;
+
+REQUIRE BillReceipt, ReceiptPrintBs;
+
+NAMESPACE Invocing;
+
+document (Receipt r) += numberDateBill(r);
