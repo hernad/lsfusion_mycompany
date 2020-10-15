@@ -1,0 +1,9 @@
+MODULE LocationEmployeeRu;
+
+REQUIRE Location, Individual;
+
+NAMESPACE Inventory;
+
+@defineEmployee(allowed, 'Vacation allowed', location, l, invoicePrint);
+@defineEmployee(accountant, 'Chief (senior) accountant', location, l, invoicePrint);
+@defineEmployee(performed, 'The leave produced', location, l, invoicePrint);

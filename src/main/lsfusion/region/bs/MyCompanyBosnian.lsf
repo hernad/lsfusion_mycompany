@@ -1,0 +1,10 @@
+MODULE MyCompanyRu;
+
+REQUIRE MyCompany,
+        LegalEntityBs,
+        LegalEntityImportBs,
+        InventoryBs,
+        InvoicingBs, 
+        PurchaseBs,
+        SalesBs,
+        CashRegisterAtol;
