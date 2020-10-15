@@ -341,7 +341,7 @@ X-отчет,X-report
 Импорт себестоимостей,Import of cost prices
 Импорт соотношений единиц измерений,Importing unit ratios
 Импорт спецификаций,Importing BOMs
-Импорт статей ДДС,Import of DDS articles
+Импорт статей ДДС,Import Cash flow items
 Импорт стран,Import countries
 Импорт строк спецификаций,Importing BOM Lines
 Импорт счетов,Import accounts
@@ -873,9 +873,9 @@ X-отчет,X-report
 Ставка,Rate
 Статус,Status
 Статусы,Statuses
-Статьи ДДС,DDS Articles
-Статья ДДС,DDS article
-Статья ДДС должна соответствовать типу платежа,The DDS article must correspond to the type of payment
+Статьи ДДС,Cash flow items
+Статья ДДС,Cash flow item
+Статья ДДС должна соответствовать типу платежа,Cash flow item must correspond to the type of payment
 Стоимость изделия,Product cost
 Стоимость компонентов,Component cost
 Стоимость приобретения,Purchase cost
@@ -1029,9 +1029,9 @@ X-отчет,X-report
 Экспорт остатков,Export of residues
 Экспорт производных номенклатур,Exporting Derived Items
 Экспорт себестоимостей,Export of cost prices
-Экспорт соотношений единиц измерений,Exporting unit ratios
-Экспорт спецификаций,Export specifications
-Экспорт статей ДДС,Export of DDS articles
+Экспорт соотношений единиц измерений,Exporting Unit ratios
+Экспорт спецификаций,Export Specifications
+Экспорт статей ДДС,Export Cash flow items
 Экспорт стран,Export Countries
 Экспорт строк спецификаций,Exporting BOM Lines
 Экспорт счетов,Export accounts
