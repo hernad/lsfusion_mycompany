@@ -4,30 +4,30 @@ REQUIRE Partner, RetailSettings;
 
 NAMESPACE Retail;
 
-CLASS DiscountCard 'Дисконтная карта';
+CLASS DiscountCard 'Discount card';
 
-customer 'Владелец' = DATA Partner (DiscountCard) NONULL;
-nameCustomer 'Владелец' (DiscountCard d) = name(customer(d)) IN id;
+customer 'Owner' = DATA Partner (DiscountCard) NONULL;
+nameCustomer 'Owner' (DiscountCard d) = name(customer(d)) IN id;
 
-id 'Номер' = DATA STRING[20] (DiscountCard) IN id;
+id 'Room' = DATA STRING[20] (DiscountCard) IN id;
 discountCard (STRING[20] id) = GROUP AGGR DiscountCard d BY id(d);
 
-issuedDate 'Дата выпуска' = DATA DATE (DiscountCard) NONULL;
-blockedDate 'Дата блокировки' = DATA DATE (DiscountCard);
+issuedDate 'Date of issue' = DATA DATE (DiscountCard) NONULL;
+blockedDate 'Lock date' = DATA DATE (DiscountCard);
 
 issuedDate(DiscountCard d) <- currentDate() WHEN SET(d IS DiscountCard);
 
 CONSTRAINT issuedDate(DiscountCard d) > blockedDate(d) 
-    MESSAGE 'Дата блокировки дисконтной карты не может быть раньше даты выпуска';
+    MESSAGE 'The blocking date of the discount card cannot be earlier than the issue date';
 
-FORM discountCard 'Дисконтная карта'
+FORM discountCard 'Discount card'
     OBJECTS d = DiscountCard PANEL
     PROPERTIES(d) id, nameCustomer, issuedDate, blockedDate
     
     EDIT DiscountCard OBJECT d
 ;
 
-FORM discountCards 'Дисконтные карты'
+FORM discountCards 'Discount cards'
     OBJECTS d = DiscountCard
     PROPERTIES(d) READONLY id, nameCustomer, issuedDate, blockedDate
     PROPERTIES(d) NEWSESSION NEW, EDIT, DELETE;

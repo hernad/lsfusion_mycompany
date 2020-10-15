@@ -6,7 +6,7 @@ NAMESPACE Retail;
 
 // invoice
 invoiceType = DATA InvoiceType (Pos) NONULL;
-nameInvoiceType 'Тип реализации' (Pos p) = name(invoiceType(p));
+nameInvoiceType 'Implementation type' (Pos p) = name(invoiceType(p));
 
 EXTEND FORM pos
     PROPERTIES(p) nameInvoiceType
@@ -16,7 +16,7 @@ DESIGN pos {
 }
 
 session = DATA Session (Invoice);
-numberSession 'Смена' (Invoice i) = number(session(i));
+numberSession 'Shift' (Invoice i) = number(session(i));
 
 WHEN LOCAL SET(session(Invoice i)) AND NOT CHANGED(type(i)) DO
     type(i) <- invoiceType(pos(session(i)));
@@ -27,7 +27,7 @@ WHEN LOCAL SET(session(Invoice i)) AND NOT CHANGED(company(i)) DO
 EXTEND FORM session
     OBJECTS i = Invoice
     PROPERTIES(i) READONLY nameStatus BACKGROUND colorStatus(i), dateTime, number, nameCustomer, 
-                           'Итого' = fullAmount, 'Скидка' = discountAmount, 'К оплате' = amount
+                           'Total' = fullAmount, 'A discount' = discountAmount, 'To pay' = amount
     PROPERTIES(i) NEWSESSION EDIT
     FILTERS session(i) = s
 ;
@@ -45,7 +45,7 @@ EXTEND FORM invoice
 DESIGN invoice {
     otherInformation {
         NEW session {
-            caption = 'Смена';
+            caption = 'Shift';
             MOVE PROPERTY(numberSession(i));
         }
     }
@@ -53,12 +53,12 @@ DESIGN invoice {
 
 // bill
 session = DATA Session (Bill);
-numberSession 'Смена' (Bill i) = number(session(i));
+numberSession 'Shift' (Bill i) = number(session(i));
 
 EXTEND FORM session
     OBJECTS b = Bill
     PROPERTIES(b) READONLY nameStatus BACKGROUND colorStatus(i), dateTime, number, nameVendor, 
-                           'К оплате' = amount
+                           'To pay' = amount
     PROPERTIES(b) NEWSESSION EDIT
     FILTERS session(b) = s
 ;
@@ -69,13 +69,13 @@ DESIGN session {
     }
 }
 
-totalAmountInvoice 'Продано' (Session s) = GROUP SUM amount(Invoice i) IF session(i) = s MATERIALIZED ; 
-countInvoices 'Продаж' (Session s) = GROUP SUM 1 IF session(Invoice i) = s MATERIALIZED;
+totalAmountInvoice 'Sold' (Session s) = GROUP SUM amount(Invoice i) IF session(i) = s MATERIALIZED ; 
+countInvoices 'Selling' (Session s) = GROUP SUM 1 IF session(Invoice i) = s MATERIALIZED;
 
-totalAmountBill 'Возвращено' (Session s) = GROUP SUM amount(Bill b) IF session(b) = s MATERIALIZED;
-countBills 'Возвратов' (Session s) = GROUP SUM 1 IF  session(Bill b) = s MATERIALIZED;
+totalAmountBill 'Returned' (Session s) = GROUP SUM amount(Bill b) IF session(b) = s MATERIALIZED;
+countBills 'Refunds' (Session s) = GROUP SUM 1 IF  session(Bill b) = s MATERIALIZED;
 
-amount 'Итого' (Session s) = totalAmountInvoice(s) (-) totalAmountBill(s) MATERIALIZED;
+amount 'Total' (Session s) = totalAmountInvoice(s) (-) totalAmountBill(s) MATERIALIZED;
 
 EXTEND FORM sessions
     PROPERTIES(o) countInvoices, totalAmountInvoice,
@@ -90,7 +90,7 @@ EXTEND FORM bill
 DESIGN bill {
     otherInformation {
         NEW session {
-            caption = 'Смена';
+            caption = 'Shift';
             MOVE PROPERTY(numberSession(b));
         }
     }

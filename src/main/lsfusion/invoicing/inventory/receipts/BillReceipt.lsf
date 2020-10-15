@@ -6,13 +6,13 @@ REQUIRE BillCanceled, BillReady, ReceiptCanceled,
 NAMESPACE Invoicing;
 
 receiptType = DATA ReceiptType (BillType);
-nameReceiptType 'Тип поступления' (BillType t) = name(receiptType(t));
+nameReceiptType 'Receipt type' (BillType t) = name(receiptType(t));
 
 EXTEND FORM billType PROPERTIES nameReceiptType(o);
 
 // location
-location 'Место хранения' = DATA Location (Bill);
-nameLocation 'Место хранения' (Bill b) = name(location(b));
+location 'Storage' = DATA Location (Bill);
+nameLocation 'Storage' (Bill b) = name(location(b));
 
 EXTEND FORM bill 
     PROPERTIES(b) nameLocation SHOWIF receiptType(type(b))
@@ -30,7 +30,7 @@ EXTEND FORM bills
 @defineDocLocationAccess(bill, b);
 
 // lines
-@defineDocLineRelation(bill, receipt, 'Приобретения', 'Поступления', b, r);
+@defineDocLineRelation(bill, receipt, 'Purchases', 'Receipts', b, r);
 
 fill ABSTRACT LIST (ReceiptLine, BillLine);
 billReceiptCreated = DATA LOCAL Receipt ();
@@ -55,7 +55,7 @@ newReceipt (Bill b) {
     }
 }
 
-createReceipt 'Принять' (Bill b) {
+createReceipt 'To accept' (Bill b) {
     APPLY;
     IF canceled() THEN RETURN;
     
@@ -80,14 +80,14 @@ DESIGN bill {
     }
     relatedDoc {
         MOVE BOX(r) {
-            caption = CONCAT ' ', 'Поступления', '(' + countReceipts(b) + ')';
+            caption = CONCAT ' ', 'Receipts', '(' + countReceipts(b) + ')';
         }
         REMOVE TOOLBARSYSTEM(r);
     }
 }
 
 // auto create
-autoCreateReceipt 'Автоматически создавать поступление' = DATA BOOLEAN (BillType);
+autoCreateReceipt 'Automatically create receipt' = DATA BOOLEAN (BillType);
 EXTEND FORM billType PROPERTIES autoCreateReceipt(o) SHOWIF receiptType(o);
 
 WHEN (SET(ready(Bill b)) OR SET(countProductLines(b))) AND autoCreateReceipt(type(b)) AND countProductLines(b) DO 

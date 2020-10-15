@@ -31,11 +31,11 @@ reportX(Pos p) {
     } CATCH {
         CASE
             WHEN statusHttp() > 299 THEN
-                MESSAGE 'Ошибка - ' + STRING(statusHttp());
+                MESSAGE 'Error - ' + STRING(statusHttp());
             WHEN NOT statusHttp() THEN
-                MESSAGE 'Ошибка - нет связи с хостом АТОЛ v.10';
+                MESSAGE 'Error - there is no connection with the ATOL v.10 host';
             ELSE
-                MESSAGE 'Ошибка - потеряна связь с хостом АТОЛ v.10';
+                MESSAGE 'Error - lost connection with ATOL v.10 host';
     }
 }
 reportX(Pos p) + WHEN driver(p) = CashDriver.atol10 THEN {reportX(p);}
@@ -53,11 +53,11 @@ continuePrint(Pos p) {
     } CATCH {
         CASE
             WHEN statusHttp() > 299 THEN
-                MESSAGE 'Ошибка - ' + STRING(statusHttp());
+                MESSAGE 'Error - ' + STRING(statusHttp());
             WHEN NOT statusHttp() THEN
-                MESSAGE 'Ошибка - нет связи с хостом АТОЛ v.10';
+                MESSAGE 'Error - there is no connection with the ATOL v.10 host';
             ELSE
-                MESSAGE 'Ошибка - потеряна связь с хостом АТОЛ v.10';
+                MESSAGE 'Error - lost connection with ATOL v.10 host';
     }
 }
 continuePrint(Pos p) + WHEN driver(p) = CashDriver.atol10 THEN {continuePrint(p);}
@@ -77,11 +77,11 @@ openShift(Session s) {
     } CATCH
         CASE
             WHEN statusHttp() > 299 THEN
-                MESSAGE 'Ошибка - ' + STRING(statusHttp());
+                MESSAGE 'Error - ' + STRING(statusHttp());
             WHEN NOT statusHttp() THEN
-                MESSAGE 'Ошибка - нет связи с хостом АТОЛ v.10';
+                MESSAGE 'Error - there is no connection with the ATOL v.10 host';
             ELSE
-                MESSAGE 'Ошибка - потеряна связь с хостом АТОЛ v.10';
+                MESSAGE 'Error - lost connection with ATOL v.10 host';
 }
 openShift(Session s) + WHEN driver(pos(s)) = CashDriver.atol10 THEN {openShift(s);}
 
@@ -101,11 +101,11 @@ closeShift(Session s) {
     CATCH
         CASE
             WHEN statusHttp() > 299 THEN
-                MESSAGE 'Ошибка - ' + STRING(statusHttp());
+                MESSAGE 'Error - ' + STRING(statusHttp());
             WHEN NOT statusHttp() THEN
-                MESSAGE 'Ошибка - нет связи с хостом АТОЛ v.10';
+                MESSAGE 'Error - there is no connection with the ATOL v.10 host';
             ELSE
-                MESSAGE 'Ошибка - потеряна связь с хостом АТОЛ v.10';
+                MESSAGE 'Error - lost connection with ATOL v.10 host';
 }
 closeShift(Session s) + WHEN driver(pos(s)) = CashDriver.atol10 THEN {closeShift(s);}
 
@@ -127,11 +127,11 @@ cashIn(IncomingPayment i) {
     } CATCH
         CASE
             WHEN statusHttp() > 299 THEN
-                MESSAGE 'Ошибка - ' + STRING(statusHttp());
+                MESSAGE 'Error - ' + STRING(statusHttp());
             WHEN NOT statusHttp() THEN
-                MESSAGE 'Ошибка - нет связи с хостом АТОЛ v.10';
+                MESSAGE 'Error - there is no connection with the ATOL v.10 host';
             ELSE
-                MESSAGE 'Ошибка - потеряна связь с хостом АТОЛ v.10';
+                MESSAGE 'Error - lost connection with ATOL v.10 host';
 }
 cashIn(IncomingPayment i) + WHEN driver(pos(session(i))) = CashDriver.atol10 AND i IS IncomingPayment THEN {cashIn(i);}
 
@@ -153,11 +153,11 @@ cashOut(OutgoingPayment o) {
     } CATCH
         CASE
             WHEN statusHttp() > 299 THEN
-                MESSAGE 'Ошибка - ' + STRING(statusHttp());
+                MESSAGE 'Error - ' + STRING(statusHttp());
             WHEN NOT statusHttp() THEN
-                MESSAGE 'Ошибка - нет связи с хостом АТОЛ v.10';
+                MESSAGE 'Error - there is no connection with the ATOL v.10 host';
             ELSE
-                MESSAGE 'Ошибка - потеряна связь с хостом АТОЛ v.10';
+                MESSAGE 'Error - lost connection with ATOL v.10 host';
 }
 cashOut(OutgoingPayment o) + WHEN driver(pos(session(o))) = CashDriver.atol10 THEN {cashOut(o);}
 
@@ -197,10 +197,10 @@ buy(Invoice i) {
     } CATCH
         CASE
             WHEN statusHttp() > 299 THEN
-                MESSAGE 'Ошибка - ' + STRING(statusHttp());
+                MESSAGE 'Error - ' + STRING(statusHttp());
             WHEN NOT statusHttp() THEN
-                MESSAGE 'Ошибка - нет связи с хостом АТОЛ v.10';
+                MESSAGE 'Error - there is no connection with the ATOL v.10 host';
             ELSE
-                MESSAGE 'Ошибка - потеряна связь с хостом АТОЛ v.10';
+                MESSAGE 'Error - lost connection with ATOL v.10 host';
 }
 buy(Invoice i) + WHEN driver(pos(session(i))) THEN {buy(i);}

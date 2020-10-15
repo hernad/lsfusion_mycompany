@@ -11,7 +11,7 @@ addressLocation (Order o ) = linesAddress(location(o));
 addressCompany (Order o) = csvAddress(company(o));
 phoneCompany (Order o) = phone(company(o));
 
-FORM printOrder 'Заказ покупателя'   
+FORM printOrder 'Purchase Order'   
     OBJECTS o = Order PANEL 
     PROPERTIES(o) number, dateTime, scheduledDateTime, nameRepresentative,
                   nameCustomer, addressCustomer, phoneCustomer, deliveryAddress,   
@@ -25,5 +25,5 @@ FORM printOrder 'Заказ покупателя'
     FILTERS order(l) = o
 ; 
 
-@defineDocTemplate(order, 'заказа покупателя');
+@defineDocTemplate(order, 'Sales order');
 @defineDocTemplateForm(order, o);

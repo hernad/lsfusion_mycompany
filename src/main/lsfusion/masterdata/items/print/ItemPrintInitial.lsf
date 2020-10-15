@@ -6,11 +6,11 @@ NAMESPACE MasterData;
 
 loadDefaultData () + {
     NEW tm = PrintItemType {
-        name(tm) <- 'Этикетка 58x40';
+        name(tm) <- 'Label 58x40';
         template(tm) <- 'ItemBarCode58x40.jrxml';
     }
     NEW tm = PrintItemType {
-        name(tm) <- 'Этикетка 58x60';
+        name(tm) <- 'Label 58x60';
         template(tm) <- 'ItemBarCode58x60.jrxml';
     }
 }

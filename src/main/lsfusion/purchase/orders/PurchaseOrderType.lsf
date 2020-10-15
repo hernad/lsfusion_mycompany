@@ -4,18 +4,18 @@ REQUIRE Numerator, PurchaseSettings;
 
 NAMESPACE Purchase;
 
-CLASS OrderType 'Тип заказа';
-name 'Название' = DATA ISTRING[50] (OrderType) NONULL;
+CLASS OrderType 'Order type';
+name 'Name' = DATA ISTRING[50] (OrderType) NONULL;
 
-id 'Код' = DATA STRING[20] (OrderType);
+id 'Code' = DATA STRING[20] (OrderType);
 orderType = GROUP AGGR OrderType t BY id(t);
 
-numerator 'Нумератор' = DATA Numerator (OrderType);
-nameNumerator 'Нумератор' (OrderType o) = name(numerator(o));
+numerator 'Numerator' = DATA Numerator (OrderType);
+nameNumerator 'Numerator' (OrderType o) = name(numerator(o));
 
-taxIncluded 'Цена включает налоги' = DATA BOOLEAN (OrderType);
+taxIncluded 'Price includes taxes' = DATA BOOLEAN (OrderType);
 
-FORM orderType 'Тип заказа'
+FORM orderType 'Order type'
     OBJECTS o = OrderType PANEL 
     PROPERTIES(o) name, id, nameNumerator, taxIncluded
      
@@ -31,7 +31,7 @@ DESIGN orderType {
     }
 }
 
-FORM orderTypes 'Типы заказов'
+FORM orderTypes 'Types of orders'
     OBJECTS o = OrderType
     PROPERTIES(o) READONLY name, id
     
@@ -51,7 +51,7 @@ DESIGN options {
 }
 
 // default type
-countOrderTypes 'Кол-во типов' () = GROUP SUM 1 IF r IS OrderType; 
+countOrderTypes 'Number of types' () = GROUP SUM 1 IF r IS OrderType; 
 firstOrderType = GROUP LAST OrderType r ORDER DESC r WHERE r IS OrderType;
 
 defaultOrderType = firstOrderType() IF countOrderTypes() = 1;

@@ -25,7 +25,7 @@ printQuantity(InvoiceLine l) += quantity(l);
 printPrice = ABSTRACT VALUE NUMERIC[16,3] (InvoiceLine);
 printPrice(InvoiceLine l) += price(l);  
 
-FORM printInvoice 'Реализация'
+FORM printInvoice 'Implementation'
     OBJECTS o = Invoice PANEL 
     PROPERTIES(o) dateTime, dueDateTime, number,
                   nameCompany, addressCompany, phoneCompany, emailCompany, websiteCompany,
@@ -40,5 +40,5 @@ FORM printInvoice 'Реализация'
     FILTERS invoice(l) = o
 ;
 
-@defineDocTemplate(invoice, 'реализации');
+@defineDocTemplate(invoice, 'implementation');
 @defineDocTemplateForm(invoice, i);

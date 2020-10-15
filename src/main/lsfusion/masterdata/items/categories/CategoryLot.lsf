@@ -5,7 +5,7 @@ REQUIRE Category, Lot;
 NAMESPACE MasterData;
 
 //category
-dataUseLot 'Партионный учет' = DATA BOOLEAN (Category);
+dataUseLot 'Lot accounting' = DATA BOOLEAN (Category);
 useLot (Category c) = useLot() AND (GROUP LAST dataUseLot(Category cp) ORDER level(c, cp)) MATERIALIZED;
 
 EXTEND FORM category

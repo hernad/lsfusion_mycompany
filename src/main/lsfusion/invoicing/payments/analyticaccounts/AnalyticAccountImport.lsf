@@ -2,15 +2,15 @@ MODULE AnalyticAccountImport;
 
 REQUIRE AnalyticAccount;
 
-analyticAccountExport 'Экспорт статей ДДС' () {
+analyticAccountExport 'Export Cash flow items' () {
     NEWSESSION {
         LOCAL f = EXCELFILE ();
-        EXPORT XLSX HEADER FROM 'Код' = id(AnalyticAccount a), 'Наименование' = name(a), 'Код родителя' = id(parent(a)) TO f;   
+        EXPORT XLSX HEADER FROM 'Code' = id(AnalyticAccount a), 'Name' = name(a), 'Parent code' = id(parent(a)) TO f;   
         open(f());
     }
 }
 
-analyticAccountImport 'Импорт статей ДДС' () {
+analyticAccountImport 'Import Cash flow items' () {
     LOCAL id = STRING[20] (INTEGER);
     LOCAL name = ISTRING[50] (INTEGER);
     LOCAL idParent = STRING[20] (INTEGER);
@@ -25,7 +25,7 @@ analyticAccountImport 'Импорт статей ДДС' () {
                 parent(a) <- parent(idParent(i));
             }
             APPLY;
-            MESSAGE 'Импорт завершен';
+            MESSAGE 'Import completed';
         }
     }
 }    
@@ -38,7 +38,7 @@ DESIGN migrationData {
     commons {
         NEW bank {
             type = CONTAINERH;
-            caption = 'Статьи ДДС';
+            caption = 'Cash flow items';
             MOVE PROPERTY(analyticAccountExport());
             MOVE PROPERTY(analyticAccountImport());
         }

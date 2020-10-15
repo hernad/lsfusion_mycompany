@@ -4,8 +4,8 @@ REQUIRE Product, CategoryLot;
 
 NAMESPACE MasterData;
 
-dataUseLot 'Партионный учет' = DATA BOOLEAN (Product);
-useLot 'Партионный учет' (Product i) = useLot() AND (dataUseLot(i) OR (useLot(category(i)) AND i IS Product)) MATERIALIZED;
+dataUseLot 'Lot accounting' = DATA BOOLEAN (Product);
+useLot 'Lot accounting' (Product i) = useLot() AND (dataUseLot(i) OR (useLot(category(i)) AND i IS Product)) MATERIALIZED;
 
 EXTEND FORM item
     PROPERTIES (i) dataUseLot SHOWIF i IS Product AND useLot();

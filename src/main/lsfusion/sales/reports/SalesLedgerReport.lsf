@@ -4,14 +4,14 @@ REQUIRE SalesLedger, SalesSettings, SalesDiscountLedger;
 
 NAMESPACE Sales;
 
-FORM salesLedgerReport 'Отчет по продажам'
+FORM salesLedgerReport 'Sales report'
     OBJECTS l = SalesLedger PIVOT
     PROPERTIES(l) READONLY class, type, dateTime, number, 
                            nameCustomer, nameLocation, nameItem,
                            price, markup, 
                            fullPrice, nameSalesDiscount
-    PROPERTIES READONLY 'Группа 1' = level1(item(l)), 'Группа 2' = level2(item(l)), 'Группа 3' = level3(item(l)), 'Группа 4' = level4(item(l)), 
-                        'Группа полная' = canonicalNameCategory(item(l)) 
+    PROPERTIES READONLY 'Group 1' = level1(item(l)), 'Group 2' = level2(item(l)), 'Group 3' = level3(item(l)), 'Group 4' = level4(item(l)), 
+                        'Full group' = canonicalNameCategory(item(l)) 
     PROPERTIES(l) READONLY MEASURE
                            quantity, costAmount, markupAmount, untaxedAmount, taxAmount, amount, discountAmount
 ;

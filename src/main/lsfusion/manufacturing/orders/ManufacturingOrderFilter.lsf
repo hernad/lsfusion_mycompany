@@ -7,10 +7,10 @@ NAMESPACE Manufacturing;
 @defineDateFilterForm(manufacturingOrders, o, scheduled);
 
 // right pane
-@defineDocFilter(manufacturingOrder, ManufacturingOrderType, type, o, 'Тип');
+@defineDocFilter(manufacturingOrder, ManufacturingOrderType, type, o, 'Type');
 
-@defineDocFilter(manufacturingOrder, Location, materialsLocation, o, 'Списать из');
+@defineDocFilter(manufacturingOrder, Location, materialsLocation, o, 'writeOffFrom');
 CONSTRAINT accessDenied(materialsLocation()) CHECKED BY materialsLocation[] MESSAGE '';
 
-@defineDocFilter(manufacturingOrder, Location, productsLocation, o, 'Получатель');
+@defineDocFilter(manufacturingOrder, Location, productsLocation, o, 'Recipient');
 CONSTRAINT accessDenied(productsLocation()) CHECKED BY productsLocation[] MESSAGE '';

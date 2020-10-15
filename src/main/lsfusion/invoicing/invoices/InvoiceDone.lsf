@@ -5,9 +5,9 @@ REQUIRE InvoiceReady, Time;
 NAMESPACE Invoicing;
 
 EXTEND CLASS InvoiceStatus {
-    done 'Оплачено'
+    done 'Paid up'
 }
-done 'Оплачено' = DATA BOOLEAN (Invoice);
+done 'Paid up' = DATA BOOLEAN (Invoice);
 
 status(Invoice b) += WHEN done(b) THEN InvoiceStatus.done;
 
@@ -23,5 +23,5 @@ DESIGN invoice {
 
 EXTEND FORM invoices 
     EXTEND FILTERGROUP status
-        FILTER 'Оплачено' status(i) = InvoiceStatus.done
+        FILTER 'Paid up' status(i) = InvoiceStatus.done
 ;

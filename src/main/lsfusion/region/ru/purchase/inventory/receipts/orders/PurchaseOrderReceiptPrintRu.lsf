@@ -4,4 +4,4 @@ REQUIRE PurchaseOrderReceipt, ReceiptPrintRu;
 
 NAMESPACE Purchase;
 
-order (Receipt r) += 'Заказ поставщику ' + numberDateOrder(r);
+order (Receipt r) += 'Purchase order ' + numberDateOrder(r);

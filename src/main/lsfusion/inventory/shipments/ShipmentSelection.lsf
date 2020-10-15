@@ -9,7 +9,7 @@ NAMESPACE Inventory;
 @defineSelectionForm(shipments, Shipment, s);
 
 // copy
-FORM dialogScheduledDate 'Введите планируемую дату'
+FORM dialogScheduledDate 'Enter the planned date'
     OBJECTS d '' = DATETIME PANEL
     PROPERTIES dateTime '' = VALUE(d)
 ;
@@ -20,7 +20,7 @@ DESIGN dialogScheduledDate {
 }
 
 
-copySelected 'Копировать' () {
+copySelected 'Copy' () {
     DIALOG dialogScheduledDate OBJECTS d INPUT DO {
         LOCAL NESTED toCopy = BOOLEAN (Shipment);
         toCopy(Shipment o) <- selectedShipments(o);

@@ -4,22 +4,22 @@ REQUIRE Uom;
 
 NAMESPACE MasterData;
 
-uomExport 'Экспорт единиц измерения' () {
+uomExport 'Exporting Units' () {
     NEWSESSION {
         IF NOT (GROUP SUM 1 IF Uom i AND i IS Uom) THEN {
             NEW i = Uom {
                 id(i) <- '1';
-                name(i) <- 'Штука';
+                name(i) <- 'Thing';
             }
         }
     
         LOCAL f = EXCELFILE ();
-        EXPORT XLSX HEADER FROM 'Код' = id(Uom i), 'Наименование' = name(i) TO f;   
+        EXPORT XLSX HEADER FROM 'Code' = id(Uom i), 'Name' = name(i) TO f;   
         open(f());
     }
 }
 
-uomImport 'Импорт единиц измерения' () {
+uomImport 'Importing Units' () {
     LOCAL id = STRING[50] (INTEGER);
     LOCAL name = ISTRING[50] (INTEGER);
     
@@ -33,7 +33,7 @@ uomImport 'Импорт единиц измерения' () {
             }
             
             APPLY;
-            MESSAGE 'Импорт завершен';
+            MESSAGE 'Import completed';
         }
     }    
 }
@@ -46,7 +46,7 @@ DESIGN migrationData {
     commons {
         NEW uom {
             type = CONTAINERH;
-            caption = 'Единицы измерения';
+            caption = 'Units';
             MOVE PROPERTY(uomImport());
             MOVE PROPERTY(uomExport());
         }

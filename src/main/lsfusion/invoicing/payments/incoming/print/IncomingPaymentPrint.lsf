@@ -4,7 +4,7 @@ REQUIRE IncomingPayment, DocTemplate;
 
 NAMESPACE Invoicing;
 
-FORM printIncomingPayment 'Входящий платeж'
+FORM printIncomingPayment 'Incoming payment'
 
     OBJECTS o = IncomingPayment PANEL 
     PROPERTIES(o)
@@ -14,5 +14,5 @@ FORM printIncomingPayment 'Входящий платeж'
         amount, note, reference 
 ;
 
-@defineDocTemplate(incomingPayment, 'входящего платежа');
+@defineDocTemplate(incomingPayment, 'incoming payment');
 @defineDocTemplateForm(incomingPayment, p);

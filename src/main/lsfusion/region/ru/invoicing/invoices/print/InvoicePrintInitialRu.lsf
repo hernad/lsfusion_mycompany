@@ -11,7 +11,7 @@ loadDefaultData () + {
         in(tm, InvoiceType t) <- TRUE;
     }
     NEW tm = InvoiceTemplate {
-        name(tm) <- 'Счет-фактура';
+        name(tm) <- 'Invoice';
         template(tm) <- 'InvoiceRu.jrxml';
         in(tm, InvoiceType t) <- TRUE;
     }

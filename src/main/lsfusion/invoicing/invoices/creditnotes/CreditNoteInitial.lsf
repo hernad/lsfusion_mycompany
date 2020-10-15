@@ -6,11 +6,11 @@ NAMESPACE Invoicing;
 
 loadDefaultData () + {
     NEW t = BillType {
-        name(t) <- 'Оптовый возврат';
+        name(t) <- 'Bulk return';
         id(t) <- 'creditnotewholesale';
         isCreditNote(t) <- TRUE;
         NEW n = Numerator {
-            name(n) <- 'Оптовый возврат';
+            name(n) <- 'Bulk return';
             series(n) <- 'ОВ';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
@@ -20,12 +20,12 @@ loadDefaultData () + {
         billType(InvoiceType it) <- t WHERE id(it) = 'wholesale';
     }
     NEW t = BillType {
-        name(t) <- 'Розничный возврат';
+        name(t) <- 'Retail return';
         id(t) <- 'creditnoteretail';
         isCreditNote(t) <- TRUE;
         taxIncluded(t) <- TRUE;
         NEW n = Numerator {
-            name(n) <- 'Розничный возврат';
+            name(n) <- 'Retail return';
             series(n) <- 'РВ';
             minValue(n) <- 1;
             maxValue(n) <- 999999;

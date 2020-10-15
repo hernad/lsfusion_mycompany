@@ -4,16 +4,16 @@ REQUIRE CountryP;
 
 NAMESPACE MasterData;
 
-countryExport 'Экспорт стран' () {
+countryExport 'Export Countries' () {
     NEWSESSION {
         LOCAL f = EXCELFILE ();
-        EXPORT XLSX HEADER FROM 'Код' = id(Country c), 'Наименование' = name(c),
-                                'Альфа-2' = alpha2(c),  'Альфа-3' = alpha3(c) TO f;   
+        EXPORT XLSX HEADER FROM 'Code' = id(Country c), 'Name' = name(c),
+                                'Alpha-2' = alpha2(c),  'Alpha-3' = alpha3(c) TO f;   
         open(f());
     }
 }
 
-countryImport 'Импорт стран' () {
+countryImport 'Import countries' () {
     LOCAL id = STRING[3] (INTEGER);
     LOCAL name = ISTRING[50] (INTEGER);
     LOCAL alpha2 = ISTRING[2] (INTEGER);
@@ -30,7 +30,7 @@ countryImport 'Импорт стран' () {
                 alpha3(im) <- alpha3(i);
             }
             APPLY;
-            MESSAGE 'Импорт завершен';
+            MESSAGE 'Import completed';
         }
     }    
 }
@@ -43,7 +43,7 @@ DESIGN migrationData {
     commons {
         NEW country {
             type = CONTAINERH;
-            caption = 'Страны';
+            caption = 'Countries';
             MOVE PROPERTY(countryImport());
             MOVE PROPERTY(countryExport());
         }

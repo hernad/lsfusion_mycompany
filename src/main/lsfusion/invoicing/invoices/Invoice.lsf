@@ -8,42 +8,42 @@ REQUIRE InvoicingSettings, TaxItem, BankAccount,
 
 NAMESPACE Invoicing;
 
-CLASS Invoice 'Реализация';
+CLASS Invoice 'Implementation';
 
-@defineDocStatus(invoice, 'счета');
+@defineDocStatus(invoice, 'accounts');
 
 // type
-type 'Тип' = DATA InvoiceType (Invoice) NONULL;
-nameType 'Тип' (Invoice s) = name(type(s));
+type 'Type' = DATA InvoiceType (Invoice) NONULL;
+nameType 'Type' (Invoice s) = name(type(s));
 
 WHEN LOCAL SET(Invoice s IS Invoice) AND NOT CHANGED(type(s)) DO type(s) <- defaultInvoiceType(); 
 
 // dateTime
-dateTime 'Дата' = DATA DATETIME (Invoice) NONULL IN id;
+dateTime 'Date' = DATA DATETIME (Invoice) NONULL IN id;
 WHEN LOCAL SET (Invoice b IS Invoice) DO dateTime(b) <- currentDateTime();
 @defineDateTimeAggregation(Invoice);
 
 @defineNumberType(invoice);
 
-numberDate 'Описание' (Invoice i) = number(i) + ' от ' + dateTime(i) IN id;
+numberDate 'Description' (Invoice i) = number(i) + ' from ' + dateTime(i) IN id;
 
 // customer
 customer = DATA Partner (Invoice);
-nameCustomer 'Покупатель' (Invoice b) = name(customer(b));
+nameCustomer 'Customer' (Invoice b) = name(customer(b));
 CONSTRAINT customer(Invoice b) AND NOT isCustomer(customer(b)) 
                 CHECKED BY customer
-                MESSAGE 'Контрагент должен быть покупателем';
+                MESSAGE 'The Partner must be the Customer';
 
 // company
-company 'Компания' = DATA Company (Invoice) NONULL;
-nameCompany 'Компания' (Invoice b) = name(company(b));
+company 'Company' = DATA Company (Invoice) NONULL;
+nameCompany 'Company' (Invoice b) = name(company(b));
 WHEN LOCAL SET(Invoice b IS Invoice) AND NOT CHANGED(company(b)) DO company(b) <- defaultCompany(); 
 
 // payment
 paymentTerms = DATA PaymentTerm (Invoice); 
-namePaymentTerms 'Условия оплаты' (Invoice i) = name(paymentTerms(i));
+namePaymentTerms 'Terms of payment' (Invoice i) = name(paymentTerms(i));
 
-dueDateTime 'Оплатить до' = DATA DATETIME (Invoice);
+dueDateTime 'Pay before' = DATA DATETIME (Invoice);
 
 WHEN LOCAL CHANGED(customer(Invoice b)) AND NOT CHANGED(paymentTerms(b)) DO paymentTerms(b) <- customerPaymentTerms(customer(b)); 
 
@@ -52,55 +52,55 @@ WHEN LOCAL (SETCHANGED(paymentTerms(Invoice i)) OR SETCHANGED(dateTime(i))) AND 
 }
 
 // partner account
-customerAccount 'Счет покупателя' = DATA Account (Invoice);
-nameCustomerAccount 'Счет покупателя' (Invoice b) = name(customerAccount(b));
+customerAccount 'Customer\'s account' = DATA Account (Invoice);
+nameCustomerAccount 'Customer\'s account' (Invoice b) = name(customerAccount(b));
 WHEN LOCAL CHANGED (customer(Invoice b)) DO customerAccount(b) <- defaultAccount(customer(b));
 
 CONSTRAINT customerAccount(Invoice b) AND NOT customer(b) = holder(customerAccount(b))
     CHECKED BY customerAccount
-    MESSAGE 'Счет должен принадлежать выбранному контрагенту';
+    MESSAGE 'The account must belong to the selected Partner';
 
 // company account
-companyAccount 'Счет компании' = DATA Account (Invoice);
-nameCompanyAccount 'Счет компании' (Invoice b) = name(companyAccount(b));
+companyAccount 'Company account' = DATA Account (Invoice);
+nameCompanyAccount 'Company account' (Invoice b) = name(companyAccount(b));
 WHEN LOCAL CHANGED(company(Invoice b)) DO companyAccount(b) <- defaultAccount(company(b));
 
 CONSTRAINT companyAccount(Invoice b) AND NOT company(b) = holder(companyAccount(b))
     CHECKED BY companyAccount
-    MESSAGE 'Счет должен принадлежать выбранной компании';
+    MESSAGE 'The account must belong to the selected company';
 
-customerReference 'Код покупателя' = DATA STRING[30] (Invoice);
-note 'Примечание' = DATA ISTRING[50] (Invoice);
+customerReference 'Customer code' = DATA STRING[30] (Invoice);
+note 'Note' = DATA ISTRING[50] (Invoice);
 
 // lines
-CLASS InvoiceLine 'Строка реализации';
+CLASS InvoiceLine 'Implementation line';
 
-invoice 'Реализация' = DATA Invoice (InvoiceLine) NONULL DELETE;
+invoice 'Implementation' = DATA Invoice (InvoiceLine) NONULL DELETE;
 
-index '№' = PARTITION SUM 1 ORDER InvoiceLine l BY invoice(l) IN id MATERIALIZED CHARWIDTH 3;
+index 'No' = PARTITION SUM 1 ORDER InvoiceLine l BY invoice(l) IN id MATERIALIZED CHARWIDTH 3;
 
-item 'Номенклатура' = DATA Item (InvoiceLine) NONULL;
-nameItem 'Номенклатура' (InvoiceLine l) = name(item(l)) IN id;
-idBarCodeItem 'Штрихкод' (InvoiceLine l) = idBarCode(item(l));
-idItem 'Код' (InvoiceLine l) = id(item(l));
+item 'Items' = DATA Item (InvoiceLine) NONULL;
+nameItem 'Items' (InvoiceLine l) = name(item(l)) IN id;
+idBarCodeItem 'Barcode' (InvoiceLine l) = idBarCode(item(l));
+idItem 'Code' (InvoiceLine l) = id(item(l));
 
 CONSTRAINT item(InvoiceLine l) AND NOT canBeSold(item(l))
             CHECKED BY item 
-            MESSAGE 'Номенклатура не предназначена для продажи';
+            MESSAGE 'The item is not for sale';
 
-countProductLines 'Кол-во строк с товарами' (Invoice i) = GROUP SUM 1 IF invoice(InvoiceLine l) = i AND item(l) IS Product;
+countProductLines 'Number of lines with Products' (Invoice i) = GROUP SUM 1 IF invoice(InvoiceLine l) = i AND item(l) IS Product;
 
 uom = DATA Uom (InvoiceLine);
-nameUom 'Ед. изм.' (InvoiceLine l) = name(uom(l));
+nameUom 'UOM name' (InvoiceLine l) = name(uom(l));
 WHEN LOCAL CHANGED(item(InvoiceLine l)) DO uom(l) <- uom(item(l)); 
 
-description 'Описание' = DATA STRING (InvoiceLine); 
+description 'Description' = DATA STRING (InvoiceLine); 
 
-quantity 'Кол-во' = DATA NUMERIC[16,3] (InvoiceLine) NONULL CHARWIDTH 7;
+quantity 'Quantity' = DATA NUMERIC[16,3] (InvoiceLine) NONULL CHARWIDTH 7;
 
-weight 'Вес' (InvoiceLine l) = NUMERIC[16,3](quantity(l) * weight(item(l)));
+weight 'Weight' (InvoiceLine l) = NUMERIC[16,3](quantity(l) * weight(item(l)));
 
-price 'Цена' = DATA NUMERIC[10,2] (InvoiceLine) NONULL;
+price 'Price' = DATA NUMERIC[10,2] (InvoiceLine) NONULL;
 
 defaultPrice = ABSTRACT CASE NUMERIC[10,2] (InvoiceLine);
 WHEN LOCAL SETCHANGED(item(InvoiceLine l)) AND NOT CHANGED(price(l)) DO price(l) <- defaultPrice(l);
@@ -113,16 +113,16 @@ defaultPrice (InvoiceLine l) += WHEN salesPrice(item(l)) THEN salesPrice(item(l)
 taxIncluded (InvoiceLine l) += taxIncluded(type(invoice(l)));
 
 // Line properties
-nameStatus 'Статус' (InvoiceLine l) = nameStatus(invoice(l));
+nameStatus 'Status' (InvoiceLine l) = nameStatus(invoice(l));
 type (InvoiceLine l) = type(invoice(l));
-number 'Номер' (InvoiceLine l) = number(invoice(l));
-numberDate 'Описание' (InvoiceLine l) = numberDate(invoice(l));
-dateTime 'Дата' (InvoiceLine l) = dateTime(invoice(l));
+number 'Room' (InvoiceLine l) = number(invoice(l));
+numberDate 'Description' (InvoiceLine l) = numberDate(invoice(l));
+dateTime 'Date' (InvoiceLine l) = dateTime(invoice(l));
 customer (InvoiceLine l) = customer(invoice(l));
-nameCustomer 'Покупатель' (InvoiceLine l) = nameCustomer(invoice(l));
-nameCompany 'Компания' (InvoiceLine l) = nameCompany(invoice(l));
+nameCustomer 'Customer' (InvoiceLine l) = nameCustomer(invoice(l));
+nameCompany 'Company' (InvoiceLine l) = nameCompany(invoice(l));
 
-FORM invoiceLines 'Строки реализаций'
+FORM invoiceLines 'Implementation strings'
     OBJECTS l = InvoiceLine
     PROPERTIES(l) READONLY dateTime, number, index, nameItem, quantity, price
     PROPERTIES(l) NEWSESSION EDIT
@@ -132,7 +132,7 @@ FORM invoiceLines 'Строки реализаций'
 
 edit (InvoiceLine l) + { edit(invoice(l)); } 
 
-FORM invoice 'Реализация'
+FORM invoice 'Implementation'
     OBJECTS  i = Invoice PANEL 
     PROPERTIES(i) nameType, dateTime, number, nameCustomer, nameCompany,
                   namePaymentTerms, dueDateTime, nameCustomerAccount, nameCompanyAccount,
@@ -147,7 +147,7 @@ FORM invoice 'Реализация'
 ;
 
 DESIGN invoice {
-    caption = (CONCAT ' ', 'Реализация', '№' + number(i), 'от ' + dateTime(i));
+    caption = (CONCAT ' ', 'Implementation', 'No' + number(i), 'from ' + dateTime(i));
     OBJECTS {
         NEW header {
             type = CONTAINERH;
@@ -170,7 +170,7 @@ DESIGN invoice {
             fill = 5;
             type = TABBED;
             NEW lines {
-                caption = 'Строки';
+                caption = 'Strings';
                 MOVE BOX(l) { 
                     fill = 3;
                     PROPERTY(nameItem(l)) { notNull = TRUE; } 
@@ -181,11 +181,11 @@ DESIGN invoice {
                 }
             }
             NEW otherInformation {
-                caption = 'Прочая информация';
+                caption = 'other information';
                 type = COLUMNS;
                 columns = 2;
                 NEW payment {
-                    caption = 'Оплата';
+                    caption = 'Payment';
                     alignment = STRETCH;
                     MOVE PROPERTY(namePaymentTerms(i)); 
                     MOVE PROPERTY(dueDateTime(i)); 
@@ -193,7 +193,7 @@ DESIGN invoice {
                     MOVE PROPERTY(nameCustomerAccount(i));              
                 }           
                 NEW invoiceInformat {
-                    caption = 'Прочие';
+                    caption = 'Others';
                     alignment = STRETCH;
                     MOVE PROPERTY(customerReference(i)); 
                     MOVE PROPERTY(note(i));
@@ -209,12 +209,12 @@ DESIGN invoice {
 }
 
 @defineDocHistory(invoice, i, item, quantity);
-@defineDocSearch(invoice, item, quantity, 'Кол-во', i, canBeSold);
+@defineDocSearch(invoice, item, quantity, 'Quantity', i, canBeSold);
 @defineBarCodeSearch(invoice, i, l, item, quantity);
 
 @defineDocDiscountForm(invoice);
 
-FORM invoices 'Реализации'
+FORM invoices 'Implementation'
     OBJECTS i = Invoice
     PROPERTIES(i) READONLY nameType, dateTime, number, nameCustomer, nameCompany,
                            namePaymentTerms, dueDateTime, nameCustomerAccount, nameCompanyAccount,
@@ -236,7 +236,7 @@ NAVIGATOR {
 }
 
 // copy
-copy 'Копировать' (Invoice i)  { 
+copy 'Copy' (Invoice i)  { 
     NEWSESSION {
         NEW ni = Invoice {
             customer(ni) <- customer(i);

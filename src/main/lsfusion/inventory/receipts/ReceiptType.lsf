@@ -4,21 +4,21 @@ REQUIRE Numerator, Location;
 
 NAMESPACE Inventory;
 
-CLASS ReceiptType 'Тип поступления';
-name 'Название' = DATA ISTRING[50] (ReceiptType) NONULL;
+CLASS ReceiptType 'Receipt type';
+name 'Name' = DATA ISTRING[50] (ReceiptType) NONULL;
 
-id 'Код' = DATA STRING[20] (ReceiptType);
+id 'Code' = DATA STRING[20] (ReceiptType);
 receiptType = GROUP AGGR ReceiptType t BY id(t);
 
 numerator = DATA Numerator (ReceiptType);
-nameNumerator 'Нумератор' (ReceiptType o) = name(numerator(o));
+nameNumerator 'Numerator' (ReceiptType o) = name(numerator(o));
 
 defaultLocation = DATA Location (ReceiptType);
 nameDefaultLocation 'Место хранения по умолчанию' (ReceiptType o) = name(defaultLocation(o));
 
 maxQuantity 'Максимальное кол-во товара' = DATA NUMERIC[16,3] (ReceiptType);
 
-FORM receiptType 'Тип поступления'
+FORM receiptType 'Receipt type'
     OBJECTS o = ReceiptType PANEL 
     PROPERTIES(o) name, id, nameNumerator, nameDefaultLocation, maxQuantity
      
@@ -53,7 +53,7 @@ DESIGN options {
 }
 
 // default type
-countReceiptTypes 'Кол-во типов' () = GROUP SUM 1 IF r IS ReceiptType; 
+countReceiptTypes 'Number of types' () = GROUP SUM 1 IF r IS ReceiptType; 
 firstReceiptType = GROUP LAST ReceiptType r ORDER DESC r WHERE r IS ReceiptType;
 
 defaultReceiptType = firstReceiptType() IF countReceiptTypes() = 1;

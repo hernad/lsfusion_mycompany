@@ -4,19 +4,19 @@ REQUIRE ReceiptDone, InvLedger, ReceiptCost, ItemPurchase;
 
 NAMESPACE Inventory;
 
-receiptExport 'Экспорт остатков' () {
+receiptExport 'Export of residues' () {
     LOCAL f = EXCELFILE ();
     
     IF GROUP SUM 1 IF onHand(Location l, Product p) THEN
-        EXPORT XLSX HEADER FROM 'Код места хранения' = id(Location l), 'Код продукта' = id(Product p), 
-                                'Кол-во' = onHand(l, p), 'Себестоимость' = costAmount(l,p) WHERE onHand(l, p) TO f;   
+        EXPORT XLSX HEADER FROM 'Storage location code' = id(Location l), 'Product code' = id(Product p), 
+                                'Quantity' = onHand(l, p), 'Cost price' = costAmount(l,p) WHERE onHand(l, p) TO f;   
     ELSE 
-        EXPORT XLSX HEADER FROM 'Код места хранения' = '111', 'Код продукта' = '222', 
-                                'Кол-во' = '1', 'Себестоимость' = 1.43 TO f;
+        EXPORT XLSX HEADER FROM 'Storage location code' = '111', 'Product code' = '222', 
+                                'Quantity' = '1', 'Cost price' = 1.43 TO f;
     open(f());
 }
 
-receiptImport 'Импорт остатков' () {
+receiptImport 'Residue import' () {
     LOCAL idLocation = STRING[50] (INTEGER);
     LOCAL idProduct = ISTRING[50] (INTEGER);
     LOCAL quantity = NUMERIC[16,3] (INTEGER);
@@ -27,17 +27,17 @@ receiptImport 'Импорт остатков' () {
             IMPORT XLS HEADER FROM f TO idLocation = A, idProduct = B, quantity = C, cost = D;
             
             FOR [GROUP SUM 1 BY idLocation(INTEGER i)](num) AND NOT location[STRING](num) DO {
-                MESSAGE 'Отсутствует место хранения в базе данных с кодом ' + num + '. Импорт отменен';
+                MESSAGE 'Missing storage location in database with code ' + num + '. Import canceled';
                 RETURN;
             }
             
             FOR [GROUP SUM 1 BY idProduct(INTEGER i)](num) AND NOT item[STRING](num) DO {
-                MESSAGE 'Отсутствует товар в базе данных с кодом ' + num + '. Импорт отменен';
+                MESSAGE 'There is no product in the database with a code ' + num + '. Import canceled';
                 RETURN;
             }
             
             IF NOT (GROUP SUM 1 IF ReceiptType t AND t IS ReceiptType) THEN {
-                MESSAGE 'Отсутствуют типы поступлений в базе данных. Импорт отменен';
+                MESSAGE 'There are no receipt types in the database. Import canceled';
                 RETURN;
             }
             
@@ -61,7 +61,7 @@ receiptImport 'Импорт остатков' () {
             }
                         
             APPLY;
-            MESSAGE 'Импорт завершен';
+            MESSAGE 'Import completed';
         }
     }
 }
@@ -74,7 +74,7 @@ DESIGN migrationData {
     commons {
         NEW receipt {
             type = CONTAINERH;
-            caption = 'Остатки';
+            caption = 'Leftovers';
             MOVE PROPERTY(receiptImport());
             MOVE PROPERTY(receiptExport());
         }

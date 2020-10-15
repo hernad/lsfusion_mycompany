@@ -4,7 +4,7 @@ REQUIRE DiscountCard, Partner;
 
 NAMESPACE Retail;
 
-newDiscountCard 'Карта' (Partner p) {
+newDiscountCard 'Card' (Partner p) {
     NESTEDSESSION {
         NEW d = DiscountCard {
             customer(d) <- p;
@@ -25,7 +25,7 @@ EXTEND FORM partner
 DESIGN partner {
     tabs {
         NEW discountCardPartner {
-            caption = 'Дисконтные карты';
+            caption = 'Discount cards';
             MOVE BOX(d);
         }
     }

@@ -18,7 +18,7 @@ company (IncomingPayment p) += company(p);
 amount (IncomingPayment p) += amount(p);
 
 // pay
-pay 'Разнести' (IncomingPayment p, OutgoingDebt d) {
+pay 'Blow up' (IncomingPayment p, OutgoingDebt d) {
     APPLY; 
     IF canceled() THEN RETURN;
     
@@ -43,9 +43,9 @@ EXTEND FORM incomingPayment
 DESIGN incomingPayment {
     details {
         NEW debts {
-            caption = 'Разнесение оплат';
-            MOVE BOX(d) { caption = 'Разнесенные'; }            
-            MOVE BOX(dd) { caption = 'Доступные'; }          
+            caption = 'Payment spread';
+            MOVE BOX(d) { caption = 'Spaced'; }            
+            MOVE BOX(dd) { caption = 'Available'; }          
         }
     }
 }
@@ -56,7 +56,7 @@ WHEN (SETCHANGED(reference(IncomingPayment p)) OR SETCHANGED(partner(p)) OR SET(
      canBePaid(p, d) DO
     paid(p, d) <- left(p, d);
     
-countPaid 'Кол-во оплат' (IncomingDebt p) = GROUP SUM 1 IF paid(p, OutgoingDebt d) AND active(d) MATERIALIZED;
+countPaid 'Number of payments' (IncomingDebt p) = GROUP SUM 1 IF paid(p, OutgoingDebt d) AND active(d) MATERIALIZED;
 
 EXTEND FORM incomingPayments
     PROPERTIES(p) READONLY countPaid, paid

@@ -6,12 +6,12 @@ NAMESPACE Purchase;
 
 loadDefaultData () + {
     NEW t = OrderType {
-        name(t) <- 'Заказ поставщику';
+        name(t) <- 'Purchase Order';
         id(t) <- 'vendor';
 
         NEW n = Numerator {
-            name(n) <- 'Заказ поставщику';
-            series(n) <- 'ЗК';
+            name(n) <- 'Purchase Order';
+            series(n) <- 'PO';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
             stringLength(n) <- 6;

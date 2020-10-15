@@ -5,15 +5,15 @@ REQUIRE SalesOrder, SalesOrderPrint;
 NAMESPACE Sales;
 
 // order type
-defaultMailTemplate 'Шаблон по умолчанию' = DATA OrderTemplate (OrderType);
-nameDefaultMailTemplate 'Шаблон по умолчанию' (OrderType o) = name(defaultMailTemplate(o)) IN id;
+defaultMailTemplate 'Default template' = DATA OrderTemplate (OrderType);
+nameDefaultMailTemplate 'Default template' (OrderType o) = name(defaultMailTemplate(o)) IN id;
 
-mailSendCopyTo 'Копия адресату' = DATA STRING[50] (OrderType);
-mailSubject 'Тема' = DATA STRING (OrderType);
+mailSendCopyTo 'Copy to addressee' = DATA STRING[50] (OrderType);
+mailSubject 'Subject' = DATA STRING (OrderType);
 mailBody '' = DATA TEXT (OrderType);
 
 CONSTRAINT defaultMailTemplate(OrderType o) AND NOT in(defaultMailTemplate(o),  o) CHECKED 
-    MESSAGE 'Шаблон должен быть включен для данного типа заказа';  
+    MESSAGE 'Template must be included for this type of order';  
 
 EXTEND FORM orderType
     PROPERTIES(o) mailSendCopyTo, mailSubject, mailBody, nameDefaultMailTemplate 
@@ -22,7 +22,7 @@ EXTEND FORM orderType
 DESIGN orderType {
     tabbedPane {
         NEW mail {
-            caption = 'Почта';
+            caption = 'mail';
             type = CONTAINERV;
             MOVE PROPERTY(mailSendCopyTo(o));
             MOVE PROPERTY(mailSubject(o));
@@ -34,20 +34,20 @@ DESIGN orderType {
 
 // order
 EXTEND CLASS OrderStatus {
-    sent 'Отправлен'
+    sent 'Submitted'
 }
-sent 'Отправлен'  = DATA BOOLEAN (Order);
+sent 'Submitted'  = DATA BOOLEAN (Order);
 
 status(Order o) += WHEN sent(o) THEN OrderStatus.sent;
 colorStatus(Order i) += WHEN status(i) = OrderStatus.sent THEN RGB(252,247,149);
 
-send 'Отправить' (Order o) {
+send 'Send message' (Order o) {
     APPLY;
     IF canceled() THEN RETURN;
     
     LOCAL attachFile = FILE();
     LOCAL nameFile = STRING();
-    nameFile() <- 'Заказ №' + numberDate(o) + ' (' + OVERRIDE nameCompany(o), name(defaultCompany()) + ')';
+    nameFile() <- 'Order no.' + numberDate(o) + ' (' + OVERRIDE nameCompany(o), name(defaultCompany()) + ')';
     orderTemplate() <- defaultMailTemplate(type(o));
     IF defaultMailTemplate(type(o)) THEN {
         CASE EXCLUSIVE
@@ -91,5 +91,5 @@ DESIGN order {
 
 EXTEND FORM orders    
     EXTEND FILTERGROUP status
-        FILTER 'Отправлен' status(o) = OrderStatus.sent    
+        FILTER 'Submitted' status(o) = OrderStatus.sent    
 ;

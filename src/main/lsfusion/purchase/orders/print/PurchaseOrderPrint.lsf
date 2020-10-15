@@ -11,7 +11,7 @@ phoneVendor (Order o) = phone(vendor(o));
 
 addressLocation (Order o ) = linesAddress(location(o));
 
-FORM printOrder 'Заказ поставщику'   
+FORM printOrder 'Purchase Order'   
     OBJECTS o = Order PANEL 
     PROPERTIES(o) scheduledDateTime, number, nameRepresentative,
                   nameCompany, addressCompany, phoneCompany,
@@ -26,5 +26,5 @@ FORM printOrder 'Заказ поставщику'
     FILTERS order(l) = o
 ; 
 
-@defineDocTemplate(order, 'заказа поставщику');
+@defineDocTemplate(order, 'Purchase order');
 @defineDocTemplateForm(order, o);

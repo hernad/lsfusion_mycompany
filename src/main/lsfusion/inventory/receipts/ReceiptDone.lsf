@@ -5,33 +5,33 @@ REQUIRE ReceiptReady;
 NAMESPACE Inventory;
 
 EXTEND CLASS ReceiptStatus {
-    done 'Принят'
+    done 'Accepted'
 }
-done 'Принят' = DATA BOOLEAN (Receipt);
+done 'Accepted' = DATA BOOLEAN (Receipt);
 
 status (Receipt r) += WHEN done(r) THEN ReceiptStatus.done;
 
-executionDateTime 'Дата поступления' = DATA DATETIME (Receipt);
+executionDateTime 'Receipt Date' = DATA DATETIME (Receipt);
 WHEN SET(done(Receipt r)) AND NOT CHANGED(executionDateTime(r)) DO executionDateTime(r) <- currentDateTime(); 
-executionDateTime 'Дата поступления' (ReceiptLine l) = executionDateTime(receipt(l));
+executionDateTime 'Receipt Date' (ReceiptLine l) = executionDateTime(receipt(l));
 
-done 'Принятое количество' = DATA NUMERIC[16,3] (ReceiptLine);
+done 'Accepted quantity' = DATA NUMERIC[16,3] (ReceiptLine);
 
 CONSTRAINT done(ReceiptLine l) < 0 OR done(l) > initialDemand(l) 
-    MESSAGE 'Принятое количество должно быть от 0 до исходного';
+    MESSAGE 'The accepted amount must be between 0 and the original';
 
-setDone 'Заполнить Принято' (Receipt r) {
+setDone 'Fill Accepted' (Receipt r) {
     done(ReceiptLine l) <- initialDemand(l) WHERE receipt(l) = r;    
 }
 
-validate 'Принят' (Receipt r) {        
+validate 'Accepted' (Receipt r) {        
     APPLY; // сохраняем изменения
     IF canceled() THEN RETURN; // если сработало ограничение, то выходим
         
     NEWSESSION {
         IF NOT immediate(r) THEN {
             IF NOT GROUP SUM 1 IF done(ReceiptLine l) AND receipt(l) = r THEN
-                ASK 'Не заполены принятые количества для поступления ' + number(r) + '. Проставить ожидаемыми ?' DO {
+                ASK 'Accepted Receipt Quantities Not Filled ' + number(r) + '. Put as expected?' DO {
                     done(ReceiptLine l) <- initialDemand(l) WHERE receipt(l) = r;
                 } ELSE RETURN;
         }
@@ -68,5 +68,5 @@ EXTEND FORM receipts
     PROPERTIES(r) READONLY executionDateTime AFTER scheduledDateTime(r)
 
     EXTEND FILTERGROUP status
-        FILTER 'Принят' status(r) = ReceiptStatus.done
+        FILTER 'Accepted' status(r) = ReceiptStatus.done
 ;

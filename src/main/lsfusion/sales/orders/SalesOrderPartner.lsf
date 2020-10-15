@@ -15,7 +15,7 @@ EXTEND FORM partner
 DESIGN partner {
     tabs {
         NEW sOrders {
-            caption = 'Заказы покупателям';
+            caption = 'Sales orders';
             MOVE BOX(sl);
         }
     }

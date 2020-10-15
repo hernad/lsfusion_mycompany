@@ -7,27 +7,27 @@ NAMESPACE Purchase;
 
 // type
 billType = DATA BillType (OrderType);
-nameBillType 'Тип приобретения' (OrderType t) = name(billType(t));
+nameBillType 'Purchase type' (OrderType t) = name(billType(t));
 EXTEND FORM orderType PROPERTIES nameBillType(o);
 
 // invoicing policy
-CLASS InvoicingPolicy 'Политика оформления приобретения' {
-    ordered 'Заказанное количество'
+CLASS InvoicingPolicy 'Purchase registration policy' {
+    ordered 'Ordered quantity'
 }
-name 'Имя' (InvoicingPolicy p) = staticCaption(p) IF p IS InvoicingPolicy CHARWIDTH 20;
+name 'Name' (InvoicingPolicy p) = staticCaption(p) IF p IS InvoicingPolicy CHARWIDTH 20;
 
 invoicingPolicy = DATA InvoicingPolicy (OrderType);
-nameInvoicingPolicy 'Политика оформления приобретения' (OrderType t) = name(invoicingPolicy(t)); 
+nameInvoicingPolicy 'Purchase registration policy' (OrderType t) = name(invoicingPolicy(t)); 
 EXTEND FORM orderType PROPERTIES nameInvoicingPolicy(o);
 
 // lines
-@defineDocLineRelation(order, bill, 'Заказы', 'Приобретения', o, b);
+@defineDocLineRelation(order, bill, 'Orders', 'Purchases', o, b);
 
-billed 'Приобретено' (OrderLine ol) = 
+billed 'Purchased' (OrderLine ol) = 
     GROUP SUM quantity(BillLine bl) IF orderLine(bl) = ol AND ready(bill(bl)) AND NOT canceled(bill(bl));
-paid 'Оплачено' (OrderLine ol) = 
+paid 'Paid up' (OrderLine ol) = 
     GROUP SUM quantity(BillLine bl) IF orderLine(bl) = ol AND done(bill(bl)) AND NOT canceled(bill(bl));
-toBillOrdered 'К оформлению' (OrderLine l) = 
+toBillOrdered 'To registration' (OrderLine l) = 
     max(quantity(l) (-) billed(l), 0) IF 
         (invoicingPolicy(type(l)) = InvoicingPolicy.ordered OR NOT invoicingPolicy(type(l)) OR NOT item(l) IS Product);
  
@@ -38,7 +38,7 @@ toBill (Order o) += toBillOrdered(o) > 0;
 
 fill ABSTRACT LIST (BillLine, OrderLine);
 fill ABSTRACT LIST (Bill, Order);
-createBill 'Приобрести' (Order o) {
+createBill 'Purchase' (Order o) {
     APPLY;
     IF canceled() THEN RETURN;
                
@@ -74,7 +74,7 @@ createBill 'Приобрести' (Order o) {
     }
 }
 
-FORM orderBillShow 'Выставлено счетов'
+FORM orderBillShow 'Billed'
     OBJECTS ol = OrderLine
     
     OBJECTS bl = BillLine
@@ -99,7 +99,7 @@ DESIGN order {
     }
     relatedDoc  {
         MOVE BOX(bi) {
-            caption = CONCAT ' ', 'Приобретения', '(' + countBills(o) + ')';
+            caption = CONCAT ' ', 'Purchases', '(' + countBills(o) + ')';
             GRID(bi) { headerHeight = 24; }
         }
         REMOVE TOOLBARBOX(bi);
@@ -108,5 +108,5 @@ DESIGN order {
 
 EXTEND FORM orders
     FILTERGROUP toBill
-        FILTER 'Приобрести' status(o) = OrderStatus.confirmed AND toBill(o)
+        FILTER 'Purchase' status(o) = OrderStatus.confirmed AND toBill(o)
 ;

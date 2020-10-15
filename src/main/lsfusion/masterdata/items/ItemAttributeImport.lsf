@@ -4,18 +4,18 @@ REQUIRE ItemAttribute, Item, System;
 
 NAMESPACE MasterData;
 
-attributeExport 'Экспорт атрибутов' () {
+attributeExport 'Exporting attributes' () {
     NEWSESSION {
         LOCAL f = EXCELFILE ();
         EXPORT XLSX HEADER FROM
-            'Код товара' = id(Item i), 'Код атрибута' = id(ItemAttribute a), 'Значение атрибута' = value(attribute(i, a))
+            'Product code' = id(Item i), 'Attribute code' = id(ItemAttribute a), 'Attribute value' = value(attribute(i, a))
                 WHERE value(attribute(i, a)) TO f
         ; 
         open(f());
     }
 }
 
-attributeImport 'Импорт атрибутов' () {
+attributeImport 'Importing attributes' () {
     LOCAL idItem = STRING[50] (INTEGER);
     LOCAL idItemAttribute = STRING[50] (INTEGER);
     LOCAL value = STRING (INTEGER);
@@ -25,7 +25,7 @@ attributeImport 'Импорт атрибутов' () {
             IMPORT XLS HEADER FROM f TO idItem = A, idItemAttribute = B, value = C; 
 
             FOR [GROUP SUM 1 BY idItemAttribute(INTEGER i)](STRING num) AND NOT itemAttribute(num) DO {
-                MESSAGE 'Отсутствует атрибут в базе данных с кодом ' + num + '. Импорт отменен';
+                MESSAGE 'Missing attribute in database with code ' + num + '. Import canceled';
                 RETURN;
             }  
             
@@ -39,7 +39,7 @@ attributeImport 'Импорт атрибутов' () {
                 attribute(i, a) <- value(a, value(j));
             
             APPLY;
-            MESSAGE 'Импорт завершен';
+            MESSAGE 'Import completed';
         }
     }    
 }
@@ -52,7 +52,7 @@ DESIGN migrationData {
     commons {
         NEW attribute {
             type = CONTAINERH;
-            caption = 'Атрибуты товаров';
+            caption = 'Product attributes';
             MOVE PROPERTY(attributeImport());
             MOVE PROPERTY(attributeExport());
         }

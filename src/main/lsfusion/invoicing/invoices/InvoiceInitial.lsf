@@ -6,11 +6,11 @@ NAMESPACE Invoicing;
 
 loadDefaultData () + {
     NEW t = InvoiceType {
-        name(t) <- 'Оптовая продажа';
+        name(t) <- 'Invoice';
         id(t) <- 'wholesale';
         NEW n = Numerator {
-            name(n) <- 'Оптовая продажа';
-            series(n) <- 'ОП';
+            name(n) <- 'Invoice';
+            series(n) <- 'IN';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
             stringLength(n) <- 6;
@@ -18,12 +18,12 @@ loadDefaultData () + {
         }
     }
     NEW t = InvoiceType {
-        name(t) <- 'Розничная продажа';
+        name(t) <- 'Retail';
         id(t) <- 'retail';
         taxIncluded(t) <- TRUE;
         NEW n = Numerator {
-            name(n) <- 'Розничная продажа';
-            series(n) <- 'РП';
+            name(n) <- 'Retail';
+            series(n) <- 'Р2';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
             stringLength(n) <- 6;

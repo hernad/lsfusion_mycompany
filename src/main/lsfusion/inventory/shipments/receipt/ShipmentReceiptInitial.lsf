@@ -6,13 +6,13 @@ NAMESPACE Inventory;
 
 loadDefaultData () + {
     NEW r = ReceiptType {
-        name(r) <- 'Возврат';
+        name(r) <- 'Return';
         id(r) <- 'return';
         isReturn(r) <- TRUE;
         
         NEW n = Numerator {
-            name(n) <- 'Возврат';
-            series(n) <- 'ВЗ';
+            name(n) <- 'Return';
+            series(n) <- 'RX';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
             stringLength(n) <- 6;

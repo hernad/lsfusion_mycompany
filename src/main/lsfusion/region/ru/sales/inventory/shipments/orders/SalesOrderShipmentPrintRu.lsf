@@ -4,4 +4,4 @@ REQUIRE SalesOrderShipment, ShipmentPrintRu;
 
 NAMESPACE Sales;
 
-order(Shipment s) += 'Заказы покупателю ' + numberDateOrder(s);
+order(Shipment s) += 'Sales orders ' + numberDateOrder(s);

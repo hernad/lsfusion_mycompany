@@ -6,8 +6,8 @@ NAMESPACE Invoicing;
 
 @definePaymentTypeAnalytic(outgoing);
 
-analyticAccount 'Статья ДДС' = DATA AnalyticAccount (OutgoingPayment);
-nameAnalyticAccount 'Статья ДДС' (OutgoingPayment p) = name(analyticAccount(p));
+analyticAccount 'Cash flow teim' = DATA AnalyticAccount (OutgoingPayment);
+nameAnalyticAccount 'Cash flow teim' (OutgoingPayment p) = name(analyticAccount(p));
 
 EXTEND FORM outgoingPayments PROPERTIES READONLY nameAnalyticAccount(p);
 

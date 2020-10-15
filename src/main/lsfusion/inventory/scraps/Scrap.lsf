@@ -6,47 +6,47 @@ REQUIRE InventorySettings, Product, DateUtils,
 
 NAMESPACE Inventory;
 
-CLASS Scrap 'Списание';
+CLASS Scrap 'Magazine';
 
-@defineDocStatus(scrap, 'списания');
+@defineDocStatus(scrap, 'magazines');
 
 // type
-type 'Тип' = DATA ScrapType (Scrap) NONULL;
-nameType 'Тип' (Scrap r) = name(type(r));
+type 'Type' = DATA ScrapType (Scrap) NONULL;
+nameType 'Type' (Scrap r) = name(type(r));
 
 WHEN LOCAL SET(Scrap r IS Scrap) AND NOT CHANGED(type(r)) DO type(r) <- defaultScrapType(); 
 
-dateTime 'Дата' = DATA DATETIME (Scrap) NONULL;
+dateTime 'Date' = DATA DATETIME (Scrap) NONULL;
 dateTime(Scrap s) <- currentDateTime() WHEN SET(s IS Scrap);
 @defineDateTimeAggregation(Scrap);
 
 @defineNumberType(scrap);
 
-numberDate 'Описание' (Scrap s) = number(s) + ' от ' + dateTime(s) IN id;
+numberDate 'Description' (Scrap s) = number(s) + ' from ' + dateTime(s) IN id;
 
-location 'Место хранения' = DATA Location (Scrap) NONULL;
-nameLocation 'Место хранения' (Scrap s) = name(location(s));
+location 'Storage' = DATA Location (Scrap) NONULL;
+nameLocation 'Storage' (Scrap s) = name(location(s));
 
-note 'Примечание' = DATA ISTRING (Scrap) CHARWIDTH 30;
+note 'Note' = DATA ISTRING (Scrap) CHARWIDTH 30;
 
 // lines
-CLASS ScrapLine 'Строка списания';
+CLASS ScrapLine 'Debit line';
 
-scrap 'Списание' = DATA Scrap (ScrapLine) NONULL DELETE;
+scrap 'Magazine' = DATA Scrap (ScrapLine) NONULL DELETE;
 
-index '№' = PARTITION SUM 1 ORDER ScrapLine l BY scrap(l) IN id MATERIALIZED CHARWIDTH 3;
+index 'No' = PARTITION SUM 1 ORDER ScrapLine l BY scrap(l) IN id MATERIALIZED CHARWIDTH 3;
 
-product 'Продукт' = DATA Product (ScrapLine);
-nameProduct 'Продукт' (ScrapLine l) = name(product(l));
-idBarCodeProduct 'Штрихкод' (ScrapLine l) = idBarCode(product(l));
-idProduct 'Код' (ScrapLine l) = id(product(l));
+product 'Product' = DATA Product (ScrapLine);
+nameProduct 'Product' (ScrapLine l) = name(product(l));
+idBarCodeProduct 'Barcode' (ScrapLine l) = idBarCode(product(l));
+idProduct 'Code' (ScrapLine l) = id(product(l));
 
 uom (ScrapLine l) = uom(product(l));
-nameUom 'Ед. изм.' (ScrapLine l) = name(uom(l));
+nameUom 'UOM name' (ScrapLine l) = name(uom(l));
 
-quantity 'Кол-во' = DATA NUMERIC[16,3] (ScrapLine);
+quantity 'Quantity' = DATA NUMERIC[16,3] (ScrapLine);
 
-FORM scrap 'Списание'
+FORM scrap 'Magazine'
     OBJECTS s = Scrap PANEL 
     PROPERTIES(s) nameType, dateTime, number, nameLocation, note
     
@@ -58,14 +58,14 @@ FORM scrap 'Списание'
 ;
 
 DESIGN scrap {
-    caption = (CONCAT ' ', 'Списание', '№' + number(s), 'от ' + dateTime(s));
+    caption = (CONCAT ' ', 'Magazine', 'No' + number(s), 'from ' + dateTime(s));
     OBJECTS {
         PROPERTY(nameType(s)) { notNull = TRUE; }
         NEW details {
             fill = 1;
             type = TABBED;
             NEW lines {
-                caption = 'Строки';
+                caption = 'Strings';
                 type = SPLITH;
                 MOVE BOX(l);
                 NEW linesTab {
@@ -79,7 +79,7 @@ DESIGN scrap {
 
 @defineDocHistory(scrap, s, product, quantity);
 
-FORM scraps 'Списания'
+FORM scraps 'Magazines'
     OBJECTS s = Scrap 
     PROPERTIES(s) READONLY nameType, dateTime, number, nameLocation, note
     PROPERTIES(s) NEWSESSION NEW, EDIT, DELETE
@@ -100,7 +100,7 @@ NAVIGATOR {
 
 
 // copy
-copy 'Копировать' (Scrap s) {
+copy 'Copy' (Scrap s) {
     NEWSESSION {
         NEW ns = Scrap {
             dateTime(ns) <- dateTime(s);

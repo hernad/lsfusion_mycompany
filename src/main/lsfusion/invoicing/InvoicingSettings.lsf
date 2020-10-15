@@ -2,7 +2,7 @@ MODULE InvoicingSettings;
 
 NAMESPACE Invoicing;
 
-FORM options 'Настройки'
+FORM options 'Settings'
 ;
 
 DESIGN options {
@@ -15,12 +15,12 @@ DESIGN options {
 }
 
 NAVIGATOR {
-    NEW FOLDER invoicing 'Расчеты' WINDOW toolbar IMAGE 'invoicing.png' {
-        NEW FOLDER operations 'Операции' {
+    NEW FOLDER invoicing 'Calculations' WINDOW toolbar IMAGE 'invoicing.png' {
+        NEW FOLDER operations 'Actions' {
         }
-        NEW FOLDER reporting 'Отчеты' { 
+        NEW FOLDER reporting 'Reports' { 
         }
-        NEW FOLDER settings 'Настройка' {
+        NEW FOLDER settings 'Customization' {
             NEW options;        
         }
     }

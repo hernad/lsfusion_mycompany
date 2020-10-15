@@ -4,26 +4,26 @@ REQUIRE Individual;
 
 NAMESPACE MasterData;
 
-individualExport 'Экспорт физических лиц' () {
+individualExport 'Export Individuals' () {
     NEWSESSION {
         IF NOT (GROUP SUM 1 IF Individual i IS Individual) THEN {
             NEW i = Individual {
                 id(i) <- '123';
-                firstName(i) <- 'Имя';
-                lastName(i) <- 'Фамилия';
-                middleName(i) <- 'Отчество';
+                firstName(i) <- 'Name';
+                lastName(i) <- 'Surname';
+                middleName(i) <- 'Middle name';
             }
         }
     
         LOCAL f = EXCELFILE ();
-        EXPORT XLSX HEADER FROM 'Код' = id(Individual p), 'Имя' = firstName(p), 'Фамилия' = lastName(p), 
-            'Отчество' = middleName(p), 'Код организации' = idLegalEntity(p), 'Адрес' = address(p), 'Город' = city(p), 
-            'Область' = state(p), 'Почтовый индекс' = zip(p), 'Телефон' = phone(p), 'Электронная почта' = email(p) WHERE p IS Individual TO f;   
+        EXPORT XLSX HEADER FROM 'Code' = id(Individual p), 'Name' = firstName(p), 'Surname' = lastName(p), 
+            'Middle name' = middleName(p), 'Organization code' = idLegalEntity(p), 'Address' = address(p), 'City' = city(p), 
+            'Region' = state(p), 'Postcode' = zip(p), 'Phone' = phone(p), 'Email' = email(p) WHERE p IS Individual TO f;   
         open(f());
     }
 }
 
-individualImport 'Импорт физических лиц' () {
+individualImport 'Import individuals' () {
     LOCAL id = STRING[50] (INTEGER);
     LOCAL firstName = ISTRING[30] (INTEGER);
     LOCAL lastName = ISTRING[30] (INTEGER);
@@ -55,7 +55,7 @@ individualImport 'Импорт физических лиц' () {
                 email(i) <- email(j);
             }
             APPLY;
-            MESSAGE 'Импорт завершен';
+            MESSAGE 'Import completed';
         }
     }    
 }
@@ -68,7 +68,7 @@ DESIGN migrationData {
     commons {
         NEW individual {
             type = CONTAINERH;
-            caption = 'Физ лица';
+            caption = 'Individuals';
             MOVE PROPERTY(individualImport());
             MOVE PROPERTY(individualExport());
         }

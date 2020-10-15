@@ -6,11 +6,11 @@ NAMESPACE Invoicing;
 
 loadDefaultData () + {
     NEW t = BillType {
-        name(t) <- 'Закупка у поставщика';
+        name(t) <- 'Purchase from an Vendor';
         id(t) <- 'wholesale';
         NEW n = Numerator {
-            name(n) <- 'Закупка у поставщика';
-            series(n) <- 'ЗП';
+            name(n) <- 'Purchase from an Vendor';
+            series(n) <- 'PS';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
             stringLength(n) <- 6;

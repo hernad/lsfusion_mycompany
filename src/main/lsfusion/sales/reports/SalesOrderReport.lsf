@@ -6,7 +6,7 @@ NAMESPACE Sales;
 
 attribute(OrderLine l, ItemAttribute a) = value(attribute(item(l), a));
 
-FORM salesOrderReport 'Отчет по заказам'
+FORM salesOrderReport 'Order report'
     OBJECTS a = ItemAttribute
 
     OBJECTS report = (o = Order, l = OrderLine) PIVOT
@@ -15,8 +15,8 @@ FORM salesOrderReport 'Отчет по заказам'
                            nameLocation, scheduledDateTime,  
                            validity, namePaymentTerms, nameRepresentative
     PROPERTIES(l) READONLY nameItem
-    PROPERTIES READONLY 'Группа 1' = level1(item(l)), 'Группа 2' = level2(item(l)), 'Группа 3' = level3(item(l)), 'Группа 4' = level4(item(l)), 
-                        'Группа полная' = canonicalNameCategory(item(l)) 
+    PROPERTIES READONLY 'Group 1' = level1(item(l)), 'Group 2' = level2(item(l)), 'Group 3' = level3(item(l)), 'Group 4' = level4(item(l)), 
+                        'Full group' = canonicalNameCategory(item(l)) 
     PROPERTIES READONLY attribute(l, a) COLUMNS (a) HEADER name(a) 
     PROPERTIES(l) READONLY description, quantity, nameUom, price, discount, discountPrice, taxes
     PROPERTIES(l) READONLY MEASURE

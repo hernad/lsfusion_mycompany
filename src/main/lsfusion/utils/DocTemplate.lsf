@@ -4,18 +4,18 @@ REQUIRE MasterData;
 
 NAMESPACE Utils;
 
-CLASS TemplateFormat 'Формат шаблона' {
+CLASS TemplateFormat 'Template format' {
     pdf 'PDF',
     docx 'DOCX',
     xlsx 'XLSX',
     rtf 'RTF',
     html 'HTML',
-    noPreview 'Принтер'
+    noPreview 'Printer'
 }
 
-name 'Наименование' (TemplateFormat o) = staticCaption(o) IF o IS TemplateFormat CHARWIDTH 15;
+name 'Name' (TemplateFormat o) = staticCaption(o) IF o IS TemplateFormat CHARWIDTH 15;
 
-FORM dialogTemplateFormats 'Формат шаблона'
+FORM dialogTemplateFormats 'Template format'
     OBJECTS o = TemplateFormat
     PROPERTIES(o) READONLY name
     
@@ -24,16 +24,16 @@ FORM dialogTemplateFormats 'Формат шаблона'
 
 META defineDocTemplate(doc, caption)
     CLASS ###doc##Template 'Шаблон '##caption;
-    name 'Название' = DATA ISTRING[100] (###doc##Template) CHARWIDTH 15;
+    name 'Name' = DATA ISTRING[100] (###doc##Template) CHARWIDTH 15;
     
-    template 'Имя файла шаблона' = DATA STRING (###doc##Template) CHARWIDTH 50;
+    template 'Template file name' = DATA STRING (###doc##Template) CHARWIDTH 50;
 
     file = DATA FILE (###doc##Template);
     hasFile (###doc##Template t) = TRUE IF file(t);
     
     hasTemplate (###doc##Template t) = template(t) OR hasFile(t);
     
-    openFile 'Открыть' (###doc##Template t) {
+    openFile 'Open' (###doc##Template t) {
         IF hasFile(t) THEN {
             open(file(t));
         } ELSE IF template(t) THEN {
@@ -41,14 +41,14 @@ META defineDocTemplate(doc, caption)
             open(resourceFile());
         } 
     }
-    loadFile 'Загрузить' (###doc##Template t) { INPUT = file(t) CHANGE; }
-    dropFile 'Сбросить' (###doc##Template t) { file(t) <- NULL; } 
+    loadFile 'Download' (###doc##Template t) { INPUT = file(t) CHANGE; }
+    dropFile 'Reset' (###doc##Template t) { file(t) <- NULL; } 
     
     format = DATA TemplateFormat (###doc##Template);
-    nameFormat 'Формат' (###doc##Template t) = name(format(t));
+    nameFormat 'Format' (###doc##Template t) = name(format(t));
     
     // types
-    in 'Вкл' = DATA BOOLEAN (###doc##Template, ###doc##Type);
+    in 'C.Tax' = DATA BOOLEAN (###doc##Template, ###doc##Type);
     count###doc##Template (###doc##Type tp) = GROUP SUM 1 IF in(###doc##Template tm, tp);
     
     FORM doc##Template 'Шаблон '##caption
@@ -134,7 +134,7 @@ META defineDocTemplateForm(doc, obj)
         REPORT OVERRIDE file(doc##Template()), setExtension(RAWFILE(template(doc##Template())), 'path')
     ;
 
-    print 'Печать' (###doc o) {
+    print 'Printing' (###doc o) {
         doc##Template() <- NULL;
         IF count###doc##Template(type(o)) = 1 THEN
             doc##Template() <- GROUP MAX ###doc##Template it IF in(it, type(o));

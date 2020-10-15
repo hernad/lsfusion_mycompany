@@ -5,9 +5,9 @@ REQUIRE SalesPricelistPrintAll, InvLedger;
 NAMESPACE Sales;
 
 printLocation = DATA LOCAL Location ();
-namePrintLocation 'Место хранения' () = name(printLocation());
+namePrintLocation 'Storage' () = name(printLocation());
 
-onHandRec 'Остаток' (Product p) = onHandRec(printLocation(), p); 
+onHandRec 'The remainder' (Product p) = onHandRec(printLocation(), p); 
 
 EXTEND FORM printAllParams
     PROPERTIES() namePrintLocation

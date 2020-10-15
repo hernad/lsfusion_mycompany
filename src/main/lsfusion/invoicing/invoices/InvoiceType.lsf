@@ -4,18 +4,18 @@ REQUIRE Numerator, InvoicingSettings;
 
 NAMESPACE Invoicing;
 
-CLASS InvoiceType 'Тип реализации';
-name 'Название' = DATA ISTRING[50] (InvoiceType) NONULL;
+CLASS InvoiceType 'Implementation type';
+name 'Name' = DATA ISTRING[50] (InvoiceType) NONULL;
 
-id 'Код' = DATA STRING[20] (InvoiceType);
+id 'Code' = DATA STRING[20] (InvoiceType);
 invoiceType = GROUP AGGR InvoiceType t BY id(t);
 
-numerator 'Нумератор' = DATA Numerator (InvoiceType);
-nameNumerator 'Нумератор' (InvoiceType o) = name(numerator(o));
+numerator 'Numerator' = DATA Numerator (InvoiceType);
+nameNumerator 'Numerator' (InvoiceType o) = name(numerator(o));
 
-taxIncluded 'Цена включает налоги' = DATA BOOLEAN (InvoiceType);
+taxIncluded 'Price includes taxes' = DATA BOOLEAN (InvoiceType);
 
-FORM invoiceType 'Тип реализации'
+FORM invoiceType 'Implementation type'
     OBJECTS o = InvoiceType PANEL 
     PROPERTIES(o) name, id, nameNumerator, taxIncluded
      
@@ -31,7 +31,7 @@ DESIGN invoiceType {
     }
 }
 
-FORM invoiceTypes 'Типы реализации'
+FORM invoiceTypes 'Implementation types'
     OBJECTS o = InvoiceType
     PROPERTIES(o) READONLY name, id
     
@@ -51,7 +51,7 @@ DESIGN options {
 }
 
 // default type
-countInvoiceTypes 'Кол-во типов' () = GROUP SUM 1 IF r IS InvoiceType; 
+countInvoiceTypes 'Number of types' () = GROUP SUM 1 IF r IS InvoiceType; 
 firstInvoiceType = GROUP LAST InvoiceType r ORDER DESC r WHERE r IS InvoiceType;
 
 defaultInvoiceType = firstInvoiceType() IF countInvoiceTypes() = 1;

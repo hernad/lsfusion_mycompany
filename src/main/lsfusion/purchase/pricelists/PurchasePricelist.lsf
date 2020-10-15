@@ -4,54 +4,54 @@ REQUIRE ItemPurchase, PartnerPurchase, PurchaseSettings, BarCode, Doc;
 
 NAMESPACE Purchase; 
 
-CLASS Pricelist 'Прайс-лист поставщика';
+CLASS Pricelist 'Vendor price list';
 
-@defineDocStatus(pricelist, 'прайс-листа поставщика');
+@defineDocStatus(pricelist, 'Vendor price list');
 
-startDateTime 'Начало действия' = DATA DATETIME (Pricelist);
+startDateTime 'Start of action' = DATA DATETIME (Pricelist);
 startDateTime(Pricelist l) <- currentDateTime() WHEN SET(l IS Pricelist);
  
-endDateTime 'Окончание действия' = DATA DATETIME (Pricelist);
+endDateTime 'End of action' = DATA DATETIME (Pricelist);
 
-@defineNumber(pricelist, 'Прайс-листы поставщиков', 'ПП');
+@defineNumber(pricelist, 'Vendor price lists', 'PL');
 
-numberDate 'Описание' (Pricelist p) = number(p) + ' от ' + startDateTime(p) IN id;
+numberDate 'Description' (Pricelist p) = number(p) + ' from ' + startDateTime(p) IN id;
 
-note 'Примечание' = DATA STRING[50] (Pricelist);
+note 'Note' = DATA STRING[50] (Pricelist);
 
-vendor 'Поставщик ' = DATA Partner (Pricelist);
-nameVendor 'Поставщик '(Pricelist p) = name(vendor(p));
+vendor 'Vendor ' = DATA Partner (Pricelist);
+nameVendor 'Vendor '(Pricelist p) = name(vendor(p));
 
 // lines
-CLASS PricelistLine 'Номенклатура';
+CLASS PricelistLine 'Items';
 
-pricelist 'Прайс-лист' = DATA Pricelist (PricelistLine) NONULL DELETE;
+pricelist 'Price List' = DATA Pricelist (PricelistLine) NONULL DELETE;
 
-index '№' = PARTITION SUM 1 ORDER PricelistLine l BY pricelist(l) IN id MATERIALIZED CHARWIDTH 3;
+index 'No' = PARTITION SUM 1 ORDER PricelistLine l BY pricelist(l) IN id MATERIALIZED CHARWIDTH 3;
 
-item 'Номенклатура' = DATA Item (PricelistLine);
-nameItem 'Номенклатура' (PricelistLine l) = name(item(l));
-idBarCodeItem 'Штрихкод' (PricelistLine l) = idBarCode(item(l)); 
-idItem 'Код' (PricelistLine l) = id(item(l)); 
+item 'Items' = DATA Item (PricelistLine);
+nameItem 'Items' (PricelistLine l) = name(item(l));
+idBarCodeItem 'Barcode' (PricelistLine l) = idBarCode(item(l)); 
+idItem 'Code' (PricelistLine l) = id(item(l)); 
 
 uom (PricelistLine l) = uom(item(l));
-nameUom 'Ед. изм.' (PricelistLine l) = name(uom(l)); 
+nameUom 'UOM name' (PricelistLine l) = name(uom(l)); 
 
-nameItemVendor 'Наименование у поставщика' = DATA STRING[200] (PricelistLine);
-codeItemVendor 'Код у поставщика' = DATA STRING[20] (PricelistLine);
+nameItemVendor 'Vendor name' = DATA STRING[200] (PricelistLine);
+codeItemVendor 'Vendor code' = DATA STRING[20] (PricelistLine);
 
-price 'Цена' = DATA NUMERIC[10,2] (PricelistLine);
+price 'Price' = DATA NUMERIC[10,2] (PricelistLine);
 
 // Line properties
-nameStatus 'Статус' (PricelistLine prl) = nameStatus(pricelist(prl));
-number 'Номер' (PricelistLine prl) = number(pricelist(prl));
-numberDate 'Описание' (PricelistLine l) = numberDate(pricelist(l));
-startDateTime 'Начало действия' (PricelistLine prl) = startDateTime(pricelist(prl));
-endDateTime 'Окончание действия' (PricelistLine prl) = endDateTime(pricelist(prl));
-nameVendor 'Поставщик' (PricelistLine prl) = nameVendor(pricelist(prl));
-note 'Примечание' (PricelistLine prl) = note(pricelist(prl));
+nameStatus 'Status' (PricelistLine prl) = nameStatus(pricelist(prl));
+number 'Room' (PricelistLine prl) = number(pricelist(prl));
+numberDate 'Description' (PricelistLine l) = numberDate(pricelist(l));
+startDateTime 'Start of action' (PricelistLine prl) = startDateTime(pricelist(prl));
+endDateTime 'End of action' (PricelistLine prl) = endDateTime(pricelist(prl));
+nameVendor 'Vendor' (PricelistLine prl) = nameVendor(pricelist(prl));
+note 'Note' (PricelistLine prl) = note(pricelist(prl));
 
-FORM pricelist 'Прайс-лист поставщика'
+FORM pricelist 'Vendor price list'
     OBJECTS p = Pricelist PANEL
     PROPERTIES(p) number, startDateTime, endDateTime, nameVendor, note
     
@@ -65,7 +65,7 @@ FORM pricelist 'Прайс-лист поставщика'
 ;
 
 DESIGN pricelist {
-    caption = (CONCAT ' ', 'Прайс-лист поставщика', '№' + number(p), 'от ' + startDateTime(p));
+    caption = (CONCAT ' ', 'Vendor price list', 'No' + number(p), 'from ' + startDateTime(p));
     OBJECTS {
         NEW header {
             type = CONTAINERH;
@@ -75,8 +75,8 @@ DESIGN pricelist {
                 NEW period {
                     alignment = STRETCH;
                     type = CONTAINERH;
-                    MOVE PROPERTY(startDateTime(p)) { caption = 'Действует с'; }
-                    MOVE PROPERTY(endDateTime(p)) { caption = 'по '; }                
+                    MOVE PROPERTY(startDateTime(p)) { caption = 'Valid from'; }
+                    MOVE PROPERTY(endDateTime(p)) { caption = 'by '; }                
                 }
                 MOVE PROPERTY(nameVendor(p));
                 MOVE PROPERTY(note(p));
@@ -99,9 +99,9 @@ DESIGN pricelist {
     }
 }
 
-@defineDocSearch(pricelist, item, price, 'Цена', p, canBePurchased);
+@defineDocSearch(pricelist, item, price, 'Price', p, canBePurchased);
 
-FORM pricelists 'Прайс-листы поставщиков'
+FORM pricelists 'Vendor price lists'
     OBJECTS p = Pricelist
     PROPERTIES(p) READONLY startDateTime, endDateTime, number, nameVendor, note
     PROPERTIES(p) NEWSESSION NEW, EDIT, DELETE 
@@ -119,7 +119,7 @@ NAVIGATOR {
 }
 
 // copy
-copy 'Копировать' (Pricelist pl) {
+copy 'Copy' (Pricelist pl) {
     NEWSESSION {
         NEW p = Pricelist {
             startDateTime(p) <- startDateTime(pl);

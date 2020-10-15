@@ -6,12 +6,12 @@ NAMESPACE Invoicing;
 
 loadDefaultData () + {
     NEW i = OutgoingPaymentType {
-        name(i) <- 'Оплата на счет поставщику';
+        name(i) <- 'Payment to the Vendor\'s account';
         id(i) <- 'vendorbank';
         bank(i) <- TRUE;
         NEW n = Numerator {
-            name(n) <- 'Оплата на счет поставщику';
-            series(n) <- 'ПБ';
+            name(n) <- 'Payment to the Vendor\'s account';
+            series(n) <- 'P9';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
             stringLength(n) <- 6;
@@ -19,12 +19,12 @@ loadDefaultData () + {
         }
     }
     NEW i = OutgoingPaymentType {
-        name(i) <- 'Оплата наличными поставщику';
+        name(i) <- 'Cash payment to Vendor';
         id(i) <- 'vendorcash';
         cash(i) <- TRUE;
         NEW n = Numerator {
-            name(n) <- 'Оплата наличными поставщику';
-            series(n) <- 'ПН';
+            name(n) <- 'Cash payment to Vendor';
+            series(n) <- 'C7';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
             stringLength(n) <- 6;
@@ -32,12 +32,12 @@ loadDefaultData () + {
         }
     }
     NEW i = OutgoingPaymentType {
-        name(i) <- 'Возврат на счет покупателю';
+        name(i) <- 'Return to customer account';
         id(i) <- 'customerbank';
         bank(i) <- TRUE;
         NEW n = Numerator {
-            name(n) <- 'Возврат на счет покупателю';
-            series(n) <- 'ВБ';
+            name(n) <- 'Return to customer account';
+            series(n) <- 'R5';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
             stringLength(n) <- 6;
@@ -45,12 +45,12 @@ loadDefaultData () + {
         }
     }
     NEW i = OutgoingPaymentType {
-        name(i) <- 'Возврат наличными покупателю';
+        name(i) <- 'Cash back to Client';
         id(i) <- 'customercash';
         cash(i) <- TRUE;
         NEW n = Numerator {
-            name(n) <- 'Возврат наличными покупателю';
-            series(n) <- 'ВН';
+            name(n) <- 'Cash back to Client';
+            series(n) <- 'В3';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
             stringLength(n) <- 6;

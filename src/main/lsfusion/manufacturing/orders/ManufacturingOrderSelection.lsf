@@ -9,7 +9,7 @@ NAMESPACE Manufacturing;
 @defineSelectionForm(manufacturingOrders, ManufacturingOrder, o);
 
 // copy
-FORM dialogScheduledDate 'Введите дату начала'
+FORM dialogScheduledDate 'Enter start date'
     OBJECTS d '' = DATETIME PANEL
     PROPERTIES dateTime '' = VALUE(d)
 ;
@@ -20,7 +20,7 @@ DESIGN dialogScheduledDate {
 }
 
 
-copySelected 'Копировать' () {
+copySelected 'Copy' () {
     DIALOG dialogScheduledDate OBJECTS d INPUT DO {
         LOCAL NESTED toCopy = BOOLEAN (ManufacturingOrder);
         toCopy(ManufacturingOrder o) <- selectedManufacturingOrders(o);

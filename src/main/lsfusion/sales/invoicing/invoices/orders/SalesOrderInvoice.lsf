@@ -7,27 +7,27 @@ NAMESPACE Sales;
 
 // type
 invoiceType = DATA InvoiceType (OrderType);
-nameInvoiceType 'Тип реализации' (OrderType t) = name(invoiceType(t));
+nameInvoiceType 'Implementation type' (OrderType t) = name(invoiceType(t));
 EXTEND FORM orderType PROPERTIES nameInvoiceType(o);
 
 // invoicing policy
-CLASS InvoicingPolicy 'Политика оформления реализации' {
-    ordered 'Заказанное количество'
+CLASS InvoicingPolicy 'Implementation registration policy' {
+    ordered 'Ordered quantity'
 }
-name 'Имя' (InvoicingPolicy p) = staticCaption(p) IF p IS InvoicingPolicy CHARWIDTH 20;
+name 'Name' (InvoicingPolicy p) = staticCaption(p) IF p IS InvoicingPolicy CHARWIDTH 20;
 
 invoicingPolicy = DATA InvoicingPolicy (OrderType);
-nameInvoicingPolicy 'Политика оформления реализации' (OrderType t) = name(invoicingPolicy(t)); 
+nameInvoicingPolicy 'Implementation registration policy' (OrderType t) = name(invoicingPolicy(t)); 
 EXTEND FORM orderType PROPERTIES nameInvoicingPolicy(o);
 
 // lines
-@defineDocLineRelation(order, invoice, 'Заказы', 'Реализации', o, i);
+@defineDocLineRelation(order, invoice, 'Orders', 'Implementation', o, i);
 
-invoiced 'Реализовано' (OrderLine ol) = 
+invoiced 'Implemented' (OrderLine ol) = 
     GROUP SUM quantity(InvoiceLine bl) IF orderLine(bl) = ol AND active(invoice(bl));
-paid 'Оплачено' (OrderLine ol) = 
+paid 'Paid up' (OrderLine ol) = 
     GROUP SUM quantity(InvoiceLine bl) IF orderLine(bl) = ol AND done(invoice(bl)) AND NOT canceled(invoice(bl));
-toInvoiceOrdered 'К оформлению' (OrderLine l) = 
+toInvoiceOrdered 'To registration' (OrderLine l) = 
     max(quantity(l) (-) invoiced(l), 0) 
         IF (invoicingPolicy(type(l)) = InvoicingPolicy.ordered OR NOT invoicingPolicy(type(l)) OR NOT item(l) IS Product);
 
@@ -67,7 +67,7 @@ create (Invoice i, Order o) {
     }                                
 }
 
-createInvoice 'Реализовать' (Order o) {
+createInvoice 'To implement' (Order o) {
     APPLY;
     IF canceled() THEN RETURN;
                
@@ -82,7 +82,7 @@ createInvoice 'Реализовать' (Order o) {
     }
 }
 
-FORM orderInvoiceShow 'Реализовано'
+FORM orderInvoiceShow 'Implemented'
     OBJECTS ol = OrderLine
     
     OBJECTS il = InvoiceLine
@@ -107,7 +107,7 @@ DESIGN order {
     }
     relatedDoc  {
         MOVE BOX(in) {
-            caption = CONCAT ' ', 'Реализации', '(' + countInvoices(o) + ')';
+            caption = CONCAT ' ', 'Implementation', '(' + countInvoices(o) + ')';
             GRID(in) { headerHeight = 24; }
         }
         REMOVE TOOLBARBOX(in);
@@ -116,5 +116,5 @@ DESIGN order {
 
 EXTEND FORM orders
     FILTERGROUP toInvoice
-        FILTER 'Реализовать' status(o) = OrderStatus.confirmed AND toInvoice(o)
+        FILTER 'To implement' status(o) = OrderStatus.confirmed AND toInvoice(o)
 ;

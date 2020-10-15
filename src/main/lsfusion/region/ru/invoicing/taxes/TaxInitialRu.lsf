@@ -6,7 +6,7 @@ NAMESPACE Invoicing;
 
 loadDefaultData() + {
     NEW g = TaxGroup {
-        name(g) <- 'НДС';
+        name(g) <- 'VAT';
         id(g) <- 'vat';
         NEW t = Tax {
             name(t) <- '20%';

@@ -4,13 +4,13 @@ REQUIRE ProductLot, ShipmentSearch, ShipmentInv, InvLedgerLot;
 
 NAMESPACE Inventory;
 
-@defineDocLot(shipment, product, done, done, ' (отгружено)');
+@defineDocLot(shipment, product, done, done, ' (shipped)');
 
 @defineDocBarCodeLot (shipment, product, done);
 
 @defineDocDesignLotTab(shipment, done);
        
-onHandLast 'Доступный остаток' (ShipmentLine sl, Lot l) = PREV(onHand(location(shipment(sl)), l));
+onHandLast 'Available balance' (ShipmentLine sl, Lot l) = PREV(onHand(location(shipment(sl)), l));
 
 EXTEND FORM shipment 
     PROPERTIES (l, lot) BEFORE done(l, lot) onHandLast READONLY;

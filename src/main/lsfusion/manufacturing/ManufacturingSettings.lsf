@@ -2,7 +2,7 @@ MODULE ManufacturingSettings;
 
 NAMESPACE Manufacturing;
 
-FORM options 'Настройки'
+FORM options 'Settings'
 ;
 
 DESIGN options {
@@ -11,19 +11,19 @@ DESIGN options {
             type = TABBED;
             fill = 1;
             NEW commons {
-                caption = 'Основные';
+                caption = 'Basic';
             }
         }
     }
 }
 
 NAVIGATOR {
-    NEW FOLDER manufacturing 'Производство' WINDOW toolbar IMAGE 'manufacturing.png' {
-        NEW FOLDER operations 'Операции' {  
+    NEW FOLDER manufacturing 'Manufacturing' WINDOW toolbar IMAGE 'manufacturing.png' {
+        NEW FOLDER operations 'Actions' {  
         }
-        NEW FOLDER reporting 'Отчеты' {  
+        NEW FOLDER reporting 'Reports' {  
         }
-        NEW FOLDER settings 'Настройка' {
+        NEW FOLDER settings 'Customization' {
             NEW options;
         }
     }  

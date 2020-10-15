@@ -6,7 +6,7 @@ NAMESPACE MasterData;
 
 NAVIGATOR {
     masterData {
-        NEW FOLDER dashboards 'Процессы' {  
+        NEW FOLDER dashboards 'Processes' {  
         }
     }
 }

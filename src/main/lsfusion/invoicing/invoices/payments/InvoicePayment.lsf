@@ -5,11 +5,11 @@ REQUIRE InvoiceDone, InvoiceDebt, IncomingPaymentDebt;
 NAMESPACE Invoicing;
 
 paymentType = DATA IncomingPaymentType (InvoiceType);
-namePaymentType 'Тип платежа' (InvoiceType t) = name(paymentType(t));
+namePaymentType 'Payment type' (InvoiceType t) = name(paymentType(t));
 
 EXTEND FORM invoiceType PROPERTIES namePaymentType(o);
 
-registerPayment 'Оплатить' (Invoice i) {
+registerPayment 'Pay' (Invoice i) {
     APPLY; 
     IF canceled() THEN RETURN;
     

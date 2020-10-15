@@ -19,7 +19,7 @@ company (Bill b) += company(b);
 amount (Bill b) += amount(b);
 
 // pay
-pay 'Разнести' (Bill b, OutgoingDebt d) {
+pay 'Blow up' (Bill b, OutgoingDebt d) {
     paid(b, d) <- left(b, d) (+) paid(b, d);
 } CHANGEMOUSE 'DBLCLK';
 
@@ -42,9 +42,9 @@ DESIGN bill {
     }
     details {
         NEW debts {
-            caption = 'Разнесение оплат';
-            MOVE BOX(d) { caption = 'Разнесенные'; }            
-            MOVE BOX(dd) { caption = 'Доступные'; }          
+            caption = 'Payment spread';
+            MOVE BOX(d) { caption = 'Spaced'; }            
+            MOVE BOX(dd) { caption = 'Available'; }          
         }
     }
 }

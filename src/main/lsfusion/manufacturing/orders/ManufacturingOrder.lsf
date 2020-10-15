@@ -6,109 +6,109 @@ REQUIRE Doc, MetaNumerator, Input, DateUtils,
 
 NAMESPACE Manufacturing;
 
-CLASS ManufacturingOrder 'Производственный заказ';
+CLASS ManufacturingOrder 'Manufacturing Order';
 
-@defineDocStatus(manufacturingOrder, 'производственного заказа');
+@defineDocStatus(manufacturingOrder, 'Manufacturing Order');
 
-type 'Тип' = DATA ManufacturingOrderType (ManufacturingOrder) NONULL;
-nameType 'Тип' (ManufacturingOrder o) = name(type(o));
+type 'Type' = DATA ManufacturingOrderType (ManufacturingOrder) NONULL;
+nameType 'Type' (ManufacturingOrder o) = name(type(o));
 
 WHEN LOCAL SET(ManufacturingOrder o IS ManufacturingOrder) AND NOT CHANGED(type(o)) DO type(o) <- defaultManufacturingOrderType(); 
 
-scheduledDateTime 'Дата начала' = DATA DATETIME (ManufacturingOrder);
+scheduledDateTime 'start date' = DATA DATETIME (ManufacturingOrder);
 scheduledDateTime(ManufacturingOrder o) <- currentDateTime() WHEN SET(o IS ManufacturingOrder);
-@defineDateTimeAggregation(ManufacturingOrder, scheduled, ' начала');
+@defineDateTimeAggregation(ManufacturingOrder, scheduled, ' start');
 
-@defineNumber(manufacturingOrder, 'Производственные заказы', 'ПЗ');
+@defineNumber(manufacturingOrder, 'Manufacturing Orders', 'MO');
 
-numberDate 'Описание' (ManufacturingOrder o) = number(o) + ' от ' + scheduledDateTime(o) IN id;
+numberDate 'Description' (ManufacturingOrder o) = number(o) + ' from ' + scheduledDateTime(o) IN id;
 
-item 'Номенклатура' = DATA Item (ManufacturingOrder) NONULL;
-nameItem 'Номенклатура' (ManufacturingOrder m) = name(item(m));
+item 'Items' = DATA Item (ManufacturingOrder) NONULL;
+nameItem 'Items' (ManufacturingOrder m) = name(item(m));
 
 uom (ManufacturingOrder o) = uom(item(o));
-nameUom 'Ед .изм.' (ManufacturingOrder m) = name(uom(m));
+nameUom 'Unit.' (ManufacturingOrder m) = name(uom(m));
 
 // bom
-bom 'Спецификация' = DATA Bom (ManufacturingOrder) NONULL;
-descriptionBom 'Спецификация' (ManufacturingOrder m) = description(bom(m));
+bom 'Specification' = DATA Bom (ManufacturingOrder) NONULL;
+descriptionBom 'Specification' (ManufacturingOrder m) = description(bom(m));
 CONSTRAINT bom(ManufacturingOrder m) AND NOT item(m) = item(bom(m))
     CHECKED BY bom[ManufacturingOrder]
-    MESSAGE 'Номенклатура спецификации производственного заказа должна равняться номенклатуре производственного заказа';
+    MESSAGE 'Manufacturing order BOM item must be equal to manufacturing order item';
 
 WHEN LOCAL CHANGED(item(ManufacturingOrder o)) AND NOT CHANGED(bom(o)) AND defaultBom(item(o)) DO
     bom(o) <- defaultBom(item(o));
 
 company = DATA Company (ManufacturingOrder);
-nameCompany 'Компания' (ManufacturingOrder m) = name(company(m));
+nameCompany 'Company' (ManufacturingOrder m) = name(company(m));
 WHEN LOCAL SET(ManufacturingOrder o IS ManufacturingOrder) AND NOT CHANGED(company(o)) DO company(o) <- defaultCompany(); 
 
-materialsLocation 'Списать из' = DATA Location (ManufacturingOrder);
-nameMaterialsLocation 'Списать из' (ManufacturingOrder m) = name(materialsLocation(m));
+materialsLocation 'writeOffFrom' = DATA Location (ManufacturingOrder);
+nameMaterialsLocation 'writeOffFrom' (ManufacturingOrder m) = name(materialsLocation(m));
 WHEN LOCAL SETCHANGED(type(ManufacturingOrder mo)) AND NOT materialsLocation(mo) DO materialsLocation(mo) <- materialsLocation(type(mo));
 
-unbuild 'Разборка' (ManufacturingOrder mo)= unbuild(type(mo)); 
+unbuild 'Disassembly' (ManufacturingOrder mo)= unbuild(type(mo)); 
 
 // consumed
-CLASS ConsumedLine 'Материалы';
+CLASS ConsumedLine 'Materials';
 
 manufacturingOrder = DATA ManufacturingOrder (ConsumedLine) NONULL DELETE;
 
-countConsumedLine 'Строк материалов' (ManufacturingOrder m) = GROUP SUM 1 IF manufacturingOrder(ConsumedLine l) = m MATERIALIZED;
-index '№' = PARTITION SUM 1 ORDER ConsumedLine l BY manufacturingOrder(l) IN id MATERIALIZED CHARWIDTH 3;
+countConsumedLine 'Material lines' (ManufacturingOrder m) = GROUP SUM 1 IF manufacturingOrder(ConsumedLine l) = m MATERIALIZED;
+index 'No' = PARTITION SUM 1 ORDER ConsumedLine l BY manufacturingOrder(l) IN id MATERIALIZED CHARWIDTH 3;
 
-item 'Номенклатура' = DATA Item (ConsumedLine);
-nameItem 'Номенклатура' (ConsumedLine l) = name(item(l));
-idBarCodeItem 'Штрихкод' (ConsumedLine l) = idBarCode(item(l));
-idItem 'Код' (ConsumedLine l) = id(item(l));
+item 'Items' = DATA Item (ConsumedLine);
+nameItem 'Items' (ConsumedLine l) = name(item(l));
+idBarCodeItem 'Barcode' (ConsumedLine l) = idBarCode(item(l));
+idItem 'Code' (ConsumedLine l) = id(item(l));
 
 uom (ConsumedLine l) = uom(item(l));
-nameUom 'Ед. изм.' (ConsumedLine l) = name(uom(l));
+nameUom 'UOM name' (ConsumedLine l) = name(uom(l));
 
-toConsume 'Израсходовать' = DATA NUMERIC[16,3] (ConsumedLine);
+toConsume 'Use up' = DATA NUMERIC[16,3] (ConsumedLine);
 
-toConsume 'Израсходовать' (ManufacturingOrder o) = GROUP SUM toConsume(ConsumedLine l) IF manufacturingOrder(l) = o AND item(l) = item(o) MATERIALIZED;
+toConsume 'Use up' (ManufacturingOrder o) = GROUP SUM toConsume(ConsumedLine l) IF manufacturingOrder(l) = o AND item(l) = item(o) MATERIALIZED;
 
 // finished
-CLASS FinishedLine 'Продукция';
+CLASS FinishedLine 'Products';
 
 manufacturingOrder = DATA ManufacturingOrder (FinishedLine) NONULL DELETE;
 
-countFinishedLine 'Строк продукции' (ManufacturingOrder m) = GROUP SUM 1 IF manufacturingOrder(ConsumedLine l) = m MATERIALIZED;
-index '№' = PARTITION SUM 1 ORDER FinishedLine l BY manufacturingOrder(l) IN id MATERIALIZED CHARWIDTH 3;
+countFinishedLine 'Product lines' (ManufacturingOrder m) = GROUP SUM 1 IF manufacturingOrder(ConsumedLine l) = m MATERIALIZED;
+index 'No' = PARTITION SUM 1 ORDER FinishedLine l BY manufacturingOrder(l) IN id MATERIALIZED CHARWIDTH 3;
 
-item 'Номенклатура' = DATA Item (FinishedLine);
-nameItem 'Номенклатура' (FinishedLine l) = name(item(l));
-idBarCodeItem 'Штрихкод' (FinishedLine l) = idBarCode(item(l));
-idItem 'Код' (FinishedLine l) = id(item(l));
+item 'Items' = DATA Item (FinishedLine);
+nameItem 'Items' (FinishedLine l) = name(item(l));
+idBarCodeItem 'Barcode' (FinishedLine l) = idBarCode(item(l));
+idItem 'Code' (FinishedLine l) = id(item(l));
 
-uom 'Ед. изм.' = DATA Uom (FinishedLine);
-nameUom 'Ед. изм.' (FinishedLine l) = name(uom(l));
+uom 'UOM name' = DATA Uom (FinishedLine);
+nameUom 'UOM name' (FinishedLine l) = name(uom(l));
 WHEN LOCAL CHANGED(item(FinishedLine l)) DO uom(l) <- uom(item(l));
 
-toProduce 'Произвести' = DATA NUMERIC[16,3] (FinishedLine);
+toProduce 'Produce' = DATA NUMERIC[16,3] (FinishedLine);
 
-costRatio 'Доля стоимости' (FinishedLine) = DATA NUMERIC[16,3] (FinishedLine);
+costRatio 'Share of cost' (FinishedLine) = DATA NUMERIC[16,3] (FinishedLine);
 
 costRatio (ManufacturingOrder o) = GROUP SUM costRatio(FinishedLine l) IF manufacturingOrder(l) = o MATERIALIZED;
 normalizedCostRatio (FinishedLine l) = IF costRatio(manufacturingOrder(l)) THEN 
                                                                 costRatio(l) / costRatio(manufacturingOrder(l)) ELSE 
                                                                 (1.0 IF item(l) = item(manufacturingOrder(l))); 
 
-toProduce 'Произвести' (ManufacturingOrder o) = GROUP SUM toProduce(FinishedLine l) IF manufacturingOrder(l) = o AND item(l) = item(o) MATERIALIZED;
+toProduce 'Produce' (ManufacturingOrder o) = GROUP SUM toProduce(FinishedLine l) IF manufacturingOrder(l) = o AND item(l) = item(o) MATERIALIZED;
 
 // manufacture
-toManufacture 'Произвести' (ManufacturingOrder o) = IF unbuild(o) THEN toConsume(o) ELSE toProduce(o) MATERIALIZED;
+toManufacture 'Produce' (ManufacturingOrder o) = IF unbuild(o) THEN toConsume(o) ELSE toProduce(o) MATERIALIZED;
 
 // line properties
-nameType 'Тип' (ConsumedLine l) = nameType(manufacturingOrder(l));
-scheduledDateTime 'Дата начала' (ConsumedLine l) = scheduledDateTime(manufacturingOrder(l));
-number 'Номер' (ConsumedLine l) = number(manufacturingOrder(l));
-descriptionBom 'Спецификация' (ConsumedLine l) = descriptionBom(manufacturingOrder(l));
+nameType 'Type' (ConsumedLine l) = nameType(manufacturingOrder(l));
+scheduledDateTime 'start date' (ConsumedLine l) = scheduledDateTime(manufacturingOrder(l));
+number 'Room' (ConsumedLine l) = number(manufacturingOrder(l));
+descriptionBom 'Specification' (ConsumedLine l) = descriptionBom(manufacturingOrder(l));
 
 edit (ConsumedLine l) + { edit(manufacturingOrder(l)); } 
 
-FORM manufacturingOrder 'Производственный заказ'
+FORM manufacturingOrder 'Manufacturing Order'
     OBJECTS o = ManufacturingOrder PANEL 
     PROPERTIES(o) READONLY unbuild
     PROPERTIES(o) nameType, scheduledDateTime, number, nameCompany, 
@@ -128,7 +128,7 @@ FORM manufacturingOrder 'Производственный заказ'
 ;
 
 DESIGN manufacturingOrder {
-    caption = (CONCAT ' ', 'Производственный заказ', '№' + number(o), 'от ' + scheduledDateTime(o));
+    caption = (CONCAT ' ', 'Manufacturing Order', 'No' + number(o), 'from ' + scheduledDateTime(o));
     OBJECTS {
         NEW header {
             alignment = STRETCH;
@@ -154,12 +154,12 @@ DESIGN manufacturingOrder {
             fill = 1;
             type = TABBED;
             NEW consumed {
-                caption = 'Материалы';
+                caption = 'Materials';
                 MOVE PROPERTY(nameMaterialsLocation(o));
                 MOVE BOX(c);
             }
             NEW finished {
-                caption = 'Продукция';
+                caption = 'Products';
                 NEW finishedHeader { 
                     type = CONTAINERH;
                     alignment = STRETCH; 
@@ -177,7 +177,7 @@ DESIGN manufacturingOrder {
 
 background (ManufacturingOrder o) = ABSTRACT CASE COLOR (ManufacturingOrder);
 
-FORM manufacturingOrders 'Производственные заказы'
+FORM manufacturingOrders 'Manufacturing Orders'
     OBJECTS o = ManufacturingOrder
     PROPERTIES(o) READONLYIF isReadonly() BACKGROUND background(o)
                            nameType, scheduledDateTime, number, nameCompany, 
@@ -193,7 +193,7 @@ FORM manufacturingOrders 'Производственные заказы'
 
 @extendFormEditable(manufacturingOrders);
 
-@defineDocObjectsForm(manufacturingOrders, o, 'Заказы');
+@defineDocObjectsForm(manufacturingOrders, o, 'Orders');
 @defineDocStatusForm(manufacturingOrder, o);
 @defineDocLocationAccess(manufacturingOrder, o, materials);
 
@@ -231,7 +231,7 @@ clone(ManufacturingOrder to, ManufacturingOrder from) {
     extraCopy(to, from);
 }
 
-copy 'Копировать' (ManufacturingOrder from) {
+copy 'Copy' (ManufacturingOrder from) {
     NEWSESSION {
         NEW to = ManufacturingOrder {
             clone(to, from);
@@ -298,7 +298,7 @@ fillByQuantity (ManufacturingOrder o, NUMERIC[16,3] q) {
     }
 }
 
-fillLines 'Заполнить по спецификации' (ManufacturingOrder o) {
+fillLines 'Fill in according to specification' (ManufacturingOrder o) {
     APPLY;
     IF canceled() THEN RETURN;
     

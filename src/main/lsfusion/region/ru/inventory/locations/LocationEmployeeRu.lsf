@@ -4,6 +4,6 @@ REQUIRE Location, Individual;
 
 NAMESPACE Inventory;
 
-@defineEmployee(allowed, 'Отпуск разрешил', location, l, invoicePrint);
-@defineEmployee(accountant, 'Главный (старший) бухгалтер', location, l, invoicePrint);
-@defineEmployee(performed, 'Отпуск произвел', location, l, invoicePrint);
+@defineEmployee(allowed, 'Vacation allowed', location, l, invoicePrint);
+@defineEmployee(accountant, 'Chief (senior) accountant', location, l, invoicePrint);
+@defineEmployee(performed, 'The leave produced', location, l, invoicePrint);

@@ -6,23 +6,23 @@ REQUIRE Input, Utils, Reflection, Security, Authentication,
 
 NAMESPACE MasterData;
 
-loadImageApply 'Загрузить' (Item i)  { NEWSESSION { INPUT = image(i) CHANGE DO APPLY; } }
-dropImageApply 'Сбросить' (Item i) { NEWSESSION { APPLY { image(i) <- NULL; } } } CONFIRM;
+loadImageApply 'Download' (Item i)  { NEWSESSION { INPUT = image(i) CHANGE DO APPLY; } }
+dropImageApply 'Reset' (Item i) { NEWSESSION { APPLY { image(i) <- NULL; } } } CONFIRM;
 
-FORM itemImageLoad 'Загрузка изображений'
+FORM itemImageLoad 'Loading images'
     OBJECTS i = Item PAGESIZE 50
-    PROPERTIES(i) READONLY 'Имя' = name, id
+    PROPERTIES(i) READONLY 'Name' = name, id
     PROPERTIES(i) READONLY PANEL pName '' = name, '' = idBarCode, '' = nameUom 
     PROPERTIES(i) '' = image READONLY PANEL
     PROPERTIES(i) loadImageApply, dropImageApply
     ORDERS name(i)
     
     FILTERGROUP noImage
-        FILTER 'Без изображения' TRUE IF NOT image(i);
+        FILTER 'No picture' TRUE IF NOT image(i);
 ;
 
 DESIGN itemImageLoad {
-    caption = 'Изображения';
+    caption = 'Pictures';
     OBJECTS {
         NEW filters {
             alignment = STRETCH;

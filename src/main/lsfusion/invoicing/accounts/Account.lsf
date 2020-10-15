@@ -4,29 +4,29 @@ REQUIRE InvoicingSettings, Partner;
 
 NAMESPACE Invoicing;
 
-CLASS ABSTRACT Account 'Счет';
+CLASS ABSTRACT Account 'Account';
 
-holder 'Держатель счета' = DATA Partner (Account) NONULL;
-nameAccountHolder 'Держатель счета' (Account a) = name(holder(a)) IN id;
+holder 'Account holder' = DATA Partner (Account) NONULL;
+nameAccountHolder 'Account holder' (Account a) = name(holder(a)) IN id;
 
 dataDefaultAccount = DATA Account (Partner);
 calcDefaultAccount (Partner p) = GROUP LAST Account a ORDER DESC a WHERE holder(a) = p;
 
 defaultAccount (Partner p) = OVERRIDE dataDefaultAccount(p), calcDefaultAccount(p);
-default 'По умолчанию' (Account a) = defaultAccount(holder(a)) = a CHARWIDTH 10;
+default 'Default' (Account a) = defaultAccount(holder(a)) = a CHARWIDTH 10;
 
-note 'Примечание' = DATA ISTRING (Account);
+note 'Note' = DATA ISTRING (Account);
 
-name 'Наименование' = ABSTRACT ISTRING[100] (Account) CHARWIDTH 20 IN id;
+name 'Name' = ABSTRACT ISTRING[100] (Account) CHARWIDTH 20 IN id;
 
-allowNegative 'Разрешить отрицательный остаток' = DATA BOOLEAN (Account);
+allowNegative 'Allow negative balance' = DATA BOOLEAN (Account);
 
-CLASS AccountType 'Тип счета';
+CLASS AccountType 'Account type';
 
-name 'Имя' (AccountType o) = staticCaption(o) IF o IS AccountType CHARWIDTH 15;
+name 'Name' (AccountType o) = staticCaption(o) IF o IS AccountType CHARWIDTH 15;
 
 type  = ABSTRACT CASE AccountType (Account);
-nameType 'Тип счета' (Account a) = name(type(a));
+nameType 'Account type' (Account a) = name(type(a));
 
 changeDefault (Account a) {
     INPUT b = BOOLEAN DO {
@@ -35,7 +35,7 @@ changeDefault (Account a) {
     }
 }
 
-FORM account 'Счет'
+FORM account 'Account'
     OBJECTS a = Account PANEL 
     PROPERTIES(a) nameType, default ON CHANGE changeDefault(a), 
                   allowNegative, nameAccountHolder, note
@@ -56,7 +56,7 @@ DESIGN account {
     }
 }
 
-FORM accounts 'Счета'
+FORM accounts 'Accounts'
     OBJECTS a = Account
     PROPERTIES(a) READONLY nameType, name, nameAccountHolder, note, default
     PROPERTIES(a) NEWSESSION EDIT, DELETE
@@ -73,7 +73,7 @@ NAVIGATOR {
     }
 }
 
-newAccount 'Счет' (Partner p) {
+newAccount 'Account' (Partner p) {
     NESTEDSESSION {
         NEW a = Account {
             holder(a) <- p;
@@ -94,7 +94,7 @@ EXTEND FORM partner
 DESIGN partner {
     tabs {
         NEW accounts FIRST {
-            caption = 'Счета';
+            caption = 'Accounts';
             MOVE BOX(a);
         }
     }

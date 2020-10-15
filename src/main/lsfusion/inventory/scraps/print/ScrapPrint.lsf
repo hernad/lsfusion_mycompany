@@ -4,9 +4,9 @@ REQUIRE ScrapDone, DocTemplate;
 
 NAMESPACE Inventory;
 
-addressLocation 'Адрес' (Scrap s)  = linesAddress(location(s));
+addressLocation 'Address' (Scrap s)  = linesAddress(location(s));
 
-FORM printScrap 'Списание товара'
+FORM printScrap 'Write-off of Products'
     OBJECTS o = Scrap PANEL 
     PROPERTIES(o) nameType, dateTime, nameLocation, addressLocation
     
@@ -15,5 +15,5 @@ FORM printScrap 'Списание товара'
     FILTERS scrap(l) = o
 ;
 
-@defineDocTemplate(scrap, 'списания');
+@defineDocTemplate(scrap, 'magazines');
 @defineDocTemplateForm(scrap, s);

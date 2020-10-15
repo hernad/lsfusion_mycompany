@@ -4,17 +4,17 @@ REQUIRE Shipment, ShipmentFilter, LocationSelection;
 
 NAMESPACE Inventory;
 
-bulkCreate 'Создать перемещения' () {
+bulkCreate 'Create displacements' () {
     IF NOT type() THEN {
-        MESSAGE 'Не выбран тип отгрузки';
+        MESSAGE 'Shipment type not selected';
         RETURN;
     }
     IF NOT isTransfer(type()) THEN {
-        MESSAGE 'Выбран тип отгрузки не являющийся перемещением';
+        MESSAGE 'The selected shipment type is not a transfer';
         RETURN;
     }
     IF NOT location() THEN {
-        MESSAGE 'Не выбрано место хранения (откуда)';
+        MESSAGE 'No storage location selected (from where)';
         RETURN;
     }
     

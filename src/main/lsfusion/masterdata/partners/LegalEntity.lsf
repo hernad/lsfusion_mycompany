@@ -4,10 +4,10 @@ REQUIRE Partner, MasterData;
 
 NAMESPACE MasterData;
 
-CLASS LegalEntity 'Организация';
+CLASS LegalEntity 'Organization';
 
-name 'Название' = DATA ISTRING[50] (LegalEntity) CHARWIDTH 12;
-website 'Веб сайт' = DATA ISTRING[30](LegalEntity);
+name 'Name' = DATA ISTRING[50] (LegalEntity) CHARWIDTH 12;
+website 'Web site' = DATA ISTRING[30](LegalEntity);
 
 // Наследуем организацию от контрагента
 EXTEND CLASS LegalEntity : Partner;
@@ -15,7 +15,7 @@ EXTEND CLASS LegalEntity : Partner;
 name (LegalEntity l) += name(l);
 
 EXTEND CLASS PartnerType {
-    legalEntity 'Организация'
+    legalEntity 'Organization'
 }
 
 type (Partner p) += WHEN p IS LegalEntity THEN PartnerType.legalEntity;
@@ -33,7 +33,7 @@ DESIGN partner {
     }
 }
 
-newLegalEntity 'Организация' () {
+newLegalEntity 'Organization' () {
     NEWSESSION {
         NEW l = LegalEntity {
             
@@ -49,7 +49,7 @@ EXTEND FORM partners
 ;
 EXTEND FORM dialogPartners
     FILTERGROUP type
-        FILTER 'Организации' p IS LegalEntity
+        FILTER 'Organizations' p IS LegalEntity
 
     PROPERTIES newLegalEntity() DRAW p TOOLBAR
 ;

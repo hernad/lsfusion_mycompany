@@ -6,11 +6,11 @@ NAMESPACE Inventory;
 
 loadDefaultData () + {
     NEW r = ScrapType {
-        name(r) <- 'Списание товара';
+        name(r) <- 'Write-off of Products';
 
         NEW n = Numerator {
-            name(n) <- 'Списание товара';
-            series(n) <- 'СТ';
+            name(n) <- 'Write-off of Products';
+            series(n) <- 'WO';
             minValue(n) <- 1;
             maxValue(n) <- 999999;
             stringLength(n) <- 6;

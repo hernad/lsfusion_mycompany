@@ -7,8 +7,8 @@ NAMESPACE Inventory;
 @defineDateFilterForm(shipments, s, scheduled);
 
 // right pane
-@defineDocFilter(shipment, ShipmentType, type, s, 'Тип');
+@defineDocFilter(shipment, ShipmentType, type, s, 'Type');
 
-@defineDocFilter(shipment, Location, location, s, 'Откуда');
+@defineDocFilter(shipment, Location, location, s, 'From where');
 
-@defineDocFilter(shipment, Location, toLocation, s, 'Куда');
+@defineDocFilter(shipment, Location, toLocation, s, 'Where');

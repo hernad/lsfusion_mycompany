@@ -4,22 +4,22 @@ REQUIRE SalesSettings, PartnerSales, Partner;
 
 NAMESPACE Sales;
 
-CLASS PriceType 'Виды цены';
-name 'Наименование' = DATA ISTRING[100] (PriceType) NONULL CHARWIDTH 10;
+CLASS PriceType 'Price types';
+name 'Name' = DATA ISTRING[100] (PriceType) NONULL CHARWIDTH 10;
 
-id 'Код' = DATA STRING[20] (PriceType);
+id 'Code' = DATA STRING[20] (PriceType);
 priceType = GROUP AGGR PriceType t BY id(t);
 
-taxIncluded 'С учетом налогов' = DATA BOOLEAN (PriceType);  
+taxIncluded 'Tax included' = DATA BOOLEAN (PriceType);  
 
-FORM priceType 'Вид цены'
+FORM priceType 'Price type'
     OBJECTS pt = PriceType PANEL 
     PROPERTIES(pt) name, id, taxIncluded
 
     EDIT PriceType OBJECT pt
 ;
 
-FORM priceTypes 'Виды цен'
+FORM priceTypes 'Types of prices'
     OBJECTS pt = PriceType
     PROPERTIES(pt) READONLY name, id, taxIncluded
     PROPERTIES(pt) NEWSESSION NEW, EDIT, DELETE 
@@ -34,7 +34,7 @@ NAVIGATOR {
 }
 
 priceType = DATA PriceType (Partner);
-namePriceType 'Вид цен' (Partner p) =  name(priceType(p));
+namePriceType 'Price type' (Partner p) =  name(priceType(p));
 
 EXTEND FORM partner 
     PROPERTIES(p) namePriceType 

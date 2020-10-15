@@ -4,13 +4,13 @@ REQUIRE InvLedger, InvLedgerItem, ProductLot;
 
 NAMESPACE Inventory;
                                                                                         
-quantity 'Кол-во' = ABSTRACT NUMERIC[16,3] (InvLedger, Lot) MATERIALIZED;
+quantity 'Quantity' = ABSTRACT NUMERIC[16,3] (InvLedger, Lot) MATERIALIZED;
 quantityLot 'Кол-во партий' (InvLedger rl) = GROUP SUM quantity(rl, Lot l);
 
-inQuantity 'Кол-во поступившее' (Location ll, Lot l) = GROUP SUM quantity(InvLedger il, Lot lt) 
+inQuantity 'Number of received' (Location ll, Lot l) = GROUP SUM quantity(InvLedger il, Lot lt) 
                                                     IF active(il) AND toLocation(il) = ll AND lt = l MATERIALIZED;
                                                     
-inQuantity 'Кол-во поступившее'(Location ll, Lot l, DATETIME dt) = inQuantity(ll, l) (-)
+inQuantity 'Number of received'(Location ll, Lot l, DATETIME dt) = inQuantity(ll, l) (-)
     GROUP SUM quantity(InvLedger il, Lot lt)  IF active(il) AND toLocation(il) = ll AND lt = l AND dateTime(il) > dt;
     
 inQuantityA (Location ll, Lot l, DATETIME dt) = inQuantity(ll, l) (-)
@@ -19,37 +19,37 @@ inQuantityA (Location ll, Lot l, DATETIME dt) = inQuantity(ll, l) (-)
 inQuantityB (Location ll, Lot l, DATETIME dt) = inQuantity(ll, l) (-)
     GROUP SUM quantity(InvLedger il, Lot lt)  IF active(il) AND toLocation(il) = ll AND lt = l AND dateTime(il) >= dt;
                                    
-outQuantity 'Кол-во отправленное' (Location ll, Lot l) = GROUP SUM quantity(InvLedger il, Lot lt) 
+outQuantity 'Quantity sent' (Location ll, Lot l) = GROUP SUM quantity(InvLedger il, Lot lt) 
                                                     IF active(il) AND fromLocation(il) = ll AND lt = l MATERIALIZED;
 
-outQuantity 'Кол-во отправленное' (Location ll, Lot l, DATETIME dt) = outQuantity(ll, l) (-)
+outQuantity 'Quantity sent' (Location ll, Lot l, DATETIME dt) = outQuantity(ll, l) (-)
     GROUP SUM quantity(InvLedger il, Lot lt) IF active(il) AND  fromLocation(il) = ll AND lt = l AND dateTime(il) > dt;
 
-outQuantityA 'Кол-во отправленное' (Location ll, Lot l, DATETIME dt) = outQuantity(ll, l) (-)
+outQuantityA 'Quantity sent' (Location ll, Lot l, DATETIME dt) = outQuantity(ll, l) (-)
     GROUP SUM quantity(InvLedger il, Lot lt) IF active(il) AND  fromLocation(il) = ll AND lt = l AND dateTime(il) > dt;
     
-outQuantityB 'Кол-во отправленное' (Location ll, Lot l, DATETIME dt) = outQuantity(ll, l) (-)
+outQuantityB 'Quantity sent' (Location ll, Lot l, DATETIME dt) = outQuantity(ll, l) (-)
     GROUP SUM quantity(InvLedger il, Lot lt) IF active(il) AND  fromLocation(il) = ll AND lt = l AND dateTime(il) >= dt;
 
-onHand 'Текущий остаток' (Location ll, Lot l) = inQuantity(ll, l) (-) outQuantity(ll, l) MATERIALIZED;
+onHand 'Current balance' (Location ll, Lot l) = inQuantity(ll, l) (-) outQuantity(ll, l) MATERIALIZED;
 prevOnHand (Location ll, Lot l) = PREV(onHand(ll, l));
 
 onHandLot 'Текущий остаток (партии)' (Location ll, Product p) = GROUP SUM onHand(ll, Lot l) IF product(l) = p;
 
-onHand 'Текущий остаток' (Location ll, Lot l, DATETIME dt) = 
+onHand 'Current balance' (Location ll, Lot l, DATETIME dt) = 
                                                             inQuantity(ll, l, dt) (-) outQuantity(ll, l, dt) IF dt;
 
 onHandLot 'Текущий остаток (партии)' (Location ll, Product p, DATETIME dt) = GROUP SUM onHand(ll, Lot l, dt) IF product(l) = p;                                                            
 
-onHandA 'Остаток' (Location ll, Lot l, DATETIME dt) = 
+onHandA 'The remainder' (Location ll, Lot l, DATETIME dt) = 
                                                             inQuantityA(ll, l, dt) (-) outQuantityA(ll, l, dt) IF dt;
 prevOnHandA (Location ll, Lot l, DATETIME dt) = PREV(onHandA(ll, l, dt));
 
-onHandB 'Остаток' (Location ll, Lot l, DATETIME dt) = 
+onHandB 'The remainder' (Location ll, Lot l, DATETIME dt) = 
                                                             inQuantityB(ll, l, dt) (-) outQuantityB(ll, l, dt) IF dt;
 prevOnHandB (Location ll, Lot l, DATETIME dt) = PREV(onHandB(ll, l, dt));
 
-FORM invLedgerItemLot 'Партии'
+FORM invLedgerItemLot 'Party'
     OBJECTS r = InvLedger
     PROPERTIES (r) READONLY nameProduct PANEL 
         

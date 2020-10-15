@@ -26,15 +26,15 @@ EXTEND FORM printInvoice
 DESIGN invoice {
     details {
         NEW invoicePrint {
-            caption = 'Печать';
+            caption = 'Printing';
             showIf = countInvoiceTemplate(type(i));
         }
     }
 }
 
-@defineEmployee(allowed, 'Отпуск разрешил', invoice, i, invoicePrint);
-@defineEmployee(accountant, 'Главный (старший) бухгалтер', invoice, i, invoicePrint);
-@defineEmployee(performed, 'Отпуск произвел', invoice, i, invoicePrint);
+@defineEmployee(allowed, 'Vacation allowed', invoice, i, invoicePrint);
+@defineEmployee(accountant, 'Chief (senior) accountant', invoice, i, invoicePrint);
+@defineEmployee(performed, 'The leave produced', invoice, i, invoicePrint);
 
 WHEN LOCAL SETCHANGED(location(Invoice i)) DO {
     allowed(i) <- GROUP LAST allowed(Location parent) ORDER DESC level(location(i),parent);

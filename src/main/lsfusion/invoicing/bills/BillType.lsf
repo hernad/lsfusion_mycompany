@@ -4,18 +4,18 @@ REQUIRE Numerator, InvoicingSettings;
 
 NAMESPACE Invoicing;
 
-CLASS BillType 'Тип приобретения';
-name 'Название' = DATA ISTRING[50] (BillType) NONULL;
+CLASS BillType 'Purchase type';
+name 'Name' = DATA ISTRING[50] (BillType) NONULL;
 
-id 'Код' = DATA STRING[20] (BillType);
+id 'Code' = DATA STRING[20] (BillType);
 billType = GROUP AGGR BillType t BY id(t);
 
-numerator 'Нумератор' = DATA Numerator (BillType);
-nameNumerator 'Нумератор' (BillType o) = name(numerator(o));
+numerator 'Numerator' = DATA Numerator (BillType);
+nameNumerator 'Numerator' (BillType o) = name(numerator(o));
 
-taxIncluded 'Цена включает налоги' = DATA BOOLEAN (BillType);
+taxIncluded 'Price includes taxes' = DATA BOOLEAN (BillType);
 
-FORM billType 'Тип приобретения'
+FORM billType 'Purchase type'
     OBJECTS o = BillType PANEL 
     PROPERTIES(o) name, id, nameNumerator, taxIncluded
      
@@ -31,7 +31,7 @@ DESIGN billType {
     }
 }
 
-FORM billTypes 'Типы приобретения'
+FORM billTypes 'Acquisition types'
     OBJECTS o = BillType
     PROPERTIES(o) READONLY name, id
     
@@ -51,7 +51,7 @@ DESIGN options {
 }
 
 // default type
-countBillType 'Кол-во типов' () = GROUP SUM 1 IF r IS BillType; 
+countBillType 'Number of types' () = GROUP SUM 1 IF r IS BillType; 
 firstBillType = GROUP LAST BillType r ORDER DESC r WHERE r IS BillType;
 
 defaultBillType = firstBillType() IF countBillType() = 1;

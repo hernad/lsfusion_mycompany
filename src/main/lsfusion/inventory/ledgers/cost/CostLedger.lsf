@@ -4,75 +4,75 @@ REQUIRE Location, Product, Utils, CostProduct, ItemCost;
 
 NAMESPACE Inventory;
 
-CLASS CostLedger 'Регистр себестоимости';
-class 'Вид' (CostLedger l) = objectClassName(l) IF l IS CostLedger CHARWIDTH 15;
+CLASS CostLedger 'Cost register';
+class 'View' (CostLedger l) = objectClassName(l) IF l IS CostLedger CHARWIDTH 15;
 
-type 'Тип' = ABSTRACT ISTRING[100] (CostLedger) CHARWIDTH 20 MATERIALIZED;
+type 'Type' = ABSTRACT ISTRING[100] (CostLedger) CHARWIDTH 20 MATERIALIZED;
 
-dateTime 'Время' = ABSTRACT DATETIME (CostLedger) MATERIALIZED;
-date 'Дата' (CostLedger l) = DATE(dateTime(l));
+dateTime 'Time' = ABSTRACT DATETIME (CostLedger) MATERIALIZED;
+date 'Date' (CostLedger l) = DATE(dateTime(l));
 
-number 'Номер' = ABSTRACT STRING[31] (CostLedger) MATERIALIZED;
+number 'Room' = ABSTRACT STRING[31] (CostLedger) MATERIALIZED;
 
-location 'Место хранения' = ABSTRACT Location (CostLedger) MATERIALIZED;
-nameLocation 'Место хранения' (CostLedger l) = name(location(l));
+location 'Storage' = ABSTRACT Location (CostLedger) MATERIALIZED;
+nameLocation 'Storage' (CostLedger l) = name(location(l));
 
-product 'Товар' = ABSTRACT Product (CostLedger) MATERIALIZED;
-nameProduct 'Товар' (CostLedger l) = name(product(l));
+product 'Product' = ABSTRACT Product (CostLedger) MATERIALIZED;
+nameProduct 'Product' (CostLedger l) = name(product(l));
 
-CLASS InCostLedger 'Входящая проводка' : CostLedger;
+CLASS InCostLedger 'Incoming wiring' : CostLedger;
 
-quantity 'Количество' = ABSTRACT NUMERIC[16,3] (InCostLedger);
+quantity 'Number' = ABSTRACT NUMERIC[16,3] (InCostLedger);
 
-dataAmount 'Сумма (первичная)' = DATA NUMERIC[14,2] (InCostLedger);
-calcAmount 'Сумма (расчетная)' = ABSTRACT NUMERIC[14,2] (InCostLedger);
-amount 'Сумма' (InCostLedger l) = OVERRIDE dataAmount(l), calcAmount(l); 
+dataAmount 'Amount (primary)' = DATA NUMERIC[14,2] (InCostLedger);
+calcAmount 'Amount (calculated)' = ABSTRACT NUMERIC[14,2] (InCostLedger);
+amount 'Amount' (InCostLedger l) = OVERRIDE dataAmount(l), calcAmount(l); 
 
-price 'Цена' (InCostLedger il) = amount(il) / quantity(il);
+price 'Price' (InCostLedger il) = amount(il) / quantity(il);
 
-CLASS OutCostLedger 'Исходящая проводка' : CostLedger;
+CLASS OutCostLedger 'Outbound posting' : CostLedger;
 
-quantity 'Количество' = ABSTRACT NUMERIC[16,3] (OutCostLedger);
+quantity 'Number' = ABSTRACT NUMERIC[16,3] (OutCostLedger);
 negQuantity (OutCostLedger l) = -quantity(l); 
 
-amount 'Сумма' = DATA NUMERIC[14,2] (OutCostLedger);
-price 'Цена' (OutCostLedger il) = amount(il) / quantity(il);
+amount 'Amount' = DATA NUMERIC[14,2] (OutCostLedger);
+price 'Price' (OutCostLedger il) = amount(il) / quantity(il);
 
 // Проводки с учетом знака
-signedQuantity 'Количество' (CostLedger l) = MULTI quantity[InCostLedger](l), -quantity[OutCostLedger](l) MATERIALIZED;
-signedAmount 'Сумма' (CostLedger l) = MULTI amount[InCostLedger](l), -amount[OutCostLedger](l) MATERIALIZED;
+signedQuantity 'Number' (CostLedger l) = MULTI quantity[InCostLedger](l), -quantity[OutCostLedger](l) MATERIALIZED;
+signedAmount 'Amount' (CostLedger l) = MULTI amount[InCostLedger](l), -amount[OutCostLedger](l) MATERIALIZED;
 
 countLedger (Location l, Product p) =
     GROUP SUM 1 IF location(CostLedger cl) = l AND product(cl) = p MATERIALIZED;
     
-costQuantity 'Количество' (Location l, Product p) = 
+costQuantity 'Number' (Location l, Product p) = 
     GROUP SUM signedQuantity(CostLedger cl) IF location(cl) = l AND product(cl) = p MATERIALIZED;
-costAmount 'Себестоимость' (Location l, Product p) = 
+costAmount 'Cost price' (Location l, Product p) = 
     GROUP SUM signedAmount(CostLedger cl) IF location(cl) = l AND product(cl) = p MATERIALIZED;
-costPrice 'Себестоимость за единицу' (Location l, Product p) = costAmount(l, p) / costQuantity(l, p);
+costPrice 'Unit cost' (Location l, Product p) = costAmount(l, p) / costQuantity(l, p);
 
-costQuantity 'Количество' (Location l, Product p, DATETIME dt) = 
+costQuantity 'Number' (Location l, Product p, DATETIME dt) = 
     costQuantity(l, p) (-) (GROUP SUM signedQuantity(CostLedger cl) IF location(cl) = l AND product(cl) = p AND dateTime(cl) >= dt);
-costAmount 'Себестоимость' (Location l, Product p, DATETIME dt) = 
+costAmount 'Cost price' (Location l, Product p, DATETIME dt) = 
     costAmount(l, p) (-) (GROUP SUM signedAmount(CostLedger cl) IF location(cl) = l AND product(cl) = p AND dateTime(cl) >= dt);
-costPrice 'Себестоимость за единицу' (Location l, Product p, DATETIME dt) = costAmount(l, p, dt) / costQuantity(l, p, dt); 
+costPrice 'Unit cost' (Location l, Product p, DATETIME dt) = costAmount(l, p, dt) / costQuantity(l, p, dt); 
 
-costQuantity 'Количество' (Product p) = GROUP SUM costQuantity(Location l, p);
-costAmount 'Себестоимость' (Product p) = GROUP SUM costAmount(Location l, p);
-costPrice 'Себестоимость за единицу' (Product p) = costAmount(p) / costQuantity(p);
+costQuantity 'Number' (Product p) = GROUP SUM costQuantity(Location l, p);
+costAmount 'Cost price' (Product p) = GROUP SUM costAmount(Location l, p);
+costPrice 'Unit cost' (Product p) = costAmount(p) / costQuantity(p);
 
-costQuantity 'Количество' (Product p, DATETIME dt) = GROUP SUM costQuantity(Location l, p, dt);
-costAmount 'Себестоимость' (Product p, DATETIME dt) = GROUP SUM costAmount(Location l, p, dt);
-costPrice 'Себестоимость за единицу' (Product p, DATETIME dt) = costAmount(p, dt) / costQuantity(p, dt);
+costQuantity 'Number' (Product p, DATETIME dt) = GROUP SUM costQuantity(Location l, p, dt);
+costAmount 'Cost price' (Product p, DATETIME dt) = GROUP SUM costAmount(Location l, p, dt);
+costPrice 'Unit cost' (Product p, DATETIME dt) = costAmount(p, dt) / costQuantity(p, dt);
 
-overCost 'Себестоимость' (Item i, DATETIME dt) = NUMERIC[14,2](OVERRIDE costPrice(i, dt), cost(i, DATE(dt)));
+overCost 'Cost price' (Item i, DATETIME dt) = NUMERIC[14,2](OVERRIDE costPrice(i, dt), cost(i, DATE(dt)));
 // Связываем OutCostLedger и InCostLedger
 
-quantity 'Расходовано' = DATA NUMERIC[16,3] (OutCostLedger, InCostLedger);
-costed 'Расходовано' (InCostLedger il) = GROUP SUM quantity(OutCostLedger ol, il) MATERIALIZED;
+quantity 'Spent' = DATA NUMERIC[16,3] (OutCostLedger, InCostLedger);
+costed 'Spent' (InCostLedger il) = GROUP SUM quantity(OutCostLedger ol, il) MATERIALIZED;
 notCosted 'Не расходовано' (InCostLedger il) = quantity(il) (-) costed(il) MATERIALIZED; 
 
-costed 'Расходовано' (OutCostLedger ol) = GROUP SUM quantity(ol, InCostLedger il) MATERIALIZED;
+costed 'Spent' (OutCostLedger ol) = GROUP SUM quantity(ol, InCostLedger il) MATERIALIZED;
 
 calcCost = DATA LOCAL NESTED BOOLEAN (CostLedger);
 
@@ -128,11 +128,11 @@ ON {
         }
 }
 
-FORM dialogCost 'Параметры расчета себестоимости'
+FORM dialogCost 'Costing parameters'
     OBJECTS d = DATE PANEL
-    PROPERTIES 'Дата, с которой пересчитывать' = VALUE(d)
+    PROPERTIES 'Date from which to recalculate' = VALUE(d)
 ;
-recalculateCost 'Пересчитать себестоимость' () {
+recalculateCost 'Recalculate cost' () {
     DIALOG dialogCost OBJECTS d INPUT DO {
         calcCost(CostLedger l) <- TRUE WHERE DATE(dateTime(l)) >= d;
         calculateCost();

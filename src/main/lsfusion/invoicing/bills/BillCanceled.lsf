@@ -5,15 +5,15 @@ REQUIRE BillReady;
 NAMESPACE Invoicing;
     
 EXTEND CLASS BillStatus {
-    canceled 'Отменен'
+    canceled 'Canceled'
 }
-canceled 'Отменен' = DATA BOOLEAN (Bill);
-active 'Активен' (Bill b) = ready(b) AND NOT canceled(b);
+canceled 'Canceled' = DATA BOOLEAN (Bill);
+active 'Active' (Bill b) = ready(b) AND NOT canceled(b);
 
 status(Bill b) += WHEN canceled(b) THEN BillStatus.canceled;
 colorStatus(Bill b) += WHEN status(b) = BillStatus.canceled THEN RGB(181,195,247);
 
-cancel 'Отменить' (Bill b) {
+cancel 'Cancel' (Bill b) {
     APPLY; 
        IF canceled() THEN RETURN;
            
@@ -38,5 +38,5 @@ DESIGN bill {
 
 EXTEND FORM bills    
     EXTEND FILTERGROUP status
-        FILTER 'Отменен' status(b) = BillStatus.canceled    
+        FILTER 'Canceled' status(b) = BillStatus.canceled    
 ;

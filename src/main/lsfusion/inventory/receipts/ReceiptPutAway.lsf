@@ -5,18 +5,18 @@ REQUIRE ReceiptDone, ReceiptInv, Input;
 NAMESPACE Inventory;
 
 // type
-putAway 'Размещение' = DATA BOOLEAN (ReceiptType);
+putAway 'Accommodation' = DATA BOOLEAN (ReceiptType);
 EXTEND FORM receiptType PROPERTIES(o) putAway;
 
 // status
 EXTEND CLASS ReceiptStatus {
-    putAway 'Размещен'
+    putAway 'Posted'
 }
-putAway 'Размещен' = DATA BOOLEAN (Receipt);
+putAway 'Posted' = DATA BOOLEAN (Receipt);
 
 status(Receipt r) += WHEN putAway(r) THEN ReceiptStatus.putAway;
 
-markAsPutAway 'Размещен' (Receipt r) {
+markAsPutAway 'Posted' (Receipt r) {
     APPLY; 
     IF canceled() THEN RETURN;
     
@@ -40,23 +40,23 @@ DESIGN receipt {
 }
 
 // put away process
-CLASS ReceiptPutAway 'Размещение';
+CLASS ReceiptPutAway 'Accommodation';
 
-receiptLine 'Строка поступления' = DATA ReceiptLine (ReceiptPutAway) NONULL DELETE;
+receiptLine 'Receipt line' = DATA ReceiptLine (ReceiptPutAway) NONULL DELETE;
 
-location 'Место хранения' = DATA Location (ReceiptPutAway);
-nameLocation 'Место хранения' (ReceiptPutAway p) = name(location(p));
+location 'Storage' = DATA Location (ReceiptPutAway);
+nameLocation 'Storage' (ReceiptPutAway p) = name(location(p));
 
 CONSTRAINT location(ReceiptPutAway p) AND NOT level(location(p), location(receipt(receiptLine(p)))) 
            CHECKED BY location[ReceiptPutAway]
-           MESSAGE 'Место хранения должно быть дочерним от места хранения из документа потупления';
+           MESSAGE 'The storage location must be a child of the storage location from the document';
 
-quantity 'Кол-во' = DATA NUMERIC[16,3] (ReceiptPutAway); 
+quantity 'Quantity' = DATA NUMERIC[16,3] (ReceiptPutAway); 
 
-put 'Размещено' (ReceiptLine l) = GROUP SUM quantity(ReceiptPutAway p) IF receiptLine(p) = l;
+put 'Posted by' (ReceiptLine l) = GROUP SUM quantity(ReceiptPutAway p) IF receiptLine(p) = l;
 ledgerDone(ReceiptLine l) += put(l);
 
-CONSTRAINT put(ReceiptLine l) > done(l) MESSAGE 'Размещенное количество не может быть больше принятого';
+CONSTRAINT put(ReceiptLine l) > done(l) MESSAGE 'The amount placed cannot be greater than the accepted amount';
 
 EXTEND FORM receipt  
     OBJECTS p = ReceiptPutAway
@@ -64,7 +64,7 @@ EXTEND FORM receipt
     FILTERS receiptLine(p) = l
 ;
 
-FORM putAwayLoc 'Места хранения'
+FORM putAwayLoc 'Storage locations'
     OBJECTS loc = Location
     
     OBJECTS l = Location
@@ -76,7 +76,7 @@ DESIGN putAwayLoc {
     PROPERTY(formOk()) { changeKey = 'ENTER'; }
 }
 
-newPutAway 'Разместить (+)' (ReceiptLine ln) {
+newPutAway 'Place (+)' (ReceiptLine ln) {
     DIALOG putAwayLoc OBJECTS l INPUT, loc = location(receipt(ln)) DO {
         DIALOG dialogQuantity OBJECTS q = done(ln) (-) put(ln) INPUT DO {
             IF q > 0 THEN {
@@ -102,7 +102,7 @@ EXTEND FORM receipt
 DESIGN receipt {
     linesTab {
         NEW receiptPutAway {
-            caption = 'Размещение';
+            caption = 'Accommodation';
             showIf = toPutAway(r);
             MOVE GRID(p);
             MOVE TOOLBARBOX(p);
@@ -111,7 +111,7 @@ DESIGN receipt {
 }
 
 // invledger
-CLASS ReceiptPutAwayLedger 'Поступление' : InvLedger;
+CLASS ReceiptPutAwayLedger 'Admission' : InvLedger;
 putAwayLedger = AGGR ReceiptPutAwayLedger WHERE quantity(ReceiptPutAway line);
 
 type(ReceiptPutAwayLedger l) += nameType(receipt(receiptLine(line(l))));

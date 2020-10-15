@@ -5,14 +5,14 @@ REQUIRE ManufacturingOrder, ManufacturingOrderSelection;
 NAMESPACE Manufacturing;
 
 EXTEND CLASS ManufacturingOrderStatus {
-    waiting 'В ожидании'
+    waiting 'Pending'
 }
-waiting 'В ожидании' = DATA BOOLEAN (ManufacturingOrder);
+waiting 'Pending' = DATA BOOLEAN (ManufacturingOrder);
 
 status (ManufacturingOrder s) += WHEN waiting(s) THEN ManufacturingOrderStatus.waiting;
 colorStatus (ManufacturingOrder s) += WHEN status(s) = ManufacturingOrderStatus.waiting THEN RGB(250,150,157);
 
-markAsToDo 'В работу' (ManufacturingOrder s) {
+markAsToDo 'To work' (ManufacturingOrder s) {
     APPLY; 
     IF canceled() THEN RETURN;
     
@@ -37,7 +37,7 @@ DESIGN manufacturingOrder {
 
 EXTEND FORM manufacturingOrders    
     EXTEND FILTERGROUP status
-        FILTER 'В ожидании' status(o) = ManufacturingOrderStatus.waiting    
+        FILTER 'Pending' status(o) = ManufacturingOrderStatus.waiting    
 ;
 
-@defineSelectionAction(manufacturingOrders, ManufacturingOrder, markAsToDo, 'В работу', statuses);
+@defineSelectionAction(manufacturingOrders, ManufacturingOrder, markAsToDo, 'To work', statuses);
