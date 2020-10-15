@@ -1050,3 +1050,5 @@ X-отчет,X-report
 Является покупателем,Is Customer
 Является поставщиком,Is Vendor
 НДС,VAT
+Входящий платеж,Incoming payment
+Исходящий платеж,Outgoing payment
