@@ -878,7 +878,7 @@ X-отчет,X-report
 Статья ДДС должна соответствовать типу платежа,The DDS article must correspond to the type of payment
 Стоимость изделия,Product cost
 Стоимость компонентов,Component cost
-Стоимость приобретения,Acquisition cost
+Стоимость приобретения,Purchase cost
 Страна,Country
 Страна происхождения,Country of origin
 Страны,Countries
@@ -890,7 +890,7 @@ X-отчет,X-report
 Строка описи,Inventory line
 Строка отгрузки,Shipment line
 Строка поступления,Receipt line
-Строка приобретения,Acquisition line
+Строка приобретения,Purchase line
 Строка производных номенклатур,Derived item row
 Строка реализации,Implementation line
 Строка списания,Debit line
@@ -946,7 +946,7 @@ X-отчет,X-report
 Тип поступления,Receipt type
 Тип прайс-листа,Price list type
 Тип прайс-листа на продажу,Type of price list for sale
-Тип приобретения,Acquisition type
+Тип приобретения,Purchase type
 Тип производственного заказа,Manufacturing order type
 Тип реализации,Implementation type
 Тип счета,Account type
@@ -1032,13 +1032,13 @@ X-отчет,X-report
 Экспорт соотношений единиц измерений,Exporting unit ratios
 Экспорт спецификаций,Export specifications
 Экспорт статей ДДС,Export of DDS articles
-Экспорт стран,Export countries
+Экспорт стран,Export Countries
 Экспорт строк спецификаций,Exporting BOM Lines
 Экспорт счетов,Export accounts
-Экспорт товаров,Export of Products
-Экспорт услуг,Export of services
-Экспорт физических лиц,Export of individuals
-Экспорт штрихкодов,Exporting barcodes
+Экспорт товаров,Export Products
+Экспорт услуг,Export Services
+Экспорт физических лиц,Export Individuals
+Экспорт штрихкодов,Export Barcodes
 Электронная почта,Email
 Этикетка,Label
 Этикетка 58x40,Label 58x40
@@ -1049,3 +1049,4 @@ X-отчет,X-report
 Юридические данные,Legal data
 Является покупателем,Is Customer
 Является поставщиком,Is Vendor
+НДС,VAT
