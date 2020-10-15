@@ -337,7 +337,7 @@ X-отчет,X-report
 Импорт налогов на реализацию,Import sales taxes
 Импорт организаций,Importing organizations
 Импорт остатков,Residue import
-Импорт производных номенклатур,Importing Derived Items
+Импорт производных номенклатур,Importing secondary side-effect Items
 Импорт себестоимостей,Import of cost prices
 Импорт соотношений единиц измерений,Importing unit ratios
 Импорт спецификаций,Importing BOMs
@@ -891,7 +891,7 @@ X-отчет,X-report
 Строка отгрузки,Shipment line
 Строка поступления,Receipt line
 Строка приобретения,Purchase line
-Строка производных номенклатур,Derived item row
+Строка производных номенклатур,Secondary side-effect product line
 Строка реализации,Implementation line
 Строка списания,Debit line
 Строки,Strings
@@ -1027,7 +1027,7 @@ X-отчет,X-report
 Экспорт налогов на реализацию,Export sales taxes
 Экспорт организаций,Export organizations
 Экспорт остатков,Export of residues
-Экспорт производных номенклатур,Exporting Derived Items
+Экспорт производных номенклатур,Exporting secondary side-effect products
 Экспорт себестоимостей,Export of cost prices
 Экспорт соотношений единиц измерений,Exporting unit ratios
 Экспорт спецификаций,Export specifications
