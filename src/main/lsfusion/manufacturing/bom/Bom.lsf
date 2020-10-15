@@ -63,7 +63,7 @@ costRatio 'Share of cost' = DATA NUMERIC[5,2] (ComponentLine);
 countComponentLine 'Components' (Bom b) = GROUP SUM 1 IF bom(ComponentLine l) = b MATERIALIZED;
 
 // byproduct
-CLASS ByproductLine 'Derived item row';
+CLASS ByproductLine 'Secondary side-effect product line';
 
 bom 'Specification' = DATA Bom (ByproductLine) NONULL DELETE;
 
